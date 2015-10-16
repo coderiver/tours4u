@@ -5,8 +5,10 @@
 	font-weight: normal
 	font-style: normal
 
-$icon-sepa: "\EA01"
-$icon-skrill: "\EA02"
+$icon-layer-37: "\EA01"
+$icon-sepa: "\EA02"
+$icon-skrill: "\EA03"
+$icon-holidays: "\EA04"
 
 
 %icon
@@ -23,7 +25,11 @@ $icon-skrill: "\EA02"
 	@extend %icon
 	display: inline-block
 
+.icon-layer-37:before
+	content: $icon-layer-37
 .icon-sepa:before
 	content: $icon-sepa
 .icon-skrill:before
 	content: $icon-skrill
+.icon-holidays:before
+	content: $icon-holidays

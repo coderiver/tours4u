@@ -1,0 +1,75 @@
+// header
+.header
+	height: 90px
+	+l300
+	color: $c_menu
+	&__in
+		position: relative
+		margin: 0 auto
+		max-width: 1482px
+		+clr
+	&__right
+		float: right
+		margin-top: 38px
+		font-size: 0
+	.user
+		margin-left: 16px
+
+// logo
+.logo
+	position: absolute
+	top: 50%
+	left: 0
+	transform: translate(0,-50%)
+	margin-top: 26px
+	[class^="icon-"]
+		display: block
+
+// menu
+.menu
+	position: relative
+	left: 50%
+	transform: translate(-50%,0)
+	font-size: 0
+	&__item
+		margin-left: 35px
+		font-size: 14px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+		&.is-active
+			color: $red
+	a
+		position: relative
+		padding-left: 35px
+		height: 24px
+		line-height: 24px
+		display: block
+		span
+			line-height: 1.2
+			vertical-align: baseline
+			display: inline-block
+	.icon
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translate(0,-50%)
+
+// search
+.search
+	vertical-align: top
+	display: inline-block
+	&__btn
+		vertical-align: top
+		background: none
+		display: inline-block
+
+// user
+.user
+	vertical-align: top
+	display: inline-block
+	&__btn
+		vertical-align: top
+		background: none
+		display: inline-block
