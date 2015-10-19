@@ -1,0 +1,29 @@
+// topic
+.topic
+	position: relative
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: 50% 50%
+	+m700
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		opacity: .2
+		z-index: 1
+		background-color: #000
+	&__in
+		position: relative
+		height: 230px
+		@extend %in
+		+vertical
+	&__text
+		position: relative
+		color: #fff
+		font-size: 80px
+		vertical-align: middle
+		z-index: 2
+		display: inline-block

@@ -18,18 +18,18 @@
 // logo
 .logo
 	position: absolute
-	top: 50%
+	top: 26px
 	left: 0
-	transform: translate(0,-50%)
-	margin-top: 26px
 	[class^="icon-"]
 		display: block
 
 // menu
 .menu
 	position: relative
+	float: left
 	left: 50%
-	transform: translate(-50%,0)
+	transform: translate(-51.5%,0)
+	margin-top: 36px
 	font-size: 0
 	&__item
 		margin-left: 35px
@@ -38,8 +38,13 @@
 		display: inline-block
 		&:first-child
 			margin-left: 0
+		&:hover,
 		&.is-active
 			color: $red
+			[class^="icon"]
+				display: none
+			[class*=" icon-hover-"]
+				display: block
 	a
 		position: relative
 		padding-left: 35px
@@ -50,6 +55,8 @@
 			line-height: 1.2
 			vertical-align: baseline
 			display: inline-block
+	[class*=" icon-hover-"]
+		display: none
 	.icon
 		position: absolute
 		top: 50%
@@ -73,3 +80,4 @@
 		vertical-align: top
 		background: none
 		display: inline-block
+// class^="icon-"], [class*=" icon-"]
