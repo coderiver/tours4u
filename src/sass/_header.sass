@@ -38,13 +38,20 @@
 		display: inline-block
 		&:first-child
 			margin-left: 0
-		&:hover,
-		&.is-active
+		&.is-active,
+		&:active
 			color: $red
 			[class^="icon"]
 				display: none
 			[class*=" icon-hover-"]
 				display: block
+		+rm(1024)
+			&:hover
+				color: $red
+				[class^="icon"]
+					display: none
+				[class*=" icon-hover-"]
+					display: block
 	a
 		position: relative
 		padding-left: 35px
@@ -80,4 +87,3 @@
 		vertical-align: top
 		background: none
 		display: inline-block
-// class^="icon-"], [class*=" icon-"]

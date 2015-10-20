@@ -1,3 +1,10 @@
+// out
+.out
+	padding-bottom: 423px
+	height: 100%
+	min-height: 100%
+	+box
+
 // topic
 .topic
 	position: relative
@@ -27,3 +34,229 @@
 		vertical-align: middle
 		z-index: 2
 		display: inline-block
+	.like
+		position: absolute
+		right: 35px
+		bottom: 5px
+		z-index: 1
+
+// like
+.like
+	padding: 9px 20px
+	font-size: 14px
+	+m700
+	color: #fff
+	background: rgba(#000, .5)
+	display: inline-block
+	&__short
+		margin-right: 8px
+		color: $yellow
+	&__short,
+	&__text
+		vertical-align: baseline
+		display: inline-block
+
+// tabs
+.tab
+	position: relative
+	margin-top: -5px
+	border-top: 5px solid $red
+	z-index: 3
+	&__list
+		margin-top: -42px
+		font-size: 0
+		@extend %in
+	&__item
+		position: relative
+		margin-left: 5px
+		+m700
+		font-size: 14px
+		vertical-align: top
+		text-transform: uppercase
+		display: inline-block
+		background: $red
+		+transition(background .2s)
+		&:first-child
+			margin-left: 0
+		&.is-active,
+		&:active
+			background: #fff
+			.tab__link
+				color: $red
+		+rm(1024)
+			&:hover
+				background: #fff
+				.tab__link
+					color: $red
+	&__link
+		padding: 11px 28px
+		color: #fff
+		+transition(color .2s)
+		display: block
+	&__in
+		border-bottom: 5px solid $gray
+	&__cont
+		padding: 30px 15px
+		font-size: 0
+		@extend %in
+		display: none
+	&__text
+		font-size: 14px
+	.select,
+	.input,
+	.btn
+		margin-left: 1.7%
+		&:first-child
+			margin-left: 0
+	.select
+		width: 18%
+	.input
+		input
+			padding-left: 44px
+
+// select
+.select
+	position: relative
+	min-width: 220px
+	color: $c_form
+	+l300
+	font-size: 16px
+	user-select: none
+	cursor: pointer
+	vertical-align: top
+	display: inline-block
+	select
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		opacity: 0
+	&__text
+		position: relative
+		display: block
+		padding: 17px 15px
+		border: 3px solid $l_gray
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		&:after
+			content: "\f107"
+			position: absolute
+			right: 17px
+			top: 50%
+			transform: translate(0,-50%)
+			font: normal normal normal 14px/1 FontAwesome
+			font-size: inherit
+			text-rendering: auto
+			-webkit-font-smoothing: antialiased
+	&__list
+		position: absolute
+		display: none
+		left: 0
+		right: 0
+		top: 100%
+		z-index: 100
+		border: 3px solid $l_gray
+		border-top: 0 
+		max-height: 200px
+		overflow-x: hidden
+		overflow-y: auto
+		background: #fff
+		li
+			padding: 15px 
+			cursor: pointer
+			line-height: 1
+			transition: background .2s
+			&:active
+				background: $l_gray
+			+rm(1024)
+				&:hover
+					background: $l_gray
+
+// input
+.input
+	position: relative
+	vertical-align: top
+	display: inline-block
+	input
+		padding: 0 15px
+		height: 60px
+		color: $c_form
+		+l300
+		font-size: 16px
+		border: 3px solid $l_gray
+		+box
+		display: block
+		&::placeholder
+			color: $c_form
+	.fa
+		position: absolute
+		left: 19px
+		top: 50%
+		margin-top: -9px
+		font-size: 19px
+		color: $c_form
+		transition: color .2s
+	.ui-datepicker-trigger
+		position: absolute
+		left: 19px
+		top: 50%
+		transform: translate(0,-50%)
+		cursor: pointer
+		opacity: 0
+		z-index: 2
+		&:active
+			& + .fa
+				color: rgba($c_form, .7)
+		+rm(1024)
+			&:hover
+				& + .fa
+					color: rgba($c_form, .7)
+
+
+// btn
+.btn
+	padding: 20px 35px
+	color: #fff
+	+l300
+	text-transform: uppercase
+	vertical-align: top
+	font-size: 16px
+	line-height: 20px
+	transition: color .3s, background-color .3s
+	background: $red
+	display: inline-block
+	&:active
+		background: darken($red, 20%)
+	+rm(1024)
+		&:hover
+			background: darken($red, 10%)
+
+// inf
+.inf
+	text-align: center
+	color: $purple
+	text-transform: uppercase
+	background: $yellow
+	&__in
+		position: relative
+		padding: 15px 25px
+		margin: 0 auto
+		max-width: 1482px
+		+box
+	&__close
+		position: absolute
+		top: 50%
+		right: 0
+		transform: translate(0,-50%)
+		background-color: transparent
+		transition: opacity .2s
+		+s(close)
+		&:active
+			opacity: .6
+		+rm(1024)
+			&:hover
+				opacity: .8
+	strong
+		+l700

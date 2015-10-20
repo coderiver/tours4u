@@ -1,0 +1,32 @@
+// ui-datepicker
+.ui-datepicker
+	.ui-datepicker-next,
+	.ui-datepicker-prev
+		cursor: pointer
+		&:active
+			span
+				color: #000
+		+rm(1024)
+			&:hover
+				span
+					color: #000
+		span
+			position: relative
+			font: normal normal normal 14px/1 FontAwesome
+			text-rendering: auto
+			-webkit-font-smoothing: antialiased
+			background: none
+			color: #fff
+			font-size: 0 !important
+			text-indent: 0
+			&:before
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%,-50%)
+				font-size: 16px
+				content: "\f104"
+	.ui-datepicker-next
+		span
+			&:before
+				content: "\f105"
