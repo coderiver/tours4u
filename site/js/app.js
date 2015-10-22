@@ -116,5 +116,14 @@ $(document).ready(function() {
 		autoplay: true,
 		autoplaySpeed: 5000,
 	});
+	$('.js-gallery').slick({
+		dots: false,
+		infinite: false,
+		speed: 600,
+		cssEase: 'linear',
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		adaptiveHeight: true
+	});
 
 });
