@@ -5,8 +5,9 @@
 	color: $c_menu
 	&__in
 		position: relative
+		padding: 0 15px
 		margin: 0 auto
-		max-width: 1482px
+		max-width: 1502px
 		+clr
 	&__right
 		float: right
@@ -19,7 +20,7 @@
 .logo
 	position: absolute
 	top: 26px
-	left: 0
+	left: 15px
 	[class^="icon-"]
 		display: block
 	&.logo_home
@@ -71,6 +72,61 @@
 		top: 50%
 		left: 0
 		transform: translate(0,-50%)
+
+// menu-open
+.menu-open
+	margin-left: 20px
+	+font-smoothing(antialiased)
+	vertical-align: top
+	display: inline-block
+	&__inf
+		position: relative
+		margin: -11px 18px 0 0
+		height: 46px
+		width: 46px
+		color: #fff
+		font-size: 13px
+		+m700
+		line-height: 45px
+		text-align: center
+		border-radius: 50%
+		background: $d_red
+		vertical-align: top
+		display: inline-block
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			right: -6px
+			transform: translate(0,-50%)
+			+arr(9,15,$d_red,r)
+	&__btn
+		position: relative
+		width: 31px
+		height: 24px
+		vertical-align: top
+		display: inline-block
+		background: none
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			left: 0
+			height: 6px
+			width: 31px
+			background: #fff
+		&:before
+			top: 0
+		&:after
+			bottom: 0
+		span
+			position: absolute
+			top: 9px
+			left: 0
+			height: 6px
+			width: 31px
+			background: #fff
+
 
 // search
 .search

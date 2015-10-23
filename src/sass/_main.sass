@@ -1,20 +1,33 @@
 // Normally mainpage styles
 body
 	&.is-home
+		.out
+			overflow: hidden
 		.header
 			position: absolute
 			top: 0
 			left: 0
 			right: 0
-			z-index: 2
+			z-index: 1
 			background: transparent
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				left: 0
+				width: 100%
+				height: 90px
+				background: #fff
+				z-index: 2
 		.tab
 			margin: -155px auto 80px
 			max-width: 1170px
 		.tab__in
 			border-bottom: none
 		.menu
-			display: none
+			position: absolute
+			top: 0
+			z-index: 2
 
 // slider
 .slider
