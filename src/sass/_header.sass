@@ -1,13 +1,15 @@
 // header
 .header
+	position: relative
 	height: 90px
 	+l300
 	color: $c_menu
+	z-index: 10
 	&__in
-		position: relative
-		padding: 0 15px
+		padding: 0 10px 0 15px
 		margin: 0 auto
 		max-width: 1502px
+		+box
 		+clr
 	&__right
 		float: right
@@ -18,9 +20,8 @@
 
 // logo
 .logo
-	position: absolute
-	top: 26px
-	left: 15px
+	float: left
+	margin-top: 26px
 	[class^="icon-"]
 		display: block
 	&.logo_home
@@ -28,10 +29,9 @@
 
 // menu
 .menu
-	position: relative
 	float: left
-	left: 50%
-	transform: translate(-51.5%,0)
+	width: calc(100% - 294px)
+	text-align: center
 	margin-top: 36px
 	font-size: 0
 	&__item
@@ -43,28 +43,46 @@
 			margin-left: 0
 		&.is-active,
 		&:active
-			color: $red
+			& > a
+				color: $red
 			[class^="icon"]
 				display: none
 			[class*=" icon-hover-"]
 				display: block
 		+rm(1024)
 			&:hover
-				color: $red
+				& > a 
+					color: $red
+					&:before
+						opacity: 1
 				[class^="icon"]
 					display: none
 				[class*=" icon-hover-"]
 					display: block
+				.drop
+					visibility: visible
+					opacity: 1
+					z-index: 100
+		& > a
+			padding-left: 35px
+			height: 24px
+			line-height: 24px
+			display: block
+			&:before
+				position: absolute
+				content: ''
+				left: 4px
+				bottom: -30px
+				+arr(15,8,$purple,t)
+				opacity: 0
+				transition: opacity .3s
+			span
+				line-height: 1.2
+				vertical-align: baseline
+				display: inline-block
 	a
 		position: relative
-		padding-left: 35px
-		height: 24px
-		line-height: 24px
-		display: block
-		span
-			line-height: 1.2
-			vertical-align: baseline
-			display: inline-block
+		transform: translate3d(0,0,0)
 	[class*=" icon-hover-"]
 		display: none
 	.icon
@@ -107,6 +125,11 @@
 		vertical-align: top
 		display: inline-block
 		background: none
+		&:hover
+			&:before,
+			&:after,
+			span
+				background: $d_red
 		&:before,
 		&:after
 			position: absolute
@@ -115,6 +138,7 @@
 			height: 6px
 			width: 31px
 			background: #fff
+			transition: background .2s
 		&:before
 			top: 0
 		&:after
@@ -126,7 +150,86 @@
 			height: 6px
 			width: 31px
 			background: #fff
+			transition: background .2s
 
+// grop
+.drop
+	position: absolute
+	top: 100%
+	left: 0
+	right: 0
+	padding: 24px 0 36px
+	color: #fff
+	text-align: left
+	opacity: 0
+	visibility: hidden
+	z-index: -1
+	transition: opacity .3s, visibility .3s
+	background: $purple url(../img/bg-drop.png) no-repeat 50% 50%
+	a
+		color: #fff
+		line-height: 24px
+		transition: color .2s, border-color .2s
+		&.is-active,
+		&:active
+			color: $yellow
+		+rm(1024)
+			&:hover
+				color: $yellow
+	&__in
+		@extend %in
+		+clr
+	&__tab
+		float: left
+		width: 16.6%
+		+m400
+		+font-smoothing(antialiased)
+		font-size: 21px
+		li
+			&.is-active
+				a
+					color: $yellow
+					border-color: $yellow
+
+		a
+			line-height: 35px
+			border-bottom: 1px dashed transparent
+			&:active
+				border-color: $yellow
+			+rm(1024)
+				&:hover
+					border-color: $yellow
+	&__cont
+		float: right
+		padding-top: 8px
+		width: 83%
+		display: none
+	&__list
+		+clr
+		ul
+			float: left
+			width: 20%
+			display: block
+		a
+			padding-left: 12px
+			&:before
+				position: absolute
+				content: "\f105"
+				top: 1px
+				left: 0
+				color: transparent
+				font: normal normal normal 14px/1 FontAwesome
+				font-size: inherit
+				text-rendering: auto
+				-webkit-font-smoothing: antialiased
+			&:active,
+			&.is-active
+				&:before
+					color: $yellow
+			+rm(1024)
+				&:hover
+					&:before
+						color: $yellow
 
 // search
 .search

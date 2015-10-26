@@ -3,6 +3,7 @@ $(document).ready(function() {
 	$(document).click(function() {
 		$(".js-select").removeClass("is-active");
 		$(".js-select-list").fadeOut(100);
+		$('.js-header').removeClass('is-open-menu');
 	});
 
 	// tab
@@ -29,7 +30,7 @@ $(document).ready(function() {
    
 	// select list
 	$("body").on("click",".js-select",function(event) {
-	    event.stopPropagation();
+		event.stopPropagation();
 	});
 	$("body").on("click",".js-select-text",function(event) {
 		var select = $(this).parents(".js-select");
@@ -91,6 +92,14 @@ $(document).ready(function() {
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		adaptiveHeight: true
+	});
+
+	$('.js-open-menu').on('click', function() {
+		$('.js-header').addClass('is-open-menu');
+	});
+	// select list
+	$('.js-open-menu, .menu').on("click", function(event) {
+	    event.stopPropagation();
 	});
 
 });
