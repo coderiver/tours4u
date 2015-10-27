@@ -19,28 +19,53 @@ body
 				background: transparent
 				z-index: -1
 				transition: background .2s
+				+r(1200)
+					height: 70px
 			&.is-open-menu
 				&:before
 					z-index: 1
 					background: #fff
-				.menu
-					.menu__item > a
-						position: relative
-						visibility: visible
-						z-index: 2
-						opacity: 1
 		.tab
 			margin: -155px auto 80px
 			max-width: 1170px
+			+r(980)
+				margin-top: -110px
+			+r(900)
+				margin-top: -95px
+			+r(768)
+				margin: 0
 		.tab__in
 			border-bottom: none
+			+r(768)
+				border-bottom: 5px solid #ededed
 		.menu
 			width: calc(100% - 380px)
-			.menu__item > a
+			+r(1200)
+				padding-left: 0
+				width: 100%
+			.menu__item 
+				position: relative
 				z-index: -1
-				visibility: hidden
-				opacity: 0
-				transition: opacity .2s
+				& > a
+					visibility: hidden
+					opacity: 0
+					transition: opacity .2s
+		.menu-open__btn
+			&:before,
+			&:after,
+			span
+				background: #fff
+			&:active
+				&:before,
+				&:after,
+				span
+					background: $d_red
+			+rm(1024)
+				&:hover
+					&:before,
+					&:after,
+					span
+						background: $d_red
 
 // slider
 .slider
@@ -72,6 +97,9 @@ body
 		text-align: center
 		vertical-align: middle
 		display: inline-block
+		+r(768)
+			margin-top: -23px
+			transform: translate(-50%,0)
 	&__title
 		font-size: 46px
 		line-height: 1.2
@@ -81,6 +109,14 @@ body
 		transition: transform 3.5s
 		transition-delay: .1s
 		+l100
+		+r(1200)
+			font-size: 36px
+		+r(1024)
+			font-size: 28px
+		+r(900)
+			font-size: 20px
+		+r(768)
+			font-size: 14px
 	&__text
 		font-size: 80px
 		line-height: 1.3
@@ -89,6 +125,14 @@ body
 		transition: transform 2.5s
 		transition-delay: .1s
 		+m700
+		+r(1200)
+			font-size: 65px
+		+r(1024)
+			font-size: 50px
+		+r(900)
+			font-size: 35px
+		+r(768)
+			font-size: 24px
 	.slick-next,
 	.slick-prev
 		margin-top: -70px
@@ -109,18 +153,37 @@ body
 			height: auto
 			line-height: 1
 			font-size: 40px
+			+r(768)
+				font-size: 30px
+		+r(768)
+			margin-top: -20px
 	.slick-next
 		right: 80px
+		+r(1200)
+			right: 40px
+		+r(1200)
+			right: 20px
+		+r(768)
+			right: 10px
 		&:before
 			content: "\EA01"
 	.slick-prev
 		left: 80px
+		+r(1200)
+			left: 40px
+		+r(1200)
+			left: 20px
+		+r(768)
+			left: 10px
 		&:before
 			content: "\EA02"
 	.slick-dots
 		top: 50%
 		margin-top: 70px
 		bottom: auto
+		+r(768)
+			top: auto
+			bottom: 50px
 		li
 			padding: 0 1px
 			&.slick-active
@@ -213,6 +276,9 @@ body
 		background: $purple
 		background: rgba($purple, .8)
 		display: inline-block
+		+r(900)
+			padding: 10px 14px
+			line-height: 1.2
 	&__inf
 		position: absolute
 		top: 100%
@@ -229,6 +295,16 @@ body
 		font-size: 26px
 		z-index: 1
 		text-transform: uppercase
+		+r(1200)
+			font-size: 24px
+		+r(1024)
+			font-size: 22px
+		+r(900)
+			font-size: 18px
+		+r(576)
+			font-size: 16px
+		+r(480)
+			font-size: 18px
 	&__text
 		position: relative
 		margin: 5% 0 4%
@@ -240,6 +316,16 @@ body
 		margin-top: 2px
 		font-size: 22px
 		z-index: 1
+		+r(1200)
+			font-size: 20px
+		+r(1024)
+			font-size: 18px
+		+r(900)
+			font-size: 14px
+		+r(576)
+			font-size: 12px
+		+r(480)
+			font-size: 14px
 	.slick-next,
 	.slick-prev
 		margin-top: -41px
@@ -257,10 +343,28 @@ body
 		line-height: 1
 		-webkit-font-smoothing: antialiased
 		-moz-osx-font-smoothing: grayscale
+		+r(1200)
+			margin-top: -36px
+			width: 74px
+			height: 72px
+		+r(1024)
+			margin-top: -26px
+			height: 54px
+			width: 52px
+		+r(576)
+			margin-top: -21px
+			height: 42px
+			width: 44px
 		&:before
 			height: auto
 			line-height: 1
 			font-size: 40px
+			+r(1200)
+				font-size: 38px
+			+r(1024)
+				font-size: 30px
+			+r(576)
+				font-size: 24px
 		&:active
 			background: darken($bg_arr, 30%)
 		&.slick-disabled
@@ -279,6 +383,17 @@ body
 .packages
 	margin-bottom: 60px
 	+clr
+	&__row
+		position: relative
+		+clr
+		&:nth-child(odd)
+			+r(768)
+				.package
+					&:last-child
+						right: 0
+		&.is-right
+			.package
+				float: right
 
 // package
 .package
@@ -291,31 +406,74 @@ body
 	line-height: 24px
 	+l300
 	background-repeat: no-repeat
-	background-position: 0 0
+	background-position: 50% 50%
 	background-size: cover
-	+r(980)
+	+r(1024)
+		font-size: 12px
+	+r(768)
+		position: absolute
+		top: 0
+		bottom: 0
+	+r(620)
+		position: relative
 		width: 100%
+	&.is-text
+		+r(768)
+			position: relative
+			padding-bottom: 0
 	&__in
 		position: absolute
 		top: 50%
 		left: 50%
 		transform: translate(-50%,-50%) 
 		width: 420px
+		+r(1024)
+			width: 380px
+		+r(900)
+			width: 325px
+			line-height: 20px
+		+r(768)
+			position: relative
+			top: auto
+			left: auto
+			padding: 20px
+			width: auto
+			transform: translate(0,0) 
+		+r(620)
+			padding-bottom: 12px
 	&__title
 		color: $purple
 		font-size: 30px
 		text-transform: uppercase
 		+m400
+		+r(1024)
+			font-size: 24px
+		+r(480)
+			font-size: 18px
 	&__inf
 		margin-bottom: 14px
 		color: $c_package-inf
 		font-size: 15px
 		text-transform: uppercase
+		+r(1024)
+			margin-bottom: 10px
+			font-size: 12px
+		+r(900)
+			margin-bottom: 5px
+		+r(480)
+			font-size: 10px
 	&__start
 		margin-top: 37px
 		color: $c_package-start
 		+m700
 		font-size: 22px
+		+r(1024)
+			margin-top: 10px
+			font-size: 16px
+		+r(900)
+			margin-top: 5px
+		+r(480)
+			font-size: 12px
 	&__price
 		color: $red
 	&__more
@@ -329,6 +487,11 @@ body
 		+rm(1024)
 			&:hover
 				border-color: $red
+		+r(900)
+			margin-top: 4px
+		+r(480)
+			margin-top: 0
+			font-size: 10px
 	.fa
 		color: $red
 

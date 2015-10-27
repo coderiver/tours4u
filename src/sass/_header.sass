@@ -5,16 +5,71 @@
 	+l300
 	color: $c_menu
 	z-index: 10
+	+r(1200)
+		height: 70px
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		width: 100%
+		height: 90px
+		background: transparent
+		z-index: -1
+		transition: background .2s
+		+r(1200)
+			height: 70px
+	&.is-open-menu
+		&:before
+			z-index: 1
+			background: #fff
+		.logo,
+		.search,
+		.user
+			visibility: hidden
+			opacity: 0
+			z-index: -1
+		.menu
+			.menu__item 
+				position: static
+				z-index: 3
+				& > a
+					visibility: visible
+					opacity: 1
+					z-index: 2
+		.menu-open__btn
+			z-index: 3
+			&:before
+				top: 9px
+				+rotate(-45)
+				border-radius: 6px
+				background: #adadad
+			&:after
+				bottom: 9px
+				+rotate(45)
+				border-radius: 6px
+				background: #adadad
+			span
+				transform: scale(0)
+				border-radius: 6px
+		.menu-open__inf
+			transform: translate(100%,0) scale(0)
 	&__in
 		padding: 0 10px 0 15px
 		margin: 0 auto
 		max-width: 1502px
 		+box
 		+clr
+		+r(1024)
+			padding: 0 10px
 	&__right
 		float: right
 		margin-top: 38px
 		font-size: 0
+		+r(1200)
+			position: relative
+			margin-top: 23px
+			z-index: 1
 	.user
 		margin-left: 16px
 
@@ -22,10 +77,87 @@
 .logo
 	float: left
 	margin-top: 26px
+	transition: visibility .2s, opacity .2s
+	+r(1200)
+		position: relative
+		margin-top: 12px
+		z-index: 1
 	[class^="icon-"]
 		display: block
 	&.logo_home
 		+s(logo_home)
+
+// menu-open
+.menu-open
+	margin-left: 20px
+	+font-smoothing(antialiased)
+	vertical-align: top
+	display: inline-block
+	&.is-resp
+		+r(1024)
+			display: inline-block
+	&__inf
+		position: relative
+		margin: -11px 18px 0 0
+		height: 46px
+		width: 46px
+		color: #fff
+		font-size: 13px
+		+m700
+		line-height: 45px
+		text-align: center
+		border-radius: 50%
+		background: $d_red
+		vertical-align: top
+		display: inline-block
+		transition: transform .2s
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			right: -6px
+			transform: translate(0,-50%)
+			+arr(9,15,$d_red,r)
+	&__btn
+		position: relative
+		width: 31px
+		height: 24px
+		overflow: hidden
+		vertical-align: top
+		display: inline-block
+		background: none
+		&:active
+			&:before,
+			&:after,
+			span
+				background: $d_red
+		+rm(1024)
+			&:hover
+				&:before,
+				&:after,
+				span
+					background: $d_red
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			left: 0
+			height: 6px
+			width: 31px
+			background: #adadad
+			transition: background .2s, transform .2s, border-radius .2s
+		&:before
+			top: 0
+		&:after
+			bottom: 0
+		span
+			position: absolute
+			top: 9px
+			left: 0
+			height: 6px
+			width: 31px
+			background: #adadad
+			transition: background .2s, border-radius .2s, transform .2s
 
 // menu
 .menu
@@ -34,11 +166,29 @@
 	text-align: center
 	margin-top: 36px
 	font-size: 0
+	+r(1200)
+		position: absolute
+		top: 0
+		left: 0
+		margin-top: 22px
+		padding-left: 90px
+		width: 100%
+	+r(1024)
+		padding-left: 0
 	&__item
 		margin-left: 35px
 		font-size: 14px
 		vertical-align: top
 		display: inline-block
+		+r(1200)
+			margin-left: 15px
+		+r(1024)
+			position: relative
+			z-index: -1
+			& > a
+				visibility: hidden
+				opacity: 0
+				transition: opacity .2s, visibility .2s
 		&:first-child
 			margin-left: 0
 		&.is-active,
@@ -76,6 +226,8 @@
 				+arr(15,8,$purple,t)
 				opacity: 0
 				transition: opacity .3s
+				+r(1200)
+					bottom: -24px
 			span
 				line-height: 1.2
 				vertical-align: baseline
@@ -91,67 +243,6 @@
 		left: 0
 		transform: translate(0,-50%)
 
-// menu-open
-.menu-open
-	margin-left: 20px
-	+font-smoothing(antialiased)
-	vertical-align: top
-	display: inline-block
-	&__inf
-		position: relative
-		margin: -11px 18px 0 0
-		height: 46px
-		width: 46px
-		color: #fff
-		font-size: 13px
-		+m700
-		line-height: 45px
-		text-align: center
-		border-radius: 50%
-		background: $d_red
-		vertical-align: top
-		display: inline-block
-		&:before
-			position: absolute
-			content: ''
-			top: 50%
-			right: -6px
-			transform: translate(0,-50%)
-			+arr(9,15,$d_red,r)
-	&__btn
-		position: relative
-		width: 31px
-		height: 24px
-		vertical-align: top
-		display: inline-block
-		background: none
-		&:hover
-			&:before,
-			&:after,
-			span
-				background: $d_red
-		&:before,
-		&:after
-			position: absolute
-			content: ''
-			left: 0
-			height: 6px
-			width: 31px
-			background: #fff
-			transition: background .2s
-		&:before
-			top: 0
-		&:after
-			bottom: 0
-		span
-			position: absolute
-			top: 9px
-			left: 0
-			height: 6px
-			width: 31px
-			background: #fff
-			transition: background .2s
-
 // grop
 .drop
 	position: absolute
@@ -166,6 +257,8 @@
 	z-index: -1
 	transition: opacity .3s, visibility .3s
 	background: $purple url(../img/bg-drop.png) no-repeat 50% 50%
+	+r(1200)
+		margin-top: 24px
 	a
 		color: #fff
 		line-height: 24px
@@ -233,7 +326,9 @@
 
 // search
 .search
+	position: relative
 	vertical-align: top
+	transition: visibility .2s, opacity .2s
 	display: inline-block
 	&__btn
 		vertical-align: top
@@ -242,7 +337,9 @@
 
 // user
 .user
+	position: relative
 	vertical-align: top
+	transition: visibility .2s, opacity .2s
 	display: inline-block
 	&__btn
 		vertical-align: top

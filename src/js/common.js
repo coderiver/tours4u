@@ -101,7 +101,7 @@ $(document).ready(function() {
 				}
 			},
 			{
-				breakpoint: 600,
+				breakpoint: 768,
 				settings: {
 				  slidesToShow: 2
 				}
@@ -116,7 +116,7 @@ $(document).ready(function() {
 	});
 
 	$('.js-open-menu').on('click', function() {
-		$('.js-header').addClass('is-open-menu');
+		$('.js-header').toggleClass('is-open-menu');
 	});
 	// select list
 	$('.js-open-menu, .menu').on("click", function(event) {
