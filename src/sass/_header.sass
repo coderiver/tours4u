@@ -19,6 +19,8 @@
 		transition: background .2s
 		+r(1200)
 			height: 70px
+		+r(768)
+			height: 0
 	&.is-open-menu
 		&:before
 			z-index: 1
@@ -30,6 +32,8 @@
 			opacity: 0
 			z-index: -1
 		.menu
+			+r(768)
+				transform: translate(0,0)
 			.menu__item 
 				position: static
 				z-index: 3
@@ -166,6 +170,7 @@
 	text-align: center
 	margin-top: 36px
 	font-size: 0
+	+box
 	+r(1200)
 		position: absolute
 		top: 0
@@ -175,6 +180,13 @@
 		width: 100%
 	+r(1024)
 		padding-left: 0
+	+r(768)
+		margin: 0
+		padding: 20px 40px
+		transition: transform .2s
+		transform: translate3d(0,0,0)
+		transform: translate(0,-100%)
+		background: #fff
 	&__item
 		margin-left: 35px
 		font-size: 14px
@@ -185,10 +197,14 @@
 		+r(1024)
 			position: relative
 			z-index: -1
+			display: block
 			& > a
 				visibility: hidden
 				opacity: 0
 				transition: opacity .2s, visibility .2s
+		+r(768)
+			margin-left: 0
+			display: block
 		&:first-child
 			margin-left: 0
 		&.is-active,
@@ -199,6 +215,8 @@
 				display: none
 			[class*=" icon-hover-"]
 				display: block
+				+r(768)
+					display: none
 		+rm(1024)
 			&:hover
 				& > a 
@@ -218,6 +236,8 @@
 			height: 24px
 			line-height: 24px
 			display: block
+			+r(768)
+				padding-left: 0
 			&:before
 				position: absolute
 				content: ''
@@ -242,6 +262,8 @@
 		top: 50%
 		left: 0
 		transform: translate(0,-50%)
+		+r(768)
+			display: none
 
 // grop
 .drop
