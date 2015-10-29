@@ -18,6 +18,13 @@
 	font-size: $sizeValue + px
 	font-size: $sizeValue / 10 + rem
 
+=svg($name, $width, $height)
+	background: url("../img/svg/#{$name}.svg") no-repeat 0 0
+	//background-image: inline-image('icons/svg/'+$sprite+'.svg','image/svg'); // to switches sprites to base64, elegant
+	background-size: (#{$width}px #{$height}px)
+	width: #{$width}px
+	height: #{$height}px
+	display: inline-block
 =text-overflow
 	overflow: hidden
 	-ms-text-overflow: ellipsis

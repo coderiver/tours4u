@@ -82,14 +82,16 @@
 	float: left
 	margin-top: 26px
 	transition: visibility .2s, opacity .2s
+	display: inline-block
+	&.logo_home
+		+svg(logo,201,58)
+		+r(768)
+			margin-top: 15px
+			+svg(logo,134,38)
 	+r(1200)
 		position: relative
 		margin-top: 12px
 		z-index: 1
-	[class^="icon-"]
-		display: block
-	&.logo_home
-		+s(logo_home)
 
 // menu-open
 .menu-open
@@ -115,6 +117,8 @@
 		vertical-align: top
 		display: inline-block
 		transition: transform .2s
+		+r(480)
+			display: none
 		&:before
 			position: absolute
 			content: ''
@@ -196,17 +200,20 @@
 			margin-left: 15px
 		+r(1024)
 			position: relative
-			z-index: -1
-			display: block
 			& > a
 				visibility: hidden
 				opacity: 0
 				transition: opacity .2s, visibility .2s
 		+r(768)
-			margin-left: 0
+			margin: 8px 0 0 0
+			z-index: -1
+			display: block
+			font-size: 18px
 			display: block
 		&:first-child
 			margin-left: 0
+			+r(768)
+				margin-top: 0
 		&.is-active,
 		&:active
 			& > a

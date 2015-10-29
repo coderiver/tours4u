@@ -30,8 +30,10 @@ body
 		.tab
 			margin: -155px auto 80px
 			max-width: 1170px
+			+r(1200)
+				margin-bottom: 70px
 			+r(980)
-				margin-top: -110px
+				margin: -110px 0 8px
 			+r(900)
 				margin-top: -95px
 			+r(768)
@@ -87,6 +89,10 @@ body
 					transform: translate(100%,0)
 	&__wrap
 		padding-bottom: 57%
+		+r(480)
+			padding-bottom: 70%
+		+r(360)
+			padding-bottom: 90%
 	&__in
 		position: absolute
 		top: 50%
@@ -135,6 +141,8 @@ body
 			font-size: 35px
 		+r(768)
 			font-size: 24px
+		+r(480)
+			font-size: 22px
 	.slick-next,
 	.slick-prev
 		margin-top: -70px
@@ -385,9 +393,15 @@ body
 .packages
 	margin-bottom: 60px
 	+clr
+	+r(1024)
+		margin-bottom: 40px
 	&__row
 		position: relative
 		+clr
+		&:first-child
+			.package__in
+				+r(620)
+					padding-top: 0
 		&:nth-child(odd)
 			+r(768)
 				.package
@@ -414,10 +428,12 @@ body
 		font-size: 12px
 	+r(768)
 		position: absolute
+		padding-bottom: 0
 		top: 0
 		bottom: 0
 	+r(620)
 		position: relative
+		padding-bottom: 35%
 		width: 100%
 	&.is-text
 		+r(768)
@@ -516,11 +532,14 @@ body
 	+font-smoothing(antialiased)
 	overflow: hidden
 	+r(980)
-		font-size: 17px
+		font-size: 16px
 	+r(768)
 		width: 48.5%
 		vertical-align: top
 		display: inline-block
+	+r(460)
+		margin-left: 0
+		width: 100%
 	&:first-child
 		margin-left: 0
 	&:nth-child(odd)
@@ -528,6 +547,28 @@ body
 			margin-left: 0
 	&.is-wide
 		width: 48.719%
+		+r(768)
+			padding-bottom: 48.39%
+			img
+				position: absolute
+				top: 0
+				left: 50%
+				height: 100%
+				width: auto
+				transform: translate(-50%,0)
+		+r(460)
+			padding-bottom: 100%
+			width: 100%
+	&.is-height
+		+r(768)
+			padding-bottom: 48.39%
+			img
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translate(0,-50%)
+		+r(460)
+			padding-bottom: 100%
 	&.is-active
 		.country__drop
 			top: 0
@@ -576,10 +617,23 @@ body
 		transition: top .3s
 		background: $purple
 		background: rgba($purple, .8)
+		+r(980)
+			padding: 6px 14px
+		+r(460)
+			padding: 16px 25px
 	&__title
 		margin: 5px 0 10px
 		+r(1200)
 			margin-bottom: 5px
+		+r(980)
+			margin-bottom: 2px
+			font-size: 14px
+			line-height: 1.2
+		+r(768)
+			margin-bottom: 5px
+			font-size: 18px
+		+r(460)
+			font-size: 22px
 	&__list
 		margin-bottom: 10px
 		+l300
@@ -590,8 +644,14 @@ body
 			font-size: 14px
 		+r(1023)
 			line-height: 1.4
-		+r(979)
-			font-size: 13px
+		+r(980)
+			margin-bottom: 0
+			font-size: 12px
+		+r(768)
+			margin-bottom: 5px
+			font-size: 14px
+		+r(460)
+			font-size: 16px
 		li
 			a
 				color: #fff
@@ -617,8 +677,10 @@ body
 			&:hover
 				.ico
 					transform: translate(3px,0)
-		+r(979)
-			font-size: 13px
+		+r(980)
+			font-size: 12px
+		+r(768)
+			font-size: 14px
 		.ico
 			position: absolute
 			top: 50%
@@ -630,26 +692,27 @@ body
 
 // bonus
 .bonus
-	position: relative
-	padding-bottom: 31.2%
+	padding: 140px 15px 160px
 	color: #fff
 	background-repeat: no-repeat
 	background-position: 0 0
 	background-size: cover
+	+r(1200)
+		padding: 100px 15px 120px
+	+r(1024)
+		padding: 50px 15px 50px
+	+r(480)
+		padding: 30px 15px 30px
 	&__in
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translate(-50%,-50%)
-		margin-top: -14px
-		padding: 0 15px
-		width: 80%
-		max-width: 1200px
-		+box
+		@extend %in
 	&__title
 		font-size: 36px
 		line-height: 1.2
 		text-transform: uppercase
+		+r(768)
+			font-size: 30px
+		+r(480)
+			font-size: 20px
 		strong
 			+l700
 	&__inf
@@ -661,6 +724,8 @@ body
 		position: relative
 		margin-top: 35px
 		max-width: 470px
+		+r(1024)
+			margin-top: 20px
 		input
 			padding: 0 55px 0 18px
 			height: 60px
@@ -674,12 +739,17 @@ body
 			display: block
 			&::placeholder
 				color: $c_form
+			+r(768)
+				height: 45px
+			+r(480)
+				height: 40px
 	&__subm
 		position: absolute
 		right: 18px
-		top: 18px
+		top: 50%
 		padding: 3px
 		font-size: 0
+		transform: translate(0,-50%)
 		background-color: transparent
 		display: inline-block
 	.fa
