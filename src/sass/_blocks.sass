@@ -458,6 +458,10 @@
 // reviews
 .reviews
 	margin: 55px 0 60px
+	+r(768)
+		margin: 35px 0
+	+r(480)
+		margin: 20px 0 30px
 	&__in
 		@extend %in
 	&__title
@@ -467,14 +471,29 @@
 		line-height: 24px
 		text-align: center
 	&__row
-		margin: 50px 0 60px
+		margin: 50px 0
 		+clr
+		+r(1024)
+			margin: 30px 0
+		+r(480)
+			margin: 15px 0
 	&__bot
 		margin-top: 60px
 		text-align: center
+		+r(1024)
+			margin-top: 30px
+		+r(480)
+			margin-top: 15px
 	.review
 		float: left
 		width: 50%
+		+r(1024)
+			margin-top: 30px
+			width: 100%
+			&:first-child
+				margin-top: 0
+		+r(768)
+			margin-top: 15px
 
 // review
 .review
@@ -494,9 +513,13 @@
 		z-index: 1
 		img
 			display: block
+		+r(768)
+			display: none
 	&__right
 		float: right
 		width: calc(100% - 146px)
+		+r(768)
+			width: 100%
 	&__top
 		margin-bottom: 5px
 	&__title
@@ -521,6 +544,9 @@
 			font-size: 93px
 			line-height: 1
 			text-transform: uppercase
+		+r(480)
+			font-size: 14px
+			line-height: 1.2
 	&__more
 		color: $red
 	.comment

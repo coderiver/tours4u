@@ -4,6 +4,8 @@
 	letter-spacing: .4px
 	color: $c_foot
 	background: url(../img/bg-foot.png) repeat 0 0
+	+r(768)
+		text-align: center
 	&__in
 		padding: 47px 15px 40px
 		@extend %in
@@ -16,11 +18,31 @@
 	&__left
 		padding-right: 36px
 		width: 25.7%
+		+r(1024)
+			width: 100%
+		+r(768)
+			padding-right: 0
+	&__text
+		+r(1024)
+			display: none
 	&__col
 		padding-right: 15px
 		width: 17%
+		+box
+		+r(1024)
+			width: 25%
+		+r(900)
+			width: 33%
+		+r(768)
+			margin-top: 5px
+			width: 100%
 	&__right
 		width: 23.3%
+		+r(1024)
+			width: 25%
+		+r(900)
+			margin-top: 20px
+			width: 100%
 	&__logo
 		margin: -13px 0 10px
 		vertical-align: top
@@ -34,9 +56,13 @@
 		font-size: 16px
 		line-height: 34px
 		text-transform: uppercase
+		+r(1024)
+			margin-bottom: 5px
 	&__list
 		font-size: 14px
 		line-height: 28px
+		+r(768)
+			line-height: 1.4
 		a
 			letter-spacing: 0
 			border-bottom: 1px solid transparent
@@ -64,6 +90,8 @@
 .soc
 	margin-top: 16px
 	font-size: 0
+	+r(1024)
+		margin-top: 10px
 	&__item
 		margin-left: 5px
 		font-size: 27px
