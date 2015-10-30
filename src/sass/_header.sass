@@ -83,6 +83,7 @@
 	margin-top: 26px
 	transition: visibility .2s, opacity .2s
 	display: inline-block
+	+s(logo)
 	&.logo_home
 		+svg(logo,201,58)
 		+r(768)
@@ -218,10 +219,9 @@
 		&:active
 			& > a
 				color: $red
+				.icon
+					color: $red
 			[class^="icon"]
-				display: none
-			[class*=" icon-hover-"]
-				display: block
 				+r(768)
 					display: none
 		+rm(1024)
@@ -230,10 +230,8 @@
 					color: $red
 					&:before
 						opacity: 1
-				[class^="icon"]
-					display: none
-				[class*=" icon-hover-"]
-					display: block
+					.icon
+						color: $red
 				.drop
 					visibility: visible
 					opacity: 1
@@ -242,6 +240,7 @@
 			padding-left: 35px
 			height: 24px
 			line-height: 24px
+			transition: color .2s
 			display: block
 			+r(768)
 				padding-left: 0
@@ -262,15 +261,19 @@
 	a
 		position: relative
 		transform: translate3d(0,0,0)
-	[class*=" icon-hover-"]
-		display: none
 	.icon
 		position: absolute
 		top: 50%
 		left: 0
+		color: $c_ico
+		font-size: 25px
+		transition: color .2s
+		transform: translate3d(0,0,0)
 		transform: translate(0,-50%)
 		+r(768)
 			display: none
+		&.icon-destination
+			font-size: 20px
 
 // grop
 .drop
@@ -360,6 +363,9 @@
 	transition: visibility .2s, opacity .2s
 	display: inline-block
 	&__btn
+		font-size: 24px
+		line-height: 1
+		color: $c_ico
 		vertical-align: top
 		background: none
 		display: inline-block

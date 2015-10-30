@@ -59,3 +59,122 @@ a
 	text-decoration: none
 
 // common blocks
+
+
+// destinations
+.destinations
+	&__in
+		+clr
+
+// destin
+.destin
+	position: relative
+	float: left
+	width: 50%
+	color: $c_destin
+	font-size: 15px
+	background: $gray
+	+clr
+	+r(1200)
+		width: 100%
+	&.is-left
+		.destin__img
+			left: auto
+			right: 0
+		.destin__art
+			float: left
+			&:before
+				right: auto
+				left: 100%
+				+arr(18,34,$gray,r)
+	&:nth-child(odd)
+		+r(1200)
+			.destin__img
+				left: auto
+				right: 0
+			.destin__art
+				float: left
+				&:before
+					right: auto
+					left: 100%
+					+arr(18,34,$gray,r)
+		+r(560)
+			.destin__art
+				&:before
+					top: auto
+					left: 50%
+					right: auto
+					bottom: 100%
+					transform: translate(-50%,0)
+					+arr(17,9,$gray,t)
+	&:nth-child(even)
+		+r(1200)
+			.destin__img
+				left: 0
+				right: auto
+			.destin__art
+				float: right
+				&:before
+					left: auto
+					right: 100%
+					+arr(18,34,$gray,l)
+		+r(560)
+			.destin__art
+				&:before
+					top: auto
+					left: 50%
+					right: auto
+					bottom: 100%
+					transform: translate(-50%,0)
+					+arr(17,9,$gray,t)
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		width: 50%
+		background-repeat: no-repeat
+		background-position: 50% 50%
+		background-size: cover
+		+r(560)
+			position: relative
+			padding-bottom: 50%
+			width: 100%
+	&__art
+		position: relative
+		float: right
+		width: 50%
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			right: 100%
+			transform: translate(0,-50%)
+			+arr(18,34,$gray,l)
+		+r(560)
+			width: 100%
+	&__in
+		padding: 15% 24% 7% 10.5%
+		font-size: 15px
+		text-align: left
+		+r(560)
+			padding: 20px 10px
+	&__bot
+		margin-top: 20px
+		+r(560)
+			margin-top: 10px
+	&__select
+		color: $red
+		text-transform: uppercase
+		border-bottom: 1px solid transparent
+		transition: border-color .2s
+		&:active
+			border-color: $red
+		+rm(1024)
+			&:hover
+				border-color: $red
+	.title-h4
+		margin-bottom: 20px
+		color: $c_body
+		+r(560)
+			margin-bottom: 10px
