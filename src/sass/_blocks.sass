@@ -60,6 +60,21 @@
 			display: none
 
 // title
+.title-h2
+	margin: 28px 0 35px
+	color: $c_body
+	font-size: 25px
+	text-transform: uppercase
+	+m400
+	&.is-mod
+		margin: 28px 0 14px
+	.rating
+		margin-left: 14px
+		font-size: 0
+		.star
+			margin-left: 1px
+	.fa
+		vertical-align: middle
 .title-h3
 	margin: 45px 0 35px
 	text-align: center
@@ -647,3 +662,40 @@
 	display: inline-block
 	&.is-purple
 		background: $purple
+
+// breadcrumbs
+.breadcrumbs
+	margin: 15px 0 18px
+	font-size: 0
+	color: $c_bread
+	+l400
+	li
+		font-size: 15px
+		vertical-align: top
+		display: inline-block
+	.fa
+		margin: 7px 5px 0
+		font-size: 11px
+		vertical-align: top
+		color: $red
+
+// view
+.view
+	padding: 10px 8px 8px
+	width: 125px
+	+l700
+	text-align: center
+	transition: opacity .2s
+	border: 1px dashed $bord_view
+	display: inline-block
+	&:active
+		opacity: .7
+	+rm(1024)
+		&:hover
+			opacity: .7
+	&.is-red
+		color: $red
+		border-color: $red
+	.icon
+		margin-bottom: 5px
+		font-size: 18px

@@ -182,6 +182,21 @@ $(document).ready(function() {
 		event.stopPropagation();
 	});
 	
-		
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		fade: true,
+		asNavFor: '.js-slider-nav'
+	});
+	$('.slider-nav').slick({
+		slidesToShow: 7,
+		slidesToScroll: 1,
+		asNavFor: '.js-slider-for',
+		dots: false,
+		arrows: false,
+		centerMode: true,
+		focusOnSelect: true
+	});
 
 });
