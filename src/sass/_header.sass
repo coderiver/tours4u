@@ -93,6 +93,9 @@
 		position: relative
 		margin-top: 12px
 		z-index: 1
+	+r(560)
+		margin-top: 20px
+		+sr(logo)
 
 // menu-open
 .menu-open
@@ -100,6 +103,7 @@
 	+font-smoothing(antialiased)
 	vertical-align: top
 	display: inline-block
+	box-sizing: border-box
 	&.is-resp
 		+r(1024)
 			display: inline-block
@@ -289,8 +293,11 @@
 	z-index: -1
 	transition: opacity .3s, visibility .3s
 	background: $purple url(../img/bg-drop.png) no-repeat 50% 50%
+	box-sizing: border-box
 	+r(1200)
 		margin-top: 24px
+	+r(768)
+		display: none
 	a
 		color: #fff
 		line-height: 24px

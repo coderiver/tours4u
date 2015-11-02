@@ -178,3 +178,57 @@ a
 		color: $c_body
 		+r(560)
 			margin-bottom: 10px
+
+// names
+.names
+	margin: 28px 0
+	color: $d_gray
+	line-height: 1.4
+	font-size: 0
+	+l700
+	+clr
+	&.is-last
+		margin-bottom: 60px
+	+r(560)
+		margin: 15px 0
+	&__list
+		padding-right: 40px
+		width: 25%
+		font-size: 15px
+		box-sizing: border-box
+		vertical-align: top
+		display: inline-block
+		+r(980)
+			width: 50%
+			text-align: center
+			&:nth-child(+n+3)
+				margin-top: 15px
+		+r(560)
+			padding-right: 0
+			width: 100%
+			&:nth-child(+n+2)
+				margin-top: 10px
+	.names__letter
+		margin-top: 15px
+		+m700
+		color: $red
+		text-transform: uppercase
+		&:first-child
+			margin-top: 0
+		+r(560)
+			margin-top: 10px
+	li
+		margin-top: 5px
+		&:first-child
+			margin-top: 0
+		+r(560)
+			margin-top: 0
+	a
+		color: $c_title
+		border-bottom: 1px solid transparent
+		transition: border-color .2s
+		&:active
+			border-color: $c_title
+		+rm(1024)
+			&:hover
+				border-color: $c_title
