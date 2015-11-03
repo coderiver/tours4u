@@ -1,16 +1,17 @@
 $icons: (0:0)
 $icons: map-merge($icons,(bonus-bg: (X: 0px, Y:0px, W: 1600px, H: 500px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(close: (X: -756px, Y:-504px, W: 20px, H: 20px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(codedby: (X: -833px, Y:-504px, W: 47px, H: 5px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(coderiver: (X: -780px, Y:-504px, W: 49px, H: 5px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(estras: (X: -728px, Y:-504px, W: 24px, H: 22px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(close: (X: -838px, Y:-504px, W: 20px, H: 20px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(codedby: (X: -915px, Y:-504px, W: 47px, H: 5px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(coderiver: (X: -862px, Y:-504px, W: 49px, H: 5px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(estras: (X: -810px, Y:-504px, W: 24px, H: 22px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(ico-company: (X: -644px, Y:-504px, W: 78px, H: 27px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
 $icons: map-merge($icons,(logo: (X: -410px, Y:-504px, W: 230px, H: 47px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(logo_foot: (X: 0px, Y:-504px, W: 201px, H: 58px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(logo_home: (X: -205px, Y:-504px, W: 201px, H: 58px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(more: (X: -644px, Y:-532px, W: 14px, H: 15px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(search-white: (X: -644px, Y:-504px, W: 24px, H: 24px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(user-white: (X: -672px, Y:-504px, W: 24px, H: 24px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
-$icons: map-merge($icons,(user: (X: -700px, Y:-504px, W: 24px, H: 24px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(logo_foot: (X: -205px, Y:-504px, W: 201px, H: 58px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(logo_home: (X: 0px, Y:-504px, W: 201px, H: 58px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(more: (X: -644px, Y:-535px, W: 14px, H: 15px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(search-white: (X: -726px, Y:-504px, W: 24px, H: 24px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(user-white: (X: -754px, Y:-504px, W: 24px, H: 24px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(user: (X: -782px, Y:-504px, W: 24px, H: 24px, TW: 1600px, TH: 562px, IMG: '../img/icons.png')))
 
 
 // Gets an attribute from the sass map
@@ -24,25 +25,8 @@ $icons: map-merge($icons,(user: (X: -700px, Y:-504px, W: 24px, H: 24px, TW: 1600
 	height: icon-attr($iconName, H)
 	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
 
-@mixin sprite-retina($iconName)
-	background-image: url(icon-attr($iconName, IMG))
-	$width: icon-attr($iconName, W)
-	$height: icon-attr($iconName, H)
-	width: $width/1.5
-	height: $height/1.5
-	$x: icon-attr($iconName, X)
-	$y: icon-attr($iconName, Y)
-	background-position: $x/1.5 $y/1.5
-	$tw: icon-attr($iconName, TW) 	
-	$th: icon-attr($iconName, TH)
-	background-size: $tw/1.5 $th/1.5  	
-
-
 @mixin s($i)
 	+sprite($i)
-
-@mixin sr($i)
-	+sprite-retina($i)
 
 .icon-bonus-bg
 	width: 1600px
@@ -53,22 +37,27 @@ $icons: map-merge($icons,(user: (X: -700px, Y:-504px, W: 24px, H: 24px, TW: 1600
 	width: 20px
 	height: 20px
 	background-image: url('../img/icons.png')
-	background-position: -756px -504px
+	background-position: -838px -504px
 .icon-codedby
 	width: 47px
 	height: 5px
 	background-image: url('../img/icons.png')
-	background-position: -833px -504px
+	background-position: -915px -504px
 .icon-coderiver
 	width: 49px
 	height: 5px
 	background-image: url('../img/icons.png')
-	background-position: -780px -504px
+	background-position: -862px -504px
 .icon-estras
 	width: 24px
 	height: 22px
 	background-image: url('../img/icons.png')
-	background-position: -728px -504px
+	background-position: -810px -504px
+.icon-ico-company
+	width: 78px
+	height: 27px
+	background-image: url('../img/icons.png')
+	background-position: -644px -504px
 .icon-logo
 	width: 230px
 	height: 47px
@@ -78,29 +67,29 @@ $icons: map-merge($icons,(user: (X: -700px, Y:-504px, W: 24px, H: 24px, TW: 1600
 	width: 201px
 	height: 58px
 	background-image: url('../img/icons.png')
-	background-position: 0px -504px
+	background-position: -205px -504px
 .icon-logo_home
 	width: 201px
 	height: 58px
 	background-image: url('../img/icons.png')
-	background-position: -205px -504px
+	background-position: 0px -504px
 .icon-more
 	width: 14px
 	height: 15px
 	background-image: url('../img/icons.png')
-	background-position: -644px -532px
+	background-position: -644px -535px
 .icon-search-white
 	width: 24px
 	height: 24px
 	background-image: url('../img/icons.png')
-	background-position: -644px -504px
+	background-position: -726px -504px
 .icon-user-white
 	width: 24px
 	height: 24px
 	background-image: url('../img/icons.png')
-	background-position: -672px -504px
+	background-position: -754px -504px
 .icon-user
 	width: 24px
 	height: 24px
 	background-image: url('../img/icons.png')
-	background-position: -700px -504px
+	background-position: -782px -504px

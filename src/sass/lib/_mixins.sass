@@ -25,6 +25,23 @@
 	width: #{$width}px
 	height: #{$height}px
 	display: inline-block
+
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2  	
+
+@mixin sr($i)
+	+sprite-retina($i)	
+
 =text-overflow
 	overflow: hidden
 	-ms-text-overflow: ellipsis
@@ -81,7 +98,7 @@
 	+background-image(linear-gradient($color1, $color2))
 
 =gh($color1, $color2)
-	+background-image(linear-gradient(left, $color1, $color2))
+	background: linear-gradient(to left, $color1, $color2)
 
 //asdfast font-family
 =font($alias, $name)

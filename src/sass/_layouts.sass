@@ -1,9 +1,20 @@
 // default layout
 .l
+	padding-bottom: 60px
 	+clr
-	.l-col1
+	&-col1
 		float: left
 		width: 65.813%
-	.l-col2
+	&-col2
 		float: right
 		width: 31.625%
+		.shadow,
+		.widget,
+		.call,
+		.hot-tours
+			margin-top: 30px
+			&:first-child
+				margin-top: 0
+		.check-prices
+			& + .shadow
+				margin-top: 0

@@ -99,10 +99,10 @@ $(document).ready(function() {
 		
 	});
 	$("body").on("click",".js-select-list li",function() {
-		var val = $(this).attr("data-val");
-		var text = $(this).text();
-		var select = $(this).parents(".js-select");
-		var selectList = $(this).parents(".js-select-list");
+		var val 		= $(this).attr("data-val");
+		var text 		= $(this).text();
+		var select 		= $(this).parents(".js-select");
+		var selectList 	= $(this).parents(".js-select-list");
 		select.find(".js-select-text").text(text);
 		select.find("option").removeAttr("selected");
 		select.find('option[value="'+val+'"]').attr("selected", "selected");
@@ -116,9 +116,9 @@ $(document).ready(function() {
 
 	// datepicker
 	$(".js-datepicker").datepicker({
-    	showOn: "both",
-    	buttonImage: "img/calendar.png",
-    	buttonImageOnly: true
+    	showOn 			: "both",
+    	buttonImage 	: "img/calendar.png",
+    	buttonImageOnly : true
     });
 
 	$('.js-close').on('click', function(){
@@ -127,40 +127,40 @@ $(document).ready(function() {
 
 	// slider init
 	$('.js-slider').slick({
-		dots: true,
-		infinite: true,
-		speed: 1000,
-		fade: true,
-		cssEase: 'linear',
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 5000
+		dots 			: true,
+		infinite		: true,
+		speed 			: 1000,
+		fade 			: true,
+		cssEase 		: 'linear',
+		slidesToShow 	: 1,
+		slidesToScroll 	: 1,
+		autoplay 		: true,
+		autoplaySpeed 	: 5000
 	});
 	$('.js-gallery').slick({
-		dots: false,
-		infinite: false,
-		speed: 600,
-		cssEase: 'linear',
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		adaptiveHeight: true,
-		responsive: [
+		dots 			: false,
+		infinite 		: false,
+		speed 			: 600,
+		cssEase 		: 'linear',
+		slidesToShow 	: 4,
+		slidesToScroll 	: 1,
+		adaptiveHeight 	: true,
+		responsive 		: [
 			{
-				breakpoint: 1200,
-				settings: {
+				breakpoint	: 1200,
+				settings 	: {
 					slidesToShow: 3
 				}
 			},
 			{
-				breakpoint: 768,
-				settings: {
+				breakpoint 	: 768,
+				settings	: {
 				  slidesToShow: 2
 				}
 			},
 			{
-				breakpoint: 480,
-				settings: {
+				breakpoint 	: 480,
+				settings 	: {
 					slidesToShow: 1
 				}
 			}
@@ -183,20 +183,63 @@ $(document).ready(function() {
 	});
 	
 	$('.slider-for').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: true,
-		fade: true,
-		asNavFor: '.js-slider-nav'
+		slidesToShow	: 1,
+		slidesToScroll	: 1,
+		arrows			: true,
+		fade 			: true,
+		asNavFor 		: '.js-slider-nav'
 	});
 	$('.slider-nav').slick({
-		slidesToShow: 7,
-		slidesToScroll: 1,
-		asNavFor: '.js-slider-for',
-		dots: false,
-		arrows: false,
-		centerMode: true,
-		focusOnSelect: true
+		slidesToShow	: 7,
+		slidesToScroll	: 1,
+		asNavFor		: '.js-slider-for',
+		dots 			: false,
+		arrows 			: false,
+		centerMode 		: true,
+		focusOnSelect 	: true
 	});
+	// map
+	if ($('#map').length) {
+		function initialize() {
+			var myLatlng = {lat: -25.363, lng: 131.044};
+
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 9,
+				center 				: myLatlng,
+				mapTypeControl 		: false,
+				streetViewControl 	: true,
+				streetViewControlOptions: {
+					position: google.maps.ControlPosition.LEFT_CENTER
+				},
+				zoomControl 		: true,
+				zoomControlOptions 	: {
+					style: google.maps.ZoomControlStyle.LARGE,
+					position: google.maps.ControlPosition.LEFT_CENTER
+				},
+				panControl: true,
+				panControlOptions 	: {
+					position: google.maps.ControlPosition.LEFT_CENTER
+				}
+			});
+
+			var marker = new google.maps.Marker({
+				position: myLatlng,
+				map 	: map,
+				title: 'Click to zoom'
+			});
+
+			map.addListener('center_changed', function() {
+				window.setTimeout(function() {
+				  map.panTo(marker.getPosition());
+				}, 3000);
+			});
+
+			marker.addListener('click', function() {
+				map.setZoom(8);
+				map.setCenter(marker.getPosition());
+			});
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	};
 
 });
