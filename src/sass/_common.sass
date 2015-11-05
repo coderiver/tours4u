@@ -971,3 +971,46 @@ a
 		color: $c_body
 		&:first-child
 			margin-top: 0
+
+// clause
+.clause
+	& > img
+		width: 100%
+	img
+		display: block
+	.author
+		margin-bottom: 18px
+
+// author
+.author
+	color: $c_author
+	&__img
+		position: relative
+		float: left
+		margin-right: 18px
+		width: 52px
+		height: 52px
+		overflow: hidden
+		&:active
+			& + .author__in .author__name
+				border-color: $c_body
+		+rm(1024)
+			&:hover
+				& + .author__in .author__name
+					border-color: $c_body
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+			display: block
+	&__in
+		padding-top: 5px
+		overflow: hidden
+	&__name
+		color: $c_body
+		+l700
+		transition: border-color .2s
+		border-bottom: 1px solid transparent
+		&:hover
+			border-color: $c_body

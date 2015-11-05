@@ -150,22 +150,27 @@ $(document).ready(function() {
 		centerMode 		: true,
 		focusOnSelect 	: true
 	});
-
-	$('.js-gall-top').slick({
-		slidesToShow	: 1,
-		slidesToScroll	: 1,
-		arrows			: false,
-		fade 			: true,
-		asNavFor 		: '.js-gall-pag'
+	$('.js-gall').each(function() {
+		var this_ = $(this),
+			top = this_.find('.js-gall-top'),
+			pag = this_.find('.js-gall-pag');
+		top.slick({
+			slidesToShow	: 1,
+			slidesToScroll	: 1,
+			arrows			: false,
+			fade 			: true,
+			asNavFor 		: pag
+		});
+		pag.slick({
+			slidesToShow	: 4,
+			slidesToScroll	: 1,
+			asNavFor		: top,
+			dots 			: false,
+			arrows 			: false,
+			focusOnSelect 	: true
+		});
 	});
-	$('.js-gall-pag').slick({
-		slidesToShow	: 4,
-		slidesToScroll	: 1,
-		asNavFor		: '.js-gall-top',
-		dots 			: false,
-		arrows 			: false,
-		focusOnSelect 	: true
-	});
+	
 
 	$('.js-open-menu').on('click', function() {
 		$('.js-header').toggleClass('is-open-menu');
