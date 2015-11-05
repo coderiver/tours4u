@@ -713,7 +713,7 @@ a
 
 // tour
 .tour
-	margin-top: 25px
+	margin-top: 28px
 	padding-bottom: 29px
 	border-bottom: 1px solid $gray
 	&:first-child
@@ -735,6 +735,9 @@ a
 		padding: 0
 		color: $c_text
 		width: calc(100% - 400px)
+	.title-h2
+		&:first-child
+			margin-top: 0
 
 // tot
 .tot
@@ -804,5 +807,167 @@ a
 		padding: 28px 20px 33px
 	.title-h2
 		margin: 1px 0
+		&:first-child
+			margin-top: 0
+
+// article
+.article
+	padding-top: 49px
+	&__in
+		+clr
+	&__wrap
+		overflow: hidden
+		+clr
+	&__col
+		float: left
+		padding-right: 28px
+		width: 50%
+		color: $c_foot
+		letter-spacing: 0.46px
+		+box
+	img
+		float: right
+	p
+		& + p,
+		& + h5
+			margin-top: 20px
+	.title-h3
+		margin: 18px 0
+		text-align: left
+		&:first-child
+			margin-top: 0
+
+// overview
+.overview
+	position: relative
+	border-top: 1px solid $gray
+	border-bottom: 1px solid $gray
+	color: $c_foot
+	+clr
+	&__col
+		float: left
+		padding: 22px 30px 15px
+		width: 18%
+		&.is-name
+			+l700
+	&__row
+		margin-top: 15px
+		&:first-child
+			margin-top: 0
+	img
+		float: left
+		margin: -1px 0
+	.widget
+		position: absolute
+		right: 0
+		bottom: 0
+
+// resorts
+.resorts
+	border-bottom: 1px solid $gray
+	&__row
+		position: relative
+		+clr
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 50%
+			bottom: 0
+			width: 1px
+			background: $gray
+		.resort
+			position: static
+			float: left
+			width: 50%
+			border-left: 1px solid transparent
+		.resort__hidden
+			width: 50%
+
+// resort
+.resort
+	position: relative
+	text-align: center
+	+box
+	&:active
+		.resort__hidden
+			opacity: 1
+			visibility: visible
+			z-index: 1
+	+rm(1024)
+		&:hover
+			.resort__hidden
+				opacity: 1
+				visibility: visible
+				z-index: 1
+	&__img
+		position: relative
+		padding-bottom: 46%
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		background-size: cover
+	&__inf
+		position: absolute
+		top: 20px
+		left: 0
+		color: #fff
+		text-transform: uppercase
+		white-space: nowrap
+		span
+			padding: 10px 20px
+			background: $purple
+			background: rgba($purple, .9)
+			display: block
+	&__text
+		padding: 28px 55px 28px 60px
+		min-height: 200px
+		color: $c_foot
+		letter-spacing: .5px
+		+box
+	&__hidden
+		position: absolute
+		top: 0
+		height: 100%
+		width: 100%
+		bottom: 0
+		border: 7px solid $yellow
+		opacity: 0
+		visibility: hidden
+		z-index: -1
+		transition: opacity .2s, visibility .2s
+		box-shadow: 0 0 18px rgba(0, 0, 0, 0.29)
+		+box
+	&__in
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate3(0,0,0)
+		transform: translate(-50%,-50%)
+	&__btn
+		margin-left: 10px
+		width: 60px
+		height: 60px
+		line-height: 60px
+		text-align: center
+		color: #fff
+		font-size: 0
+		transition: background .2s
+		background: rgba($purple, .9)
+		display: inline-block
+		&:first-child
+			margin-left: 0
+		&:active
+			background: $purple
+		+rm(1024)
+			&:hover
+				background: $purple
+		i,
+		.icon,
+		.fa
+			vertical-align: middle
+			font-size: 27px
+	.title-h6
+		margin: 15px 0
+		color: $c_body
 		&:first-child
 			margin-top: 0

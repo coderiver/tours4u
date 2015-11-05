@@ -68,7 +68,7 @@
 	+m400
 	+clr
 	&.is-mod
-		margin: 28px 0 14px
+		margin: 28px 0 10px
 	.rating
 		margin-left: 14px
 		font-size: 0
@@ -95,6 +95,10 @@
 .title-h4
 	+m400
 	font-size: 21px
+h5
+	font-size: 15px
+	+l700
+
 .title-h6
 	+l700
 	font-size: 15px
@@ -922,3 +926,17 @@
 		transform: scale(1)
 	100%
 		transform: scale(0)
+
+// flag
+.flag
+	display: inline-block
+	img
+		display: block
+
+// banner
+.banner
+	& + .banner
+		margin-top: 30px
+	img
+		width: 100%
+		display: block
