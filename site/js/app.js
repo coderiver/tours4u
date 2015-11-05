@@ -167,21 +167,6 @@ $(document).ready(function() {
 		]
 	});
 
-	$('.js-open-menu').on('click', function() {
-		$('.js-header').toggleClass('is-open-menu');
-	});
-	// select list
-	$('.js-open-menu, .menu').on("click", function(event) {
-	    event.stopPropagation();
-	});
-
-	// 
-	$('.js-topic').on('click', function(event) {
-		$('.js-country').removeClass('is-active');
-		$(this).parents('.js-country').addClass('is-active');
-		event.stopPropagation();
-	});
-	
 	$('.slider-for').slick({
 		slidesToShow	: 1,
 		slidesToScroll	: 1,
@@ -198,6 +183,38 @@ $(document).ready(function() {
 		centerMode 		: true,
 		focusOnSelect 	: true
 	});
+
+	$('.js-gall-top').slick({
+		slidesToShow	: 1,
+		slidesToScroll	: 1,
+		arrows			: false,
+		fade 			: true,
+		asNavFor 		: '.js-gall-pag'
+	});
+	$('.js-gall-pag').slick({
+		slidesToShow	: 4,
+		slidesToScroll	: 1,
+		asNavFor		: '.js-gall-top',
+		dots 			: false,
+		arrows 			: false,
+		focusOnSelect 	: true
+	});
+
+	$('.js-open-menu').on('click', function() {
+		$('.js-header').toggleClass('is-open-menu');
+	});
+	// select list
+	$('.js-open-menu, .menu').on("click", function(event) {
+	    event.stopPropagation();
+	});
+
+	// 
+	$('.js-topic').on('click', function(event) {
+		$('.js-country').removeClass('is-active');
+		$(this).parents('.js-country').addClass('is-active');
+		event.stopPropagation();
+	});
+
 	// map
 	if ($('#map').length) {
 		function initialize() {
@@ -241,5 +258,43 @@ $(document).ready(function() {
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);
 	};
+
+	$( "#slider-range" ).slider({
+		range: true,
+		min: 0,
+		max: 14,
+		values: [7, 10],
+		slide: function( event, ui ) {
+			$( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+		}
+	});
+	$( "#amount" ).val($( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 ) );
+
+	// check
+	var countChecked = function() {
+		$('.js-check-group').each(function() {
+			var this_ 		= $(this),
+				input 		= this_.find('.js-check:checked'),
+				quantity 	= this_.find('.js-check-quantity'),
+				n 			= $(input).length;
+			quantity.val(n);
+		});
+	};
+	countChecked();
+	
+	$('.js-check').on('click', function(){
+		var this_ 	= $(this),
+			parent 	= this_.parents('.js-check-parents'),
+			prev 	= parent.prevAll().find('.js-check'),
+			next 	= parent.nextAll().find('.js-check');
+		if ($(this).is(':checked')) {
+			prev.prop('checked', true);
+		}
+		else {
+			next.prop('checked', false);
+		}
+		countChecked();
+	});
+	
 
 });

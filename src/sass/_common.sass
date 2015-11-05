@@ -238,6 +238,20 @@ a
 	padding-top: 11px
 	font-size: 0
 	background: $l_gray
+	&__in
+		@extend %in
+		.nav__list
+			padding: 0
+			margin: 0
+			width: 100%
+			display: table
+		.nav__item
+			display: table-cell
+			width: 14.28%
+			max-width: 14.28%
+			a
+				padding-left: 20px
+				padding-right: 20px
 	&__list
 		@extend %in
 	&__item
@@ -247,6 +261,7 @@ a
 		text-transform: uppercase
 		border-left: 1px solid $l_gray
 		background: #fff
+		vertical-align: top
 		display: inline-block
 		&:first-child
 			border-left: none
@@ -258,19 +273,32 @@ a
 		&.is-active
 			a
 				color: $red
+	&__ico
+		margin-bottom: 1px
+		height: 33px
+		color: $c_nav-ico
+		.fa,
+		.icon
+			font-size: 31px
+			transition: color .2s
 	a
-		padding: 0 38px
-		height: 68px
-		line-height: 68px
+		padding: 22px 38px
+		text-align: center
+		transform: translate3(0,0,0)
 		transition: color .2s
 		display: block
 		&:active
 			color: $red
+			.nav__ico
+				color: $red
 		+rm(1024)
 			&:hover
 				color: $red
+				.nav__ico
+					color: $red
 		span
-			line-height: 1.2
+			line-height: 1.75
+			display: inline-block
 
 // description
 .description
@@ -402,7 +430,8 @@ a
 // info
 .info
 	padding: 12px 20px
-	background: $l_gray
+	&.is-gray
+		background: $l_gray
 	&__row,
 	&__date
 		position: relative
@@ -413,6 +442,23 @@ a
 	&__nights
 		color: $red
 		display: inline-block
+	&__top
+		margin-bottom: 16px
+		border-bottom: 1px solid $gray
+	&__in
+		margin-bottom: 15px
+		+clr
+		.price
+			float: left
+			margin-top: 5px
+			color: $red
+			font-size: 22px
+		.tot
+			float: right
+	&__title
+		margin-bottom: 11px
+		font-size: 14px
+		+m700
 	.info__date
 		margin-bottom: 15px
 		+l700
@@ -426,6 +472,10 @@ a
 			top: 3px
 			left: auto
 			right: 0
+		.info-block
+			.icon
+				position: relative
+				top: 5px
 	.info__more
 		border: none
 		span
@@ -442,6 +492,8 @@ a
 		position: absolute
 		top: 5px
 		left: 0
+	.info-block
+		margin-left: 5px
 	a
 		color: $red
 		transition: border-color .2s
@@ -452,6 +504,18 @@ a
 			&:hover
 				border-color: $red
 
+// info-block
+.info-block
+	display: inline-block
+	.icon
+		position: relative
+		transition: opacity .2s
+		&:active
+			opacity: .8
+		+rm(1024)
+			&:hover
+				opacity: .8
+				border-color: transparent
 // loc
 .loc
 	padding: 28px 20px 32px
@@ -524,9 +588,221 @@ a
 		.view-all
 			margin-top: 5px
 			float: right
-		.prise
+		.price
 			float: left
 	.title-h6
 		text-transform: initial
 		.rating
 			vertical-align: text-bottom
+
+// filter
+.filter
+	padding: 25px 0 30px
+	color: $c_form
+	+l400
+	font-size: 16px
+	&__in
+		@extend %in
+
+// adults children
+.adults,
+.children,
+.duration
+	width: 14.4%
+	vertical-align: top
+	display: inline-block
+	&__quantity
+		margin-left: 15px
+		+l700
+		width: 10px
+		color: $red
+		font-size: 16px
+		vertical-align: top
+		display: inline-block
+.adults,
+.children
+	&__group
+		margin-top: 20px
+		font-size: 0
+
+.children
+	margin-left: 2.5%
+
+.duration 
+	margin-left: 2.5%
+	&__quantity
+		width: 42px
+	&__inf
+		margin: 11px 0 7px
+		font-size: 13px
+		+clr
+	&__from
+		float: left
+	&__to
+		float: right
+	&__range
+		height: 9px
+		border: none
+		border-radius: 0
+		background: $gray
+		.ui-slider-handle
+			height: 17px
+			width: 17px
+			cursor: pointer
+			border-radius: 50%
+			border: none
+			background: $yellow
+		.ui-slider-range
+			background: $red
+
+// dates
+.dates
+	margin-left: 2.5%
+	width: 48.4%
+	vertical-align: top
+	display: inline-block
+	&__in
+		margin-top: 15px
+		font-size: 0
+.tally
+	position: relative
+	padding: 2px
+	width: 14.28%
+	color: #fff
+	font-size: 13px
+	+l400
+	line-height: 1.2
+	text-align: center
+	vertical-align: top
+	user-select: none
+	cursor: pointer
+	+box
+	border-left: 1px solid #fff
+	display: inline-block
+	&:first-child
+		border-left: none
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: $red
+	&__name,
+	&__numb
+		position: relative
+		z-index: 1
+	&__numb
+		+l700
+	input
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 100%
+		opacity: 0
+		z-index: 2
+		cursor: pointer
+		&:checked
+			& + .tally__bg
+				background: $gray
+				& + .tally__name
+					color: $c_form
+					& + .tally__numb
+						color: $c_form
+
+// tour
+.tour
+	margin-top: 25px
+	padding-bottom: 29px
+	border-bottom: 1px solid $gray
+	&:first-child
+		margin-top: 0
+	&__in
+		+clr
+	&__bot
+		margin-top: 15px
+		+clr
+	&__left
+		float: left
+	&__right
+		float: right
+	.gall
+		float: left
+		margin-right: 30px
+	.info
+		float: right
+		padding: 0
+		color: $c_text
+		width: calc(100% - 400px)
+
+// tot
+.tot
+	font-size: 0
+	+m700
+	text-transform: uppercase
+	box-shadow: 0 0 18px rgba(0, 0, 0, 0.19)
+	vertical-align: top
+	display: inline-block
+	&__item
+		padding: 5px 8px
+		font-size: 14px
+		color: $c_text
+		vertical-align: top
+		display: inline-block
+		&.is-active
+			color: #fff
+			background: $purple
+			box-shadow: 0 0 18px rgba(0, 0, 0, 0.19)
+
+// town
+.town
+	margin-bottom: 16px
+	color: $c_town
+	+l400
+
+// gall
+.gall
+	max-width: 370px
+	overflow: hidden
+	&__top
+		height: 234px
+	&__pag
+		margin: 10px -5px 0
+		height: 54px
+		img
+			margin: 0 5px
+			cursor: pointer
+			&:focus
+				outline: none
+
+// portrait
+.portrait
+	margin: 32px 0 30px
+	& + .widget
+		margin-top: 30px
+	&__img
+		position: relative
+		border-bottom: 3px solid $l_yellow
+		img
+			width: 100%
+			display: block
+	&__flag
+		position: absolute
+		bottom: -13px
+		left: 20px
+	&__row
+		margin-top: 18px
+		color: $c_foot
+		&:first-child
+			margin-top: 0
+	&__label
+		+l700
+	&__inf
+		color: $c_body
+	.shadow
+		padding: 28px 20px 33px
+	.title-h2
+		margin: 1px 0
+		&:first-child
+			margin-top: 0

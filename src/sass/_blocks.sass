@@ -114,6 +114,10 @@
 
 // list
 .list
+	&.is-red
+		li
+			&:before
+				color: $red
 	li
 		position: relative
 		padding-left: 20px
@@ -807,8 +811,9 @@
 		width: 100%
 		display: block
 
-// prise
-.prise
+// price
+.price
+	position: relative
 	+m700
 	color: $purple
 	font-size: 25px
@@ -816,3 +821,104 @@
 		vertical-align: top
 		font-size: 13px
 		line-height: 1.2
+	.discount
+		position: absolute
+		left: 0
+		bottom: 100%
+		margin-bottom: 7px
+
+// check
+.check
+	position: relative
+	cursor: pointer
+	user-select: none
+	color: $c_check
+	font-size: 31px
+	input
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: 0
+		z-index: 1
+		cursor: pointer
+		&:checked
+			& + .icon,
+			& + .fa
+				color: $red
+
+// discount
+.discount
+	position: relative
+	+l400
+	font-size: 12px
+	line-height: 1.5
+	color: #fff
+	white-space: nowrap
+	&:before
+		position: absolute
+		content: ''
+		top: 100%
+		left: 10px
+		+arr(10,5,$red,b)
+	span
+		padding: 0 10px
+		background: $red
+		display: inline-block
+
+// preloader
+.preloader
+	padding: 36px 0
+
+// loader
+.loader
+	position: relative
+	width: 52px
+	height: 52px
+	margin: auto
+	&__item
+		position: absolute
+		background-color: $purple
+		width: 10px
+		height: 10px
+		border-radius: 8px
+		animation: loader 1.25s infinite normal
+	&__item_1
+		left: 0
+		top: 21px
+		animation-delay: 0.47s
+	&__item_2
+		left: 5px
+		top: 5px
+		animation-delay: 0.62s
+	&__item_3
+		top: 0
+		left: 21px
+		animation-delay: 0.78s
+	&__item_4
+		right: 5px
+		top: 5px
+		animation-delay: 0.94s
+	&__item_5
+		right: 0
+		top: 21px
+		animation-delay: 1.09s
+	&__item_6
+		right: 5px
+		bottom: 5px
+		animation-delay: 1.25s
+	&__item_7
+		left: 21px
+		bottom: 0
+		animation-delay: 1.4s
+	&__item_8
+		left: 5px
+		bottom: 5px
+		animation-delay: 1.56s
+
+@keyframes loader
+	0%
+		transform: scale(1)
+	100%
+		transform: scale(0)
