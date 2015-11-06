@@ -11,6 +11,18 @@
 // center
 .center
 	@extend %in
+	+clr
+	&.is-pad
+		padding: 28px 0 39px
+
+// sidebar
+.sidebar
+	float: left
+	width: 31.5%
+
+// layout
+.layout
+	float: right
 
 // is-resp
 .is-resp
@@ -416,6 +428,57 @@ h5
 				& + .fa
 					color: rgba($c_form, .7)
 
+// checkbox
+.checkbox
+	position: relative
+	user-select: none
+	display: block
+	input,
+	&__text:before
+		position: absolute
+		top: 0
+		left: 0
+		width: 22px
+		height: 22px
+	input
+		opacity: 0
+		z-index: 1
+		cursor: pointer
+		&:checked
+			cursor: default
+			& + .checkbox__text
+				&:after
+					display: block
+		&:disabled
+			& + .checkbox__text
+				cursor: default
+				color: #d1d1d1
+	&__text
+		position: relative
+		padding-left: 30px
+		cursor: pointer
+		&:before
+			content: ''
+			border: 2px solid $l_gray
+			+box
+		&:after
+			position: absolute
+			top: 4px
+			left: 4px
+			content: "\f00c"
+			color: $red
+			font: normal normal normal 14px/1 FontAwesome
+			font-size: inherit
+			text-rendering: auto
+			-webkit-font-smoothing: antialiased
+			-moz-osx-font-smoothing: grayscale
+			display: none
+	&__in
+		+clr
+	&__left
+		float: left
+	&__right
+		float: right
 
 // btn
 .btn

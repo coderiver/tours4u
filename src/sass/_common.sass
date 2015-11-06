@@ -117,9 +117,6 @@ a
 	color: inherit
 	text-decoration: none
 
-// common blocks
-
-
 // destinations
 .destinations
 	&__in
@@ -1143,3 +1140,30 @@ a
 	.title-h6
 		text-transform: initial
 
+// sort
+.sort
+	border: 1px solid $l_gray
+	font-size: 14px
+	& + .sort
+		margin-top: 30px
+	&__top
+		padding: 19px 18px
+		text-transform: uppercase
+		font-size: 25px
+		+m400
+		background: $l_gray
+	&__wrap
+		padding: 24px 19px
+	.checkbox
+		margin-top: 8px
+	.price
+		margin-left: 2px
+		color: inherit
+		font-size: 14px
+		+l700
+	strong
+		+l700
+	.duration
+		margin: 0
+		width: 100%
+		display: block

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+	//= partials/head.html
+</head>
+<body>
+<!-- BEGIN  out-->
+<div class="out">
+	//= partials/header.html
+	<!-- topic -->
+	<div class="topic" style="background-image: url(img/t5.png);">
+		<div class="topic__in">
+			<div class="topic__text">Egypt</div>
+			<div class="like">
+				<div class="like__short"><i class="fa fa-heart"></i></div>
+				<div class="like__text"><span>0</span> Holidays shortlisted</div>
+			</div>
+		</div>
+	</div>
+	//= partials/tabs.html
+	<!-- center -->
+	<div class="center is-pad">
+		<!-- sidebar -->
+		<div class="sidebar">
+			<!-- sort -->
+			<div class="sort">
+				<div class="sort__top">Departure dates</div>
+				<div class="sort__wrap">
+					<label class="checkbox">
+						<input type="checkbox">
+						<div class="checkbox__text">
+							<div class="checkbox__in">
+								<span class="checkbox__left">Any</span>
+								<span class="checkbox__right">Per person inc. taxes</span>
+							</div>
+						</div>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox" disabled>
+						<div class="checkbox__text">Tue 3 Nov</div>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox" checked>
+						<div class="checkbox__text">
+							<div class="checkbox__in">
+								<span class="checkbox__left"><strong>Thu 5 Nov </strong></span>
+								<div class="checkbox__right">cheapest <span class="price"><i class="fa fa-gbp"></i>292.04</span></div>
+							</div>
+						</div>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox" checked>
+						<div class="checkbox__text">
+							<div class="checkbox__in">
+								<span class="checkbox__left"><strong>Sun 8 Nov</strong></span>
+								<div class="checkbox__right"><span class="price"><i class="fa fa-gbp"></i>292.04</span></div>
+							</div>
+						</div>
+					</label>
+				</div>
+			</div>
+			<!-- sort -->
+			<div class="sort">
+				<div class="sort__top">Airlines</div>
+				<div class="sort__wrap">
+					<label class="checkbox">
+						<input type="checkbox" checked>
+						<div class="checkbox__text">Any</div>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox">
+						<div class="checkbox__text">Tue 3 Nov</div>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox">
+						<div class="checkbox__text">Easyjet</div>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox">
+						<div class="checkbox__text">Thomsons</div>
+					</label>
+				</div>
+			</div>
+			<!-- sort -->
+			<div class="sort">
+				<div class="sort__top">Take off times</div>
+				<div class="sort__wrap">
+					<div class="duration">
+						<div class="duration__inf">
+							<div class="duration__from">Outbound</div>
+							<div class="duration__to">
+								<input class="duration__quantity" type="text" id="amount" readonly="">
+							</div>
+						</div>
+						<div class="duration__range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="slider-range"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 50%; width: 21.4286%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 50%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 71.4286%;"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- layout -->
+		<div class="layout">
+			
+		</div>
+	</div>
+</div>
+<!-- END out-->
+//= partials/footer.html
+</body>
+</html>
