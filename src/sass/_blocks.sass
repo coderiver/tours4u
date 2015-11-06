@@ -5,6 +5,8 @@
 	height: auto
 	min-height: 100%
 	+box
+	&.is-non-foot
+		padding-bottom: 30px
 
 // center
 .center
@@ -47,6 +49,7 @@
 		font-size: 80px
 		vertical-align: middle
 		z-index: 2
+		background: transparent
 		display: inline-block
 		+r(1200)
 			font-size: 60px
@@ -118,6 +121,12 @@ h5
 		+rm(1024)
 			&:hover
 				border-color: $c_body
+
+// title-small
+.title-small
+	font-size: 14px
+	text-transform: uppercase
+	+m700
 
 // list
 .list
@@ -954,6 +963,32 @@ h5
 		transform: scale(1)
 	100%
 		transform: scale(0)
+
+// load
+.load
+	overflow: hidden
+	&__in
+		width: 1000%
+		height: 16px
+		white-space: nowrap
+		animation-name: loadleft
+		animation-duration: 95s
+		animation-iteration-count: infinite
+		animation-timing-function: linear
+		font-size: 0
+	&__item
+		height: 16px
+		width: 1000%
+		background: url(../img/load-bg.png) repeat-x 0 0
+		vertical-align: top
+		display: inline-block
+
+@keyframes loadleft
+	0%
+		margin-left: 0px
+
+	100%
+		margin-left: -1000%
 
 // flag
 .flag

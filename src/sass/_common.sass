@@ -1099,3 +1099,46 @@ a
 		top: -11px
 		left: 13px
 		z-index: 1
+
+// preloader
+.preload
+	padding: 17px 0
+	text-align: center
+	&__load
+		margin-bottom: 55px
+	&__in
+		@extend %in
+	&__wrap
+		margin: 36px auto 0
+		padding: 45px 0 70px
+		max-width: 770px
+		border-top: 5px solid $l_yellow
+		box-shadow: 0 0 18px rgba(0, 0, 0, 0.19)
+		.title-h6
+			margin-bottom: 3px
+	&__row
+		+clr
+	&__col
+		float: left
+		padding: 0 10px
+		width: 33.3%
+		+box
+	&__ico
+		height: 138px
+		line-height: 138px
+		font-size: 48px
+		color: $yellow
+		.fa,
+		.icon
+			vertical-align: middle
+	.icon-financial_protection
+		font-size: 66px
+	.icon-price_match_promise
+		font-size: 70px
+	.title-h2
+		margin-bottom: 25px
+	.title-small
+		margin: 0 0 38px
+	.title-h6
+		text-transform: initial
+
