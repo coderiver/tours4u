@@ -268,5 +268,15 @@ $(document).ready(function() {
 		countChecked();
 	});
 	
+	// popup
+	$('.js-popup').on('click', function(){
+		$(this).removeClass('is-active');
+	});
+	$('.js-popup-close').on('click', function(){
+		$(this).parents('.js-popup').removeClass('is-active');
+	});
+	$('.js-popup-in').on("click", function(event) {
+		event.stopPropagation();
+	});
 
 });

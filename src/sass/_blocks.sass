@@ -367,6 +367,10 @@ h5
 		border: 3px solid $l_gray
 		+box
 		display: block
+		&.is-error,
+		&.error
+			& + .text-error
+				display: block
 		&::placeholder
 			color: $c_form
 		+r(980)
@@ -413,8 +417,10 @@ h5
 	vertical-align: top
 	font-size: 16px
 	line-height: 20px
+	text-align: center
 	transition: color .3s, background-color .3s
 	background: $red
+	+box
 	display: inline-block
 	&:active
 		background: darken($red, 20%)
@@ -433,6 +439,13 @@ h5
 		+rm(1024)
 			&:hover
 				background: darken($purple, 10%)
+	&_black
+		background: $c_body
+		&:active
+			background: darken($c_body, 20%)
+		+rm(1024)
+			&:hover
+				background: darken($c_body, 10%)
 	&_middle
 		padding: 0 20px
 		height: 45px
@@ -855,8 +868,9 @@ h5
 			& + .fa
 				color: $red
 
-// discount
-.discount
+// discount, text-error
+.discount,
+.text-error
 	position: relative
 	+l400
 	font-size: 12px
@@ -873,6 +887,17 @@ h5
 		padding: 0 10px
 		background: $red
 		display: inline-block
+
+// text-error
+.text-error
+	display: none
+	.is-error
+		display: block
+	&:before
+		+arr(10,5,$d_red,b)
+	span
+		padding: 0 8px
+		background: $d_red
 
 // preloader
 .preloader

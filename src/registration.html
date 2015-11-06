@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	//= partials/head.html
+</head>
+<body class="is-registration is-hidden">
+<!-- BEGIN  out-->
+<div class="out">
+	//= partials/header_home.html
+	<!-- popup -->
+	<div class="popup is-active js-popup">
+		<div class="popup__in js-popup-in">
+			<button class="popup__close js-popup-close" type="button"></button>
+			<div class="title-h2">Want your own personalized tours4u experience?</div>
+			<div class="popup__wrap">
+				<div class="popup__title">By creating a profile, you can see your search history, set your travel preferences, create Fare Alerts, and save favorite hotels & flights.</div>
+				<form class="popup__form">
+					<label class="email">
+						<i class="fa fa-envelope-o"></i>
+						<div class="input">
+							<input type="text" placeholder="enter your email" class="is-error">
+							<div class="text-error">
+								<span>You must enter email address</span>
+							</div>
+						</div>
+					</label>
+					<label class="pass">
+						<i class="fa fa-key"></i>
+						<div class="input">
+							<input type="password" placeholder="enter password" class="is-error">
+							<div class="text-error">
+								<span>Your password is too short</span>
+							</div>
+						</div>
+					</label>
+					<div class="buttons">
+						<a href="#" class="btn btn_black">back</a>
+						<button class="btn" type="submit">Sign up</button>
+					</div>
+					<div class="forgot"><a href="#">Forgot your password?</a></div>
+				</form>
+				<div class="popup__text">By registering you automatically accept our <a href="#">privacy policy</a>, <a href="#">terms of use</a>, and to receive emails with travel tips, inspiration, and getaways. You can unsubscribe from emails or delete your profile at any time.</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

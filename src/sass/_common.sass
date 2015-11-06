@@ -53,6 +53,65 @@ body
 	+l300
 	font-size: 14px
 	line-height: 20px
+	&.is-hidden
+		overflow: hidden
+	&.is-registration
+		background: url(../img/sl1.png) 50% 50% no-repeat
+		background-size: cover
+		.out
+			overflow: hidden
+		.header
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			background: transparent
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				left: 0
+				width: 100%
+				height: 90px
+				background: transparent
+				z-index: -1
+				transition: background .2s
+				+r(1200)
+					height: 70px
+				+r(768)
+					height: 0
+			&.is-open-menu
+				&:before
+					z-index: 1
+					background: #fff
+		.menu
+			width: calc(100% - 380px)
+			+r(1200)
+				padding-left: 0
+				width: 100%
+			.menu__item 
+				position: relative
+				z-index: -1
+				& > a
+					visibility: hidden
+					opacity: 0
+					transition: opacity .2s
+		.menu-open__btn
+			&:before,
+			&:after,
+			span
+				background: #fff
+			&:active
+				&:before,
+				&:after,
+				span
+					background: $d_red
+			+rm(1024)
+				&:hover
+					&:before,
+					&:after,
+					span
+						background: $d_red
 
 a
 	color: inherit
@@ -1014,3 +1073,29 @@ a
 		border-bottom: 1px solid transparent
 		&:hover
 			border-color: $c_body
+
+// email pass
+.email,
+.pass
+	position: relative
+	margin-top: 20px
+	display: block
+	&:first-child
+		margin-top: 0
+	.input input
+		padding-left: 55px
+	.icon,
+	.fa
+		position: absolute
+		top: 50%
+		left: 22px
+		font-size: 18px
+		color: $c_pop-ico
+		transform: translate3d(0,0,0)
+		transform: translate(0,-50%)
+		z-index: 1
+	.text-error
+		position: absolute
+		top: -11px
+		left: 13px
+		z-index: 1
