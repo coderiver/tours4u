@@ -264,16 +264,60 @@ $(document).ready(function() {
 		google.maps.event.addDomListener(window, 'load', initialize);
 	};
 
-	$( "#slider-range" ).slider({
-		range: true,
-		min: 0,
-		max: 14,
-		values: [7, 10],
-		slide: function( event, ui ) {
-			$( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-		}
+	// range
+	$( ".js-slider-range" ).each(function(){
+		var slider = $(this),
+			parent = slider.parent(),
+			amount = parent.find('.js-amount');
+		slider.slider({
+			range: true,
+			min: 0,
+			max: 14,
+			values: [7, 10],
+			slide: function( event, ui ) {
+				amount.val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+			}
+		});
+		amount.val($(slider).slider( "values", 0 ) + " - " + $(slider).slider( "values", 1 ) );
 	});
-	$( "#amount" ).val($( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 ) );
+
+	// addZero
+	function addZero(value) {
+		return value < 10 ? '0' + value : value;
+	};
+
+	// range time
+	$( ".js-range-time" ).each(function(){
+		var slider = $(this),
+			parent = slider.parent(),
+			amount = parent.find('.js-amount-time');
+		slider.slider({
+			range: true,
+			min: 0,
+			max: 1440,
+			step: 15,
+			values: [ 0, 1440 ],
+			slide: function( event, ui ) {
+				var hours1 = Math.floor(ui.values[0] / 60);
+				var minutes1 = ui.values[0] - (hours1 * 60);
+
+				if(hours1.length < 10) hours1= '0' + hours;
+				if(minutes1.length < 10) minutes1 = '0' + minutes;
+
+				if(minutes1 == 0) minutes1 = '00';
+
+				var hours2 = Math.floor(ui.values[1] / 60);
+				var minutes2 = ui.values[1] - (hours2 * 60);
+
+				if(hours2.length < 10) hours2= '0' + hours;
+				if(minutes2.length < 10) minutes2 = '0' + minutes;
+
+				if(minutes2 == 0) minutes2 = '00';
+
+				amount.val(addZero(hours1) + ':'+minutes1+' - '+addZero(hours2)+':'+minutes2 );
+			}
+		});
+	});
 
 	// check
 	var countChecked = function() {
@@ -300,6 +344,39 @@ $(document).ready(function() {
 		}
 		countChecked();
 	});
+
+	// spiner
+	function spiner() {
+		var number = $('.js-spiner');
+		number.each(function(){
+			var max_number = +($(this).attr('data-max-number'));
+			var input = $(this).find('input');
+			var plus = $(this).find('.js-plus');
+			var minus = $(this).find('.js-minus');
+			plus.on('click', function(){
+				var val = +(input.val());
+				if (val >= max_number) {
+					return false;
+				}
+				else {
+					val += 1;
+					input.val(val);
+				}
+			});
+			minus.on('click', function(){
+				var val = +(input.val());
+				if (val > 1) {
+					val -= 1;
+					input.val(val);
+				}
+				else {
+					input.val('0');
+					return false;
+				}
+			});
+		});
+	}
+	spiner();
 	
 	// popup
 	$('.js-popup').on('click', function(){

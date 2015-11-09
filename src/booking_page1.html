@@ -89,17 +89,297 @@
 						<div class="duration__inf">
 							<div class="duration__from">Outbound</div>
 							<div class="duration__to">
-								<input class="duration__quantity" type="text" id="amount" readonly="">
+								<input class="duration__quantity js-amount-time" type="text" readonly="" value="00:00 - 24:00">
 							</div>
 						</div>
-						<div class="duration__range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="slider-range"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 50%; width: 21.4286%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 50%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 71.4286%;"></span></div>
+						<div class="duration__range js-range-time"></div>
+					</div>
+					<div class="duration">
+						<div class="duration__inf">
+							<div class="duration__from">Inbound</div>
+							<div class="duration__to">
+								<input class="duration__quantity js-amount-time" type="text" readonly="" value="00:00 - 24:00">
+							</div>
+						</div>
+						<div class="duration__range js-range-time"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- layout -->
 		<div class="layout">
-			
+			<h3 class="title-h2">London Stansted to Sharm El Sheikh</h3>
+			<div class="addition">
+				<div class="addition__right">
+					<div class="addition__inf"><span>Add bags</span></div>
+					<div class="spiner js-spiner" data-max-number="10">
+						<button class="spiner__minus js-minus">–</button>
+						<input type="text" class="spiner__input" name="spiner-input" value="0" readonly="">
+						<button class="spiner__plus js-plus">+</button>
+					</div>
+				</div>
+				<div class="addition__text"><span>Include hold bags in your flight prices</span></div>
+			</div>
+			<!-- flights -->
+			<div class="flights">
+				<div class="flights__title">We've found 4 flights</div>
+				<!-- flight -->
+				<div class="flight">
+					<div class="flight__right">
+						<div class="check-prices">
+							<div class="check-prices__price">
+								<i class="fa fa-gbp"></i>
+								292
+								<sup>pp</sup>
+							</div>
+						</div>
+						<a href="#" class="btn btn_middle btn_purple">Select Flight</a>
+					</div>
+					<div class="flight__left">
+						<div class="flight__row">
+							<div class="info">
+								<div class="info__row">
+									<i class="icon icon-flight_fill"></i>
+									<div class="info__img"><img src="./img/company-img.png" alt="img"></div>
+									<div class="info__text">
+										<p>London Gatwick - Corfu</p>
+									</div>
+								</div>
+							</div>
+							<div class="flight__field">
+								<div class="flight__col">
+									<div class="flight__bold">09:40</div>
+									<div class="flight__text">London Stansted</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">16:55 </div>
+									<div class="flight__text">Sharm</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">5h 15</div>
+									<div class="flight__text">EZY 3031</div>
+								</div>
+							</div>
+						</div>
+						<div class="flight__row">
+							<div class="info">
+								<div class="info__row">
+									<i class="icon icon-flight_fill_back"></i>
+									<div class="info__text">
+										<p>London Gatwick - Corfu</p>
+									</div>
+								</div>
+							</div>
+							<div class="flight__field">
+								<div class="flight__col">
+									<div class="flight__bold">09:40</div>
+									<div class="flight__text">London Stansted</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">16:55 </div>
+									<div class="flight__text">Sharm</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">5h 15</div>
+									<div class="flight__text">EZY 3031</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- flight -->
+				<div class="flight">
+					<div class="flight__right">
+						<div class="check-prices">
+							<div class="check-prices__price">
+								<i class="fa fa-gbp"></i>
+								292
+								<sup>pp</sup>
+							</div>
+						</div>
+						<a href="#" class="btn btn_middle btn_purple">Select Flight</a>
+					</div>
+					<div class="flight__left">
+						<div class="flight__row">
+							<div class="info">
+								<div class="info__row">
+									<i class="icon icon-flight_fill"></i>
+									<div class="info__img"><img src="./img/company-img.png" alt="img"></div>
+									<div class="info__text">
+										<p>London Gatwick - Corfu</p>
+									</div>
+								</div>
+							</div>
+							<div class="flight__field">
+								<div class="flight__col">
+									<div class="flight__bold">09:40</div>
+									<div class="flight__text">London Stansted</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">16:55 </div>
+									<div class="flight__text">Sharm</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">5h 15</div>
+									<div class="flight__text">EZY 3031</div>
+								</div>
+							</div>
+						</div>
+						<div class="flight__row">
+							<div class="info">
+								<div class="info__row">
+									<i class="icon icon-flight_fill_back"></i>
+									<div class="info__text">
+										<p>London Gatwick - Corfu</p>
+									</div>
+								</div>
+							</div>
+							<div class="flight__field">
+								<div class="flight__col">
+									<div class="flight__bold">09:40</div>
+									<div class="flight__text">London Stansted</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">16:55 </div>
+									<div class="flight__text">Sharm</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">5h 15</div>
+									<div class="flight__text">EZY 3031</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- flight -->
+				<div class="flight">
+					<div class="flight__right">
+						<div class="check-prices">
+							<div class="check-prices__price">
+								<i class="fa fa-gbp"></i>
+								292
+								<sup>pp</sup>
+							</div>
+						</div>
+						<a href="#" class="btn btn_middle btn_purple">Select Flight</a>
+					</div>
+					<div class="flight__left">
+						<div class="flight__row">
+							<div class="info">
+								<div class="info__row">
+									<i class="icon icon-flight_fill"></i>
+									<div class="info__img"><img src="./img/company-img.png" alt="img"></div>
+									<div class="info__text">
+										<p>London Gatwick - Corfu</p>
+									</div>
+								</div>
+							</div>
+							<div class="flight__field">
+								<div class="flight__col">
+									<div class="flight__bold">09:40</div>
+									<div class="flight__text">London Stansted</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">16:55 </div>
+									<div class="flight__text">Sharm</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">5h 15</div>
+									<div class="flight__text">EZY 3031</div>
+								</div>
+							</div>
+						</div>
+						<div class="flight__row">
+							<div class="info">
+								<div class="info__row">
+									<i class="icon icon-flight_fill_back"></i>
+									<div class="info__text">
+										<p>London Gatwick - Corfu</p>
+									</div>
+								</div>
+							</div>
+							<div class="flight__field">
+								<div class="flight__col">
+									<div class="flight__bold">09:40</div>
+									<div class="flight__text">London Stansted</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">16:55 </div>
+									<div class="flight__text">Sharm</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">5h 15</div>
+									<div class="flight__text">EZY 3031</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- flight -->
+				<div class="flight">
+					<div class="flight__right">
+						<div class="check-prices">
+							<div class="check-prices__price">
+								<i class="fa fa-gbp"></i>
+								329
+								<sup>pp</sup>
+							</div>
+						</div>
+						<a href="#" class="btn btn_middle btn_purple">Select Flight</a>
+					</div>
+					<div class="flight__left">
+						<div class="flight__row">
+							<div class="info">
+								<div class="info__row">
+									<i class="icon icon-flight_fill"></i>
+									<div class="info__img"><img src="./img/company-img.png" alt="img"></div>
+									<div class="info__text">
+										<p>London Gatwick - Corfu</p>
+									</div>
+								</div>
+							</div>
+							<div class="flight__field">
+								<div class="flight__col">
+									<div class="flight__bold">09:40</div>
+									<div class="flight__text">London Stansted</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">16:55 </div>
+									<div class="flight__text">Sharm</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">5h 15</div>
+									<div class="flight__text">EZY 3031</div>
+								</div>
+							</div>
+						</div>
+						<div class="flight__row">
+							<div class="info">
+								<div class="info__row">
+									<i class="icon icon-flight_fill_back"></i>
+									<div class="info__text">
+										<p>London Gatwick - Corfu</p>
+									</div>
+								</div>
+							</div>
+							<div class="flight__field">
+								<div class="flight__col">
+									<div class="flight__bold">09:40</div>
+									<div class="flight__text">London Stansted</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">16:55 </div>
+									<div class="flight__text">Sharm</div>
+								</div>
+								<div class="flight__col">
+									<div class="flight__bold">5h 15</div>
+									<div class="flight__text">EZY 3031</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

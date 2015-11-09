@@ -466,7 +466,7 @@ a
 // check-prices
 .check-prices
 	position: relative
-	padding: 20px
+	padding: 20px 19px
 	color: $purple
 	font-size: 14px
 	background: $yellow
@@ -496,6 +496,13 @@ a
 	&__row
 		margin-top: 3px
 		line-height: 1.7
+		+clr
+	&__text
+		overflow: hidden
+	&__img
+		float: right
+		font-size: 0
+		line-height: 1
 	&__nights
 		color: $red
 		display: inline-block
@@ -1164,9 +1171,21 @@ a
 	strong
 		+l700
 	.duration
-		margin: 0
+		padding: 0 10px
+		margin: 0 0 14px
 		width: 100%
+		+box
 		display: block
+		&:first-child
+			.duration__inf
+				margin-top: 0
+	.duration__inf
+		margin: 14px -8px 17px
+	.duration__quantity	
+		width: 82px
+		font-size: 14px
+		+l300
+		color: $c_body
 
 // profile
 .profile
@@ -1218,6 +1237,7 @@ a
 		& + .input,
 		& + .select
 			margin-top: 20px
+// prof-in
 .prof-in
 	.btn
 		margin-top: 8px
@@ -1225,3 +1245,101 @@ a
 		display: block
 		&:first-child
 			margin-top: 0
+
+// addition
+.addition
+	+m700
+	text-transform: uppercase
+	color: $c_text
+	+clr
+	&__text
+		min-height: 40px
+		line-height: 40px
+		overflow: hidden
+		span
+			vertical-align: middle
+			display: inline-block
+	&__right
+		float: right
+	&__inf
+		margin-right: 12px
+		min-height: 40px
+		line-height: 40px
+		vertical-align: top
+		display: inline-block
+		span
+			vertical-align: middle
+			display: inline-block
+
+// flights
+.flights
+	&__title
+		margin: 30px 0 25px
+		color: $red
+		+m700
+		font-size: 14px
+		text-transform: uppercase
+
+// flight
+.flight
+	border: 1px solid $yellow
+	+clr
+	& + .flight
+		margin-top: 16px
+	&__left
+		padding: 22px 30px 28px
+		overflow: hidden
+	&__right
+		float: right
+		margin: 0 -1px 0 0 
+		.btn
+			width: 100%
+			+m700
+			-webkit-font-smoothing: antialiased
+			-moz-osx-font-smoothing: grayscal
+			display: block
+		.check-prices
+			padding: 20px 27px 20px
+			color: $c_title
+	&__row
+		margin-top: 28px
+		&:first-child
+			margin-top: 0
+	&__field
+		padding-left: 38px
+		font-size: 0
+		color: $c_text
+	&__col
+		width: 33.3%
+		font-size: 15px
+		vertical-align: top
+		display: inline-block
+	&__bold
+		+l700
+	.info
+		margin-bottom: 8px
+		padding: 0
+		+l700
+		.icon
+			font-size: 18px
+	.info__row
+		padding-left: 38px
+
+// armor
+// .armor
+// 	&__top
+// 		+clr
+// 	&__right
+// 		float: right
+// 	&__col
+// 	strong
+// 	&__row
+// 		+clr
+// 	&__left
+// 		float: left
+// 	&__title
+// 	&__text
+// 	&__right
+// 	&__col
+// 	.price
+// 	.btn
