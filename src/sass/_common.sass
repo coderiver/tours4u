@@ -1167,3 +1167,61 @@ a
 		margin: 0
 		width: 100%
 		display: block
+
+// profile
+.profile
+	border: 1px solid $bord_profile
+	+l700
+	&__top
+		padding: 20px
+		+box
+		border-bottom: 1px solid $bord_profile
+		background: $l_gray
+	&__in
+		padding: 30px 18px
+	&__row
+		margin-top: 20px
+		+clr
+		&:first-child
+			margin-top: 0
+	&__label
+		float: left
+		width: 180px
+		min-height: 60px
+		line-height: 60px
+		label,
+		span
+			display: inline-block
+			vertical-align: middle
+	&__right
+		float: left
+		width: calc(100% - 180px)
+	&__info
+		margin-top: 8px
+		&:first-child
+			margin-top: 0
+		a
+			color: $red
+			border-bottom: 1px solid transparent
+			transition: border-color .2s
+			&:active
+				border-color: $red
+			+rm(1024)
+				&:hover
+					border-color: $red
+	&__bot
+		margin-top: 40px
+	.input,
+	.select
+		max-width: 420px
+		display: block
+		& + .input,
+		& + .select
+			margin-top: 20px
+.prof-in
+	.btn
+		margin-top: 8px
+		text-align: left
+		display: block
+		&:first-child
+			margin-top: 0
