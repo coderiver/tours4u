@@ -525,6 +525,14 @@ h5
 		+rm(1024)
 			&:hover
 				background: darken($c_body, 10%)
+	&_gray
+		color: $c_body
+		background: $l_gray
+		&:active
+			background: $yellow
+		+rm(1024)
+			&:hover
+				background: $yellow
 	&_yellow
 		padding: 20px
 		+m700
@@ -541,6 +549,27 @@ h5
 			&:hover
 				color: #fff
 				background: $c_body
+	&_yellow-black
+		color: $c_body
+		text-transform: uppercase
+		background: $yellow
+		&:active
+			color: #fff
+			background: $c_body
+		+rm(1024)
+			&:hover
+				color: #fff
+				background: $c_body
+	&_small
+		padding: 0 12px
+		height: 30px
+		min-width: 112px
+		font-size: 14px
+		+m700
+		letter-spacing: -.6px
+		line-height: 30px
+		-webkit-font-smoothing: antialiased
+		-moz-osx-font-smoothing: grayscale
 	&_middle
 		padding: 0 20px
 		height: 45px
@@ -1131,3 +1160,60 @@ h5
 		-webkit-font-smoothing: antialiased
 		-moz-osx-font-smoothing: grayscal
 		background: $purple
+
+// time
+.time
+	font-size: 14px
+	&__for,
+	&__to
+		vertical-align: top
+		display: inline-block
+	&__to
+		position: relative
+		padding-left: 8px
+		margin-left: 5px
+		&:before
+			position: absolute
+			content: ''
+			top: 6px
+			left: 0
+			+arr(5,8,$c_text,r)
+	.fa
+		margin: 2px 5px 0 0
+		font-size: 16px
+		vertical-align: top
+
+// date
+.date
+	.fa,
+	.icon
+		margin: 2px 4px 0 0
+		font-size: 16px
+		vertical-align: top
+
+// back
+.back
+	position: relative
+	padding-left: 12px
+	font-size: 15px
+	+l400
+	color: $c_menu
+	vertical-align: top
+	display: inline-block
+	&:active
+		span
+			border-color: $c_menu
+	+rm(1024)
+		&:hover
+			span
+				border-color: $c_menu
+	.fa,
+	.icon
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translate(0,-50%)
+	span
+		border-bottom: 1px solid transparent
+		transition: border-color .2s
+	

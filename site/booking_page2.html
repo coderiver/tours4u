@@ -317,15 +317,23 @@
 					<div class="star"><i class="fa fa-star"></i></div>
 				</div>
 			</h3>
-			<!-- breadcrumbs -->
-			<ul class="breadcrumbs">
-				<li><a href="#">Destinations</a><i class="fa fa-angle-right"></i></li>
-				<li><a href="#">Greece</a><i class="fa fa-angle-right"></i></li>
-				<li><a href="#">Ionian Islands</a><i class="fa fa-angle-right"></i></li>
-				<li><a href="#">Corfu</a><i class="fa fa-angle-right"></i></li>
-				<li><a href="#">Gouvia</a><i class="fa fa-angle-right"></i></li>
-				<li>Hotel Louis Corcyra Beach</li>
-			</ul>
+			<!-- block -->
+			<div class="block">
+				<!-- back -->
+				<a href="#" class="back">
+					<i class="fa fa-angle-left"></i>
+					<span>Back to search results</span>
+				</a>
+				<!-- breadcrumbs -->
+				<ul class="breadcrumbs">
+					<li><a href="#">Destinations</a><i class="fa fa-angle-right"></i></li>
+					<li><a href="#">Greece</a><i class="fa fa-angle-right"></i></li>
+					<li><a href="#">Ionian Islands</a><i class="fa fa-angle-right"></i></li>
+					<li><a href="#">Corfu</a><i class="fa fa-angle-right"></i></li>
+					<li><a href="#">Gouvia</a><i class="fa fa-angle-right"></i></li>
+					<li>Hotel Louis Corcyra Beach</li>
+				</ul>
+			</div>
 			<div class="l__in">
 				<div class="l-col1">
 					<!-- sliders -->
@@ -400,7 +408,7 @@
 									</div>
 								</div>
 								<div class="armor__col">
-									<a href="#" class="btn btn_small btn_yellow">selected</a>
+									<a href="#" class="btn btn_small btn_yellow-black">selected</a>
 								</div>
 							</div>
 						</div>
@@ -448,7 +456,7 @@
 						</div>
 					</div>
 					<!-- flight -->
-					<div class="flight">
+					<div class="flight is-mod">
 						<div class="flight__left">
 							<div class="flight__row">
 								<div class="info">
@@ -501,6 +509,53 @@
 							</div>
 						</div>
 					</div>
+					<!-- booking -->
+					<div class="booking">
+						<div class="book">
+							<div class="book__right">
+								<a href="#" class="btn btn_middle btn_purple">continue</a>
+							</div>
+							<div class="book__left">
+								<div class="book__text">Book flight only for</div>
+								<div class="price">
+									<i class="fa fa-gbp"></i><span>326</span>
+								</div>
+							</div>
+						</div>
+						<div class="book">
+							<div class="book__right">
+								<a href="#" class="btn btn_middle btn_purple">continue</a>
+							</div>
+							<div class="book__left">
+								<div class="book__text">Book hotel only for</div>
+								<div class="price">
+									<i class="fa fa-gbp"></i>
+									<span>326</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- for -->
+					<div class="for">
+						<div class="for__left">
+							<div class="for__people">2 Adults</div>
+							<a href="#" class="for__text">
+								<span>Total only</span>
+								<div class="price">
+									<i class="fa fa-gbp"></i> 
+									<span>326</span>
+								</div>
+							</a>
+						</div>
+						<a href="#" class="for__right">
+							<p>Book today for</p>
+							<div class="price"> 
+								<i class="fa fa-gbp"></i> 
+								<span>326</span>
+								<sup>pp</sup>
+							</div>
+						</a>
+					</div>
 					<!-- map -->
 					<div class="map" id="map"></div>
 					<!-- facilities -->
@@ -523,7 +578,7 @@
 							<div class="facility">
 								<div class="facility__img"><img src="http://lorempixel.com/370/200/city" alt="img"></div>
 								<h3 class="title-h6">PLAY HOUSE CHILDREN'S CLUB</h3>
-								<p>At the Play House, daytime activities are anything but ordinary thanks to the Silly Science Lab, Crazy Kitchen and the Arts and Crafts Zone. Evenings, meanwhile, bring parties and movies, plus you can pay a little extra for sleepovers. Finally, because all staff hold UK-accredited childcare qualifications, you're guaranteed peace of mind. Free supervised sessions for 3 to 12 year-olds are available 6 days a week for an hour or two. Also, you can use the facilities as a family with our special ‘stay and play’ sessions, available 7 days a week.</p>
+								<p>At the Play House, daytime activities are anything but ordinary thanks to the Silly Science Lab, Crazy Kitchen and the Arts and Crafts Zone. Evenings, meanwhile, bring parties and movies, plus you can pay a little extra for sleepovers. Finally, because all staff hold UK-accredited childcare qualifications, you're guaranteed peace of mind. Free supervised sessions for 3 to 12 year-olds are available 6 days a week for an hour or two. Also, you can use the facilities as a family with our special ‘stay and play’ sessions, available 7 days a week.</p> 
 							</div>
 							<div class="facility">
 								<div class="facility__img"><img src="http://lorempixel.com/370/200/city" alt="img"></div>
@@ -610,7 +665,78 @@
 					</div>
 					<!-- shadow -->
 					<div class="shadow">
-						
+						<div class="tot-price">
+							<div class="tot-price__text">£ 2,794 Total Price</div>
+							<div class="tot-price__adults">2 adults <a href="#">Change</a></div>
+						</div>
+						<!-- ord -->
+						<div class="ord">
+							<div class="ord__row">
+								<p>Includes taxes and charges payable in advance. We'll let you know before you book if there are others payable locally.</p>
+								<p>Additional charges apply when paying by credit card</p>
+							</div>
+							<div class="ord__row">
+								<div class="title-small">WHAT'S INCLUDED?</div>
+								<div class="ord__in">
+									<div class="ord__item">
+										<div class="ord__img"><i class="icon icon-flight_fill"></i></div>
+										<div class="ord__text">Flights</div>
+									</div>
+									<div class="ord__item">
+										<div class="ord__img"><i class="icon icon-bus"></i></div>
+										<div class="ord__text">COACH TRANSFERS</div>
+									</div>
+									<div class="ord__item">
+										<div class="ord__img">7</div>										<div class="ord__text">
+											<p>NIGHTS</p>
+											<p><a href="#">Change</a></p>
+										</div>
+									</div>
+									<div class="ord__item">
+										<div class="ord__img"><i class="icon icon-hotel"></i></div>
+										<div class="ord__text">DOUBLE ROOM WITH SEA VIEW </div>
+									</div>
+									<div class="ord__item">
+										<div class="ord__img"><i class="icon icon-all_inclusive"></i></div>
+										<div class="ord__text">ALL INCLUSIVE</div>
+									</div>
+									<div class="ord__item">
+										<div class="ord__img"><i class="icon icon-earth"></i></div>
+										<div class="ord__text">WORLD CARE FUND DONATION (OPTIONAL)</div>
+									</div>
+								</div>
+							</div>
+							<div class="ord__row">
+								<div class="title-small">RETURN FLIGHTS FROM LONDON GATWICK</div>
+								<div class="ord__in">
+									<div class="ord__col">
+										<div class="date">
+											<i class="icon icon-flight_fill"></i>
+											<span>Thu 22 Oct 2015</span>
+										</div>
+										<div class="date">
+											<i class="icon icon-flight_fill_back"></i>
+											<span>Fri 30 Oct 2015</span>
+										</div>
+									</div>
+									<div class="ord__col">
+										<div class="time">
+											<i class="fa fa-clock-o"></i>
+											<div class="time__for">17:55</div>
+											<div class="time__to">23:50</div>
+										</div>
+										<div class="time">
+											<i class="fa fa-clock-o"></i>
+											<div class="time__for">17:55</div>
+											<div class="time__to">23:50</div>
+										</div>
+									</div>
+								</div>
+								<div class="ord__change">
+									<a href="#">Change flights</a>
+								</div>
+							</div>
+						</div>
 					</div>
 					<!-- call -->
 					<div class="call">
