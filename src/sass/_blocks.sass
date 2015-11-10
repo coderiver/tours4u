@@ -176,6 +176,11 @@ h5
 			&:hover
 				border-color: $c_body
 
+// line
+.line
+	border: none
+	height: 1px
+	background: $gray
 
 // like
 .like
@@ -575,6 +580,8 @@ h5
 		height: 45px
 		font-size: 15px
 		line-height: 45px
+	&__small
+		text-transform: initial
 
 // inf
 .inf
@@ -1216,4 +1223,42 @@ h5
 	span
 		border-bottom: 1px solid transparent
 		transition: border-color .2s
-	
+
+// accord
+.accord
+	overflow: hidden
+	&.is-active
+		.accord__top
+			&:before
+				transform: translate(0,-5px)
+				transform: rotate(90deg)
+	&__top
+		position: relative
+		padding: 22px 20px
+		+m700
+		color: $c_text
+		font-size: 14px
+		text-transform: uppercase
+		cursor: pointer
+		box-shadow: 0 0 18px rgba(0, 0, 0, 0.19)
+		background: $l_gray
+		+rm(1024)
+			&:hover
+				&:before
+					transform: translate(5px,0)
+		&:before
+			position: absolute
+			right: 20px
+			top: 50%
+			margin-top: -7px
+			content: "\f054"
+			color: #c4c4c4
+			font: normal normal normal 14px/1 FontAwesome
+			font-size: inherit
+			transition: transform .3s
+			text-rendering: auto
+			-webkit-font-smoothing: antialiased
+			-moz-osx-font-smoothing: grayscale
+	&__in
+		border-top: 1px solid $gray
+		display: none
