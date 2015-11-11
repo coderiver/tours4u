@@ -330,6 +330,10 @@ h5
 	display: inline-block
 	+r(900)
 		font-size: 14px
+	&.is-mask
+		.select__text
+			white-space: normal
+			overflow: initial
 	select
 		position: absolute
 		top: 0
@@ -341,11 +345,13 @@ h5
 	&__text
 		position: relative
 		display: block
-		padding: 17px 15px
+		padding: 17px 35px 17px 15px
 		border: 3px solid $l_gray
 		white-space: nowrap
 		overflow: hidden
 		text-overflow: ellipsis
+		+box
+		+clr
 		&:after
 			content: "\f107"
 			position: absolute
@@ -384,6 +390,15 @@ h5
 			+rm(1024)
 				&:hover
 					background: $l_gray
+	&__mask
+		margin: -3px 0
+		min-width: 15px
+		height: 28px
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		border-bottom: 1px solid #a1a1a1
+		display: inline-block
 
 // input
 .input
@@ -476,7 +491,7 @@ h5
 		&:after
 			position: absolute
 			top: 4px
-			left: 4px
+			left: 5px
 			content: "\f00c"
 			color: $red
 			font: normal normal normal 14px/1 FontAwesome

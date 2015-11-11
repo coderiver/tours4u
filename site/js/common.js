@@ -65,19 +65,23 @@ $(document).ready(function() {
 		
 	});
 	$("body").on("click",".js-select-list li",function() {
-		var val 		= $(this).attr("data-val");
-		var text 		= $(this).text();
-		var select 		= $(this).parents(".js-select");
-		var selectList 	= $(this).parents(".js-select-list");
-		select.find(".js-select-text").text(text);
+		var val 		= $(this).attr("data-val"),
+			text 		= $(this).text(),
+			select 		= $(this).parents(".js-select"),
+			selectList 	= $(this).parents(".js-select-list");
 		select.find("option").removeAttr("selected");
 		select.find('option[value="'+val+'"]').attr("selected", "selected");
 		selectList.find("li").removeClass("is-active");
 		$(this).addClass("is-active");
 		select.removeClass("is-active");
 		selectList.fadeOut(100);
+		if (!select.hasClass('is-mask')) {
+			select.find(".js-select-text").text(text);
+		}
+		else {
+			select.find(".js-select-mask").text(text);
+		}
 		return false;
-		
 	});
 
 	// datepicker

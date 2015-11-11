@@ -1191,11 +1191,15 @@ a
 .profile
 	border: 1px solid $bord_profile
 	+l700
+	& + .profile
+		margin-top: 30px
 	&__top
 		padding: 20px
 		+box
 		border-bottom: 1px solid $bord_profile
 		background: $l_gray
+		span
+			+l300
 	&__in
 		padding: 30px 18px
 	&__row
@@ -1203,6 +1207,12 @@ a
 		+clr
 		&:first-child
 			margin-top: 0
+	&__checkbox
+		margin-top: 20px
+		+clr
+		&:first-child
+			margin-top: 0
+		padding-left: 180px
 	&__label
 		float: left
 		width: 180px
@@ -1212,9 +1222,15 @@ a
 		span
 			display: inline-block
 			vertical-align: middle
+		sup
+			margin-right: 2px
+			font-size: 15px
+			color: $yellow
+			+l700
 	&__right
 		float: left
 		width: calc(100% - 180px)
+		+clr
 	&__info
 		margin-top: 8px
 		&:first-child
@@ -1230,6 +1246,85 @@ a
 					border-color: $red
 	&__bot
 		margin-top: 40px
+	&__wrap
+		padding: 30px 69px 38px 49px
+	&__wrapper
+		padding: 30px 69px 30px 99px
+	&__field
+		position: relative
+		padding: 20px 20px 20px 49px
+	&__wrap,
+	&__wrapper,
+	&__field
+		& + .profile__wrap,
+		& + .profile__wrapper,
+		& + .profile__field
+			border-top: 1px solid $bord_profile
+	&__block
+		padding-left: 50px
+	&__title
+		margin-bottom: 16px
+		+l700
+		font-size: 15px
+		text-transform: uppercase
+	&__title,
+	&__point
+		position: relative
+		padding-left: 50px
+		.fa,
+		.icon
+			position: absolute
+			top: 50%
+			left: 0
+			transform: translate(0,-50%)
+			font-size: 27px
+			color: $yellow
+	&__numb
+		margin-right: 8px
+		max-width: 88px
+	&__date
+		max-width: 108px
+	&__code
+		max-width: 68px
+	&__numb,
+	&__date,
+	&__code
+		width: 100%
+		margin-left: 10px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+		.select
+			min-width: 0
+			width: 100%
+	&__slash
+		min-height: 60px
+		color: #a5a5a5
+		line-height: 60px
+		font-size: 17px
+		+l300
+		vertical-align: top
+		display: inline-block
+	&__text
+		min-height: 60px
+		line-height: 60px
+		vertical-align: top
+		display: inline-block
+		label,
+		span
+			display: inline-block
+			vertical-align: middle
+		sup
+			margin-right: 2px
+			font-size: 15px
+			color: $yellow
+			+l700
+	&__float
+		float: right
+		margin-left: 5px
+	.checkbox
+		+l300
 	.input,
 	.select
 		max-width: 420px
@@ -1237,6 +1332,8 @@ a
 		& + .input,
 		& + .select
 			margin-top: 20px
+	.select__text
+		height: 60px
 // prof-in
 .prof-in
 	.btn
@@ -1481,6 +1578,30 @@ a
 		min-width: 157px
 		+m700
 
+// fors
+.paym
+	margin: 30px 0
+	padding-bottom: 18px
+	border-bottom: 1px solid $l_gray
+	+clr
+	&__col
+		float: left
+		width: 48%
+		margin-left: 4%
+		&:first-child
+			margin-left: 0
+	&__inf
+		margin-top: 15px
+		padding-left: 20px
+	&__title
+		font-size: 14px
+		+l700
+	.for
+		margin: 0
+	.for__right
+		float: none
+		display: block
+
 // for
 .for
 	margin: 10px 0 38px
@@ -1489,6 +1610,7 @@ a
 	font-size: 22px
 	color: $purple
 	background: $yellow
+	+box
 	+clr
 	&.is-nonmarg
 		margin-bottom: 0
@@ -1651,10 +1773,15 @@ a
 // block
 .block
 	+clr
+	&.is-mod
+		margin-bottom: 15px
 	.breadcrumbs
 		overflow: hidden
 	.back
 		float: right
+		margin-top: 2px
+	.title-h2
+		overflow: hidden
 
 // apart
 .apart
@@ -1749,3 +1876,23 @@ a
 		text-transform: uppercase
 	.price
 		float: right
+
+// guarant
+.guarant
+	+clr
+	&__left
+		float: left
+		width: 262px
+	&__right
+		overflow: hidden
+	&__item
+		margin-left: 25px
+		height: 40px
+		vertical-align: top
+		display: inline-block
+		+vertical
+		&:first-child
+			margin-left: 0
+		img
+			vertical-align: middle
+			display: inline-block
