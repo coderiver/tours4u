@@ -1470,7 +1470,6 @@ a
 	&__left
 		padding: 12px 10px 12px 18px
 		overflow: hidden
-	&__text
 	&__right
 		float: right
 		padding: 16px 18px 13px 0
@@ -1561,10 +1560,10 @@ a
 		&:before
 			position: absolute
 			content: ''
-			top: 7px
+			top: 8px
 			left: 0
-			height: 7px
-			width: 7px
+			height: 6px
+			width: 6px
 			border-radius: 50%
 			background: $c_text
 	a
@@ -1683,3 +1682,70 @@ a
 		text-transform: initial
 	.rating
 		margin-top: -3px
+
+// period
+.period
+	padding: 16px 20px
+	&__title
+		font-size: 15px
+		+l700
+	&__row
+		margin-top: 10px
+		+clr
+	&__col
+		float: left
+		width: 50%
+	.title-small
+		margin-top: 12px
+
+// places
+.places
+	padding: 14px 20px
+	border-top: 1px solid $l_gray
+	&__row
+		margin-top: 5px
+		+clr
+		&:first-child
+			margin-top: 0
+	&__right
+		float: right
+		padding-right: 22px
+	a
+		+l700
+		font-size: 14px
+		color: $purple
+		transition: border-color .2s
+		border-bottom: 1px solid transparent
+		&:active
+			border-color: $purple
+		+rm(1024)
+			&:hover
+				border-color: $purple
+
+// together
+.together
+	font-size: 14px
+	color: $purple
+	background: $yellow
+	&__in
+		padding: 16px 20px
+		.price
+			+l700
+			font-size: 14px
+	&__row
+		margin-top: 2px
+		+clr
+		&:first-child
+			margin-top: 0
+	&__wrap
+		padding: 20px 20px 28px
+		border-top: 1px solid #fff
+		.price
+			font-size: 30px
+	&__tot
+		float: left
+		margin-top: 10px
+		+m700
+		text-transform: uppercase
+	.price
+		float: right
