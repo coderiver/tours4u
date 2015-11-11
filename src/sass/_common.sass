@@ -1163,6 +1163,8 @@ a
 		padding: 24px 19px
 	.checkbox
 		margin-top: 8px
+		&:first-child
+			margin-top: 0
 	.price
 		margin-left: 2px
 		color: inherit
@@ -1896,3 +1898,137 @@ a
 		img
 			vertical-align: middle
 			display: inline-block
+
+// item
+.item
+	margin-top: 40px
+	&:first-child
+		margin-top: 0
+	&__in
+		padding: 16px 18px 22px
+		background: $l_gray 
+		.title-h3
+			margin: 11px 0
+			color: $purple
+			text-align: left
+			&:first-child
+				margin-top: 0
+			& + .item__row
+				margin-top: 11px
+	&__row
+		margin-top: 22px
+		&:first-child
+			margin-top: 0
+	&__lab
+		margin-bottom: 2px
+		+l700
+		span
+			line-height: 1
+			vertical-align: bottom
+			display: inline-block
+	&__inf
+		color: $purple
+		+m700
+		font-size: 24px
+		vertical-align: top
+		display: inline-block
+
+// inform
+.inform
+	margin-top: 30px
+	+l400
+	+clr
+	&__col
+		float: left
+		margin-left: 4%
+		width: 48%
+		&:first-child
+			margin-left: 0
+		.inform__name
+			width: 27%
+		.inform__row
+			margin-top: 2px
+			line-height: 2
+			&:first-child
+				margin-top: -7px
+	&__img
+		a
+			display: block
+		img
+			width: 100%
+			display: block
+	&__in
+		padding: 0 20px
+		+clr
+		& + .inform__in
+			margin-top: 20px
+			padding-top: 20px
+			border-top: 1px solid $gray
+		.inform__row
+			margin-top: 10px
+			&:first-child
+				margin-top: 0
+	&__row
+		margin-top: 20px
+		+clr
+		&:first-child
+			margin-top: -3px
+	&__wrap
+		+clr
+	&__name
+		float: left
+		width: 23%
+	&__reply
+		+l700
+		overflow: hidden
+	&__title
+		margin-bottom: 8px
+		text-transform: uppercase
+	&__field
+		margin-top: 28px
+		text-align: right
+	&__left
+		overflow: hidden
+	&__right
+		float: right
+		width: 21%
+	.rating
+		margin-bottom: 4px
+		display: block
+	strong
+		+l700
+
+	ul
+		li
+			margin-top: 8px
+			display: block
+			&:first-child
+				margin-top: 0
+
+// manage
+.manage
+	padding: 0 20px
+	+l700
+	color: $c_text
+	&__foot
+		margin-top: 20px 
+		a
+			+l300
+			transition: border-color .2s
+			border-bottom: 1px solid transparent
+			&:active
+				border-color: $c_text
+			+rm(1024)
+				&:hover
+					border-color: $c_text
+
+	.title-h6
+		color: $c_menu
+	p
+		margin-top: 15px
+		&:first-child
+			margin-top: 0
+	ul
+		margin: 20px 0 0 20px
+		li
+			list-style-type: disc
