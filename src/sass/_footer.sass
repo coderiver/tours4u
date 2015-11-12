@@ -92,6 +92,22 @@
 	font-size: 0
 	+r(1024)
 		margin-top: 10px
+	&.is-gray
+		.soc__item
+			margin-left: 18px
+			&:first-child
+				margin-left: 0
+		a
+			height: 38px
+			width: 38px
+			line-height: 38px
+			font-size: 22px
+			background: #c6c6c8
+			&:active
+				background: darken(#c6c6c8, 20%)
+			+rm(1024)
+				&:hover
+					background: darken(#c6c6c8, 20%)
 	&__item
 		margin-left: 5px
 		font-size: 27px
