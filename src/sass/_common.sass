@@ -1225,8 +1225,14 @@ a
 .profile
 	border: 1px solid $bord_profile
 	+l700
+	&.is-view
+		.profile__in
+			position: relative
+			padding-right: 93px
 	& + .profile
 		margin-top: 30px
+	& + .title-h6
+		margin: 28px 0 18px
 	&__top
 		padding: 20px
 		+box
@@ -1236,6 +1242,7 @@ a
 			+l300
 	&__in
 		padding: 30px 18px
+		+clr
 	&__row
 		margin-top: 20px
 		+clr
@@ -1357,6 +1364,21 @@ a
 	&__float
 		float: right
 		margin-left: 5px
+	&__view
+		position: absolute
+		top: 30px
+		right: -1px
+	.inform
+		margin-top: 0
+	.inform__col
+		width: 57%
+		&:first-child
+			width: 38.2%
+		.inform__row
+			margin-top: 10px
+			line-height: 1.4
+	.inform__row
+		margin-top: 10px
 	.checkbox
 		+l300
 	.input,
@@ -2010,6 +2032,9 @@ a
 	&__name
 		float: left
 		width: 23%
+		img
+			margin: 5px 0
+			display: block
 	&__reply
 		+l700
 		overflow: hidden
@@ -2024,6 +2049,10 @@ a
 	&__right
 		float: right
 		width: 21%
+	&__count
+		margin-top: 2px
+		color: $purple
+		+l700
 	.rating
 		margin-bottom: 4px
 		display: block
@@ -2317,3 +2346,40 @@ a
 
 .office-info
 	padding: 0 20px 30px
+
+// sort-by
+.sort-by
+	margin-left: 44px
+	color: $c_body
+	+l700
+	vertical-align: top
+	display: inline-block
+	&:first-child
+		margin-left: 0
+	&__label,
+	&__text
+		vertical-align: top
+		display: inline-block
+	&__text
+		position: relative
+		padding-right: 15px
+		color: $red
+		.fa
+			position: absolute
+			top: 0
+			right: 0
+			// transform: translate(0,-50%)
+			color: #a5a5a5
+			font-size: 17px
+			line-height: 1
+		span
+			+l700
+	select
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		opacity: 0
+		z-index: 1
+		cursor: pointer

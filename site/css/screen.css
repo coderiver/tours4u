@@ -398,10 +398,13 @@ a { color: inherit; text-decoration: none; }
 .sort .duration__quantity { width: 82px; font-size: 14px; font-family: "Lato", sans-serif; font-weight: 300; color: #444; }
 
 .profile { border: 1px solid #ebebeb; font-family: "Lato", sans-serif; font-weight: 700; }
+.profile.is-view .profile__in { position: relative; padding-right: 93px; }
 .profile + .profile { margin-top: 30px; }
+.profile + .title-h6 { margin: 28px 0 18px; }
 .profile__top { padding: 20px; box-sizing: border-box; border-bottom: 1px solid #ebebeb; background: #f2f2f2; }
 .profile__top span { font-family: "Lato", sans-serif; font-weight: 300; }
-.profile__in { padding: 30px 18px; }
+.profile__in { padding: 30px 18px; *zoom: 1; }
+.profile__in:after { content: " "; display: table; clear: both; }
 .profile__row { margin-top: 20px; *zoom: 1; }
 .profile__row:after { content: " "; display: table; clear: both; }
 .profile__row:first-child { margin-top: 0; }
@@ -438,6 +441,12 @@ a { color: inherit; text-decoration: none; }
 .profile__text label, .profile__text span { display: inline-block; vertical-align: middle; }
 .profile__text sup { margin-right: 2px; font-size: 15px; color: #ffdb00; font-family: "Lato", sans-serif; font-weight: 700; }
 .profile__float { float: right; margin-left: 5px; }
+.profile__view { position: absolute; top: 30px; right: -1px; }
+.profile .inform { margin-top: 0; }
+.profile .inform__col { width: 57%; }
+.profile .inform__col:first-child { width: 38.2%; }
+.profile .inform__col .inform__row { margin-top: 10px; line-height: 1.4; }
+.profile .inform__row { margin-top: 10px; }
 .profile .checkbox { font-family: "Lato", sans-serif; font-weight: 300; }
 .profile .input, .profile .select { max-width: 420px; display: block; }
 .profile .input + .input, .profile .input + .select, .profile .select + .input, .profile .select + .select { margin-top: 20px; }
@@ -665,11 +674,13 @@ a { color: inherit; text-decoration: none; }
 .inform__wrap { *zoom: 1; }
 .inform__wrap:after { content: " "; display: table; clear: both; }
 .inform__name { float: left; width: 23%; }
+.inform__name img { margin: 5px 0; display: block; }
 .inform__reply { font-family: "Lato", sans-serif; font-weight: 700; overflow: hidden; }
 .inform__title { margin-bottom: 8px; text-transform: uppercase; }
 .inform__field { margin-top: 28px; text-align: right; }
 .inform__left { overflow: hidden; }
 .inform__right { float: right; width: 21%; }
+.inform__count { margin-top: 2px; color: #58357b; font-family: "Lato", sans-serif; font-weight: 700; }
 .inform .rating { margin-bottom: 4px; display: block; }
 .inform strong { font-family: "Lato", sans-serif; font-weight: 700; }
 .inform ul li { margin-top: 8px; display: block; }
@@ -781,6 +792,14 @@ a { color: inherit; text-decoration: none; }
 .office img { display: block; }
 
 .office-info { padding: 0 20px 30px; }
+
+.sort-by { margin-left: 44px; color: #444; font-family: "Lato", sans-serif; font-weight: 700; vertical-align: top; display: inline-block; }
+.sort-by:first-child { margin-left: 0; }
+.sort-by__label, .sort-by__text { vertical-align: top; display: inline-block; }
+.sort-by__text { position: relative; padding-right: 15px; color: #ea591b; }
+.sort-by__text .fa { position: absolute; top: 0; right: 0; color: #a5a5a5; font-size: 17px; line-height: 1; }
+.sort-by__text span { font-family: "Lato", sans-serif; font-weight: 700; }
+.sort-by select { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0; z-index: 1; cursor: pointer; }
 
 .icon-bonus-bg { width: 1600px; height: 500px; background-image: url("../img/icons.png"); background-position: 0px 0px; }
 
@@ -1465,6 +1484,7 @@ h5 { font-size: 15px; font-family: "Lato", sans-serif; font-weight: 700; }
 .btn_yellow-black:active { color: #fff; background: #444; }
 @media only screen and (min-width: 1024px) { .btn_yellow-black:hover { color: #fff; background: #444; } }
 .btn_small { padding: 0 12px; height: 30px; min-width: 112px; font-size: 14px; font-family: "Montserrat", sans-serif; font-weight: 700; letter-spacing: -0.6px; line-height: 30px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.btn_sm-m { padding: 0 28px; min-width: 93px; height: 40px; line-height: 40px; font-family: "Lato", sans-serif; font-weight: 700; font-size: 13px; }
 .btn_middle { padding: 0 20px; height: 45px; font-size: 15px; line-height: 45px; }
 .btn_bold { font-family: "Montserrat", sans-serif; font-weight: 700; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .btn_print { height: 70px; line-height: 30px; text-transform: initial; font-size: 15px; font-family: "Lato", sans-serif; font-weight: 700; }
@@ -1708,6 +1728,8 @@ h5 { font-size: 15px; font-family: "Lato", sans-serif; font-weight: 700; }
 @media only screen and (min-width: 1024px) { .list-border li a:hover { border-color: #333; } }
 
 .accent { margin: 25px 0; padding: 6px 0 5px 25px; color: #393939; border-left: 3px solid #ffdb00; }
+
+.ind { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase; color: #58357b; }
 
 .ui-datepicker { width: 13.4em; }
 .ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-prev { cursor: pointer; }

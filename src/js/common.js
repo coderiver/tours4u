@@ -84,6 +84,12 @@ $(document).ready(function() {
 		return false;
 	});
 
+	// select
+	$(".js-sort select").on("change", function() {
+	  var text = $(this).val();
+	  $(this).parents(".js-sort").find(".js-sort-text").text(text);
+	});
+
 	// datepicker
 	$(".js-datepicker").datepicker({
     	showOn 			: "both",
