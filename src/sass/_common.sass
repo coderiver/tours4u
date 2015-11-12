@@ -2038,7 +2038,26 @@ a
 	background: url(../img/bg-not.png) repeat 0 0
 	height: calc(100% - 90px)
 	min-height: calc(100% - 90px)
+	line-height: 1.4
 	+vertical
-	.notification__in
+	&__in
+		margin: 20px 0
+		padding: 0 10px
+		max-width: 695px
+		font-size: 20px
+		text-transform: uppercase
 		vertical-align: middle
 		display: inline-block
+	&__name
+		margin-bottom: 28px
+		vertical-align: top
+		display: inline-block
+		img
+			display: block
+	&__title
+		margin-bottom: 22px
+		font-size: 35px
+		+l700
+	&__text
+		margin: 0 auto
+		max-width: 470px
