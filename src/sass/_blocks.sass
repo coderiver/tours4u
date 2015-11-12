@@ -232,6 +232,12 @@ h5
 	border-top: 5px solid $red
 	z-index: 3
 	background: #fff
+	&_mod
+		.tab__link
+			padding-top: 10px
+			border: 1px solid $red
+			border-bottom: none
+			+box
 	&__list
 		margin-top: -42px
 		font-size: 0
@@ -427,12 +433,14 @@ h5
 		border-bottom: 1px solid #a1a1a1
 		display: inline-block
 
-// input
-.input
+// input textarea
+.input,
+.textarea
 	position: relative
 	vertical-align: top
 	display: inline-block
-	input
+	input,
+	textarea
 		padding: 0 15px
 		height: 60px
 		width: 100%
@@ -482,6 +490,13 @@ h5
 				& + .fa
 					color: rgba($c_form, .7)
 
+// textarea
+.textarea
+	textarea
+		padding-top: 17px
+		height: 160px
+		resize: none
+	
 // checkbox
 .checkbox
 	position: relative
@@ -1464,3 +1479,10 @@ h5
 			+rm(1024)
 				&:hover
 					border-color: $c_menu
+
+// accent
+.accent
+	margin: 25px 0
+	padding: 6px 0 5px 25px
+	color: #393939
+	border-left: 3px solid $yellow

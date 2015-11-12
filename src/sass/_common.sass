@@ -2093,3 +2093,190 @@ a
 	&__text
 		margin: 0 auto
 		max-width: 470px
+
+// top
+.top
+	margin: -7px 0 25px
+	padding-bottom: 16px
+	color: $c_foot
+	border-bottom: 1px solid $gray
+	+clr
+	&__left
+		float: left
+	&__right
+		float: right
+	&__item
+		margin-left: 35px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+		.icon,
+		.fa
+			margin-right: 2px
+		a
+			margin-left: 2px
+	.date
+		color: $c_text
+	a
+		color: $purple
+		transition: border-color .2s
+		border-bottom: 1px solid transparent
+		&:active
+			border-color: $purple
+		+rm(1024)
+			&:hover
+				border-color: $purple
+
+// paper
+.paper
+	color: $c_foot
+	.title-h3
+		margin: 25px 0 22px
+		color: $c_title
+	.soc
+		margin: 25px 0
+	.soc__item
+		font-size: 18px
+	p
+		margin-top: 22px
+	img
+		margin: 22px 0
+		width: 100%
+		display: block
+	ul
+		margin: 22px 0 22px 45px
+		li
+			list-style-type: disc
+
+// tags
+.tags
+	margin: 30px 0
+	&__title
+		color: #3d3d3d
+	.tags__list
+		margin: 0
+	.tag
+		list-style-type: none
+
+// tag
+.tag
+	margin-left: 5px
+	list-style-type: none
+	vertical-align: top
+	display: inline-block
+	&:first-child
+		margin-left: 0
+	a
+		color: $c_foot
+		transition: border-color .2s
+		border-bottom: 1px solid transparent
+		&:active
+			border-color: $c_foot
+		+rm(1024)
+			&:hover
+				border-color: $c_foot
+
+// blog-form
+.blog-form
+	margin: 45px 0
+	&__row
+		margin-top: 20px
+		+clr
+		&:first-child
+			margin-top: 0
+	&__col
+		float: left
+		width: 31%
+		margin-left: 3.4%
+		&:first-child
+			margin-left: 0
+	.input,
+	.textarea
+		position: relative
+		display: block
+
+// comment
+.comm
+	font-size: 15px
+	+l700
+	color: $c_foot
+	.comm
+		margin: 30px 0 30px 60px
+	// &__in
+	&__top
+		+clr
+	&__date
+		float: right
+		margin-top: 12px
+		+l400
+	&__text
+		margin: 25px 0 20px
+		p
+			margin-top: 20px
+			&:first-child
+				margin-top: 0
+	.author
+		float: left
+		margin: 0
+	.author__name
+		margin-top: 10px
+		display: inline-block
+
+// reply
+.reply
+	border-bottom: 1px solid $l_gray
+	&__btn
+		padding: 8px 16px 7px
+		font-size: 14px
+		+l400
+		transition: background-color .3s
+		background: $l_gray
+		&:active
+			background: darken($l_gray, 20%)
+		+rm(1024)
+			&:hover
+				background: darken($l_gray, 20%)
+
+// rounds
+.rounds
+	margin: 58px 0 0
+	&__row
+	+clr
+	&__col
+		float: left
+		margin-left: 3.4%
+		width: 31%
+		&:first-child
+			margin-left: 0
+
+// suite
+.suite
+	&__title
+		+l700
+		font-size: 15px
+		display: block
+		color: $c_body
+		span
+			transition: border-color .3s
+			border-bottom: 1px solid transparent
+			&:active
+				border-color: $c_body
+			+rm(1024)
+				&:hover
+					border-color: $c_body
+	&__img
+		display: block
+		margin-bottom: 15px
+	&__inf
+		margin-top: 15px
+		text-transform: uppercase
+	&__view
+		margin-top: 12px
+	.rating
+		margin-bottom: 2px
+	.price
+		font-size: 25px
+	img
+		width: 100%
+		display: block
