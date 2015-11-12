@@ -1038,16 +1038,48 @@ a
 
 // clause
 .clause
+	padding-bottom: 18px
+	border-bottom: 1px solid $gray
+	& + .clause
+		margin-top: 32px
+	&__inf
+		margin-bottom: 15px
+		font-size: 18px
+		+m700
+	&__bot
+		margin-top: 33px
+		+clr
+	&__right
+		float: right
 	& > img
+		margin-bottom: 25px
 		width: 100%
 	img
 		display: block
+	p
+		margin-top: 15px
+		color: $c_foot
 	.author
 		margin-bottom: 18px
+	.title-h3
+		margin: 0
+		text-align: left
+	.tell
+		margin-left: 20px
+	.view-all
+		float: left
+		color: $purple
+		&:active
+			border-color: $purple
+		+rm(1024)
+			&:hover
+				border-color: $purple
 
 // author
 .author
+	margin-bottom: 18px
 	color: $c_author
+	+clr
 	&__img
 		position: relative
 		float: left
