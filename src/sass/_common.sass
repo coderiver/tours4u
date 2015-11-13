@@ -503,6 +503,8 @@ a
 		float: right
 		font-size: 0
 		line-height: 1
+		+r(480)
+			display: none
 	&__nights
 		color: $red
 		display: inline-block
@@ -1185,6 +1187,8 @@ a
 	font-size: 14px
 	& + .sort
 		margin-top: 30px
+		+r(768)
+			margin-top: 20px
 	&__top
 		padding: 19px 18px
 		text-transform: uppercase
@@ -1409,11 +1413,16 @@ a
 		min-height: 40px
 		line-height: 40px
 		overflow: hidden
+		+r(768)
+			overflow: initial
 		span
 			vertical-align: middle
 			display: inline-block
 	&__right
 		float: right
+		+r(768)
+			float: none
+			width: 100%
 	&__inf
 		margin-right: 12px
 		min-height: 40px
@@ -1427,11 +1436,13 @@ a
 // flights
 .flights
 	&__title
-		margin: 30px 0 25px
+		margin: 20px 0
 		color: $red
 		+m700
 		font-size: 14px
 		text-transform: uppercase
+		+r(768)
+			margin: 20px 0 15px
 
 // flight
 .flight
@@ -1461,6 +1472,9 @@ a
 	&__right
 		float: right
 		margin: 0 -1px 0 0 
+		+r(768)
+			margin: 0
+			width: 100%
 		.btn
 			width: 100%
 			+m700
@@ -1468,16 +1482,23 @@ a
 			-moz-osx-font-smoothing: grayscal
 			display: block
 		.check-prices
-			padding: 20px 27px 20px
+			padding: 20px 27px
 			color: $c_title
+			+r(768)
+				padding: 10px 27px
+				text-align: center
 	&__row
 		margin-top: 28px
 		&:first-child
 			margin-top: 0
+		+r(480)
+			margin-top: 15px
 	&__field
 		padding-left: 38px
 		font-size: 0
 		color: $c_text
+		+r(480)
+			padding-left: 25px
 	&__col
 		width: 33.3%
 		font-size: 15px
@@ -1489,6 +1510,15 @@ a
 			width: 39%
 		&:nth-child(3)
 			width: 14%
+		+r(480)
+			margin-top: 5px
+			width: 100%
+			&:first-child,
+			&:nth-child(2),
+			&:nth-child(3)
+				width: 100%
+			&:first-child
+				margin-top: 0
 	&__bold
 		+l700
 	.info
@@ -1499,6 +1529,8 @@ a
 			font-size: 18px
 	.info__row
 		padding-left: 38px
+		+r(480)
+			padding-left: 25px
 
 // armor
 .armor
@@ -2271,7 +2303,7 @@ a
 .rounds
 	margin: 58px 0 0
 	&__row
-	+clr
+		+clr
 	&__col
 		float: left
 		margin-left: 3.4%

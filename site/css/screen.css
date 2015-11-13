@@ -165,6 +165,7 @@ a { color: inherit; text-decoration: none; }
 .info__row:after { content: " "; display: table; clear: both; }
 .info__text { overflow: hidden; }
 .info__img { float: right; font-size: 0; line-height: 1; }
+@media only screen and (max-width: 480px) { .info__img { display: none; } }
 .info__nights { color: #ea591b; display: inline-block; }
 .info__top { margin-bottom: 16px; border-bottom: 1px solid #ededed; }
 .info__in { margin-bottom: 15px; *zoom: 1; }
@@ -386,6 +387,7 @@ a { color: inherit; text-decoration: none; }
 
 .sort { border: 1px solid #f2f2f2; font-size: 14px; }
 .sort + .sort { margin-top: 30px; }
+@media only screen and (max-width: 768px) { .sort + .sort { margin-top: 20px; } }
 .sort__top { padding: 19px 18px; text-transform: uppercase; font-size: 25px; font-family: "Montserrat", sans-serif; font-weight: 400; background: #f2f2f2; }
 .sort__wrap { padding: 24px 19px; }
 .sort .checkbox { margin-top: 8px; }
@@ -458,12 +460,15 @@ a { color: inherit; text-decoration: none; }
 .addition { font-family: "Montserrat", sans-serif; font-weight: 700; text-transform: uppercase; color: #666; *zoom: 1; }
 .addition:after { content: " "; display: table; clear: both; }
 .addition__text { min-height: 40px; line-height: 40px; overflow: hidden; }
+@media only screen and (max-width: 768px) { .addition__text { overflow: initial; } }
 .addition__text span { vertical-align: middle; display: inline-block; }
 .addition__right { float: right; }
+@media only screen and (max-width: 768px) { .addition__right { float: none; width: 100%; } }
 .addition__inf { margin-right: 12px; min-height: 40px; line-height: 40px; vertical-align: top; display: inline-block; }
 .addition__inf span { vertical-align: middle; display: inline-block; }
 
-.flights__title { margin: 30px 0 25px; color: #ea591b; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; }
+.flights__title { margin: 20px 0; color: #ea591b; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; }
+@media only screen and (max-width: 768px) { .flights__title { margin: 20px 0 15px; } }
 
 .flight { border: 1px solid #ffdb00; *zoom: 1; }
 .flight:after { content: " "; display: table; clear: both; }
@@ -476,19 +481,27 @@ a { color: inherit; text-decoration: none; }
 .flight.is-mod .flight__row:first-child { margin-top: 0; }
 .flight__left { padding: 22px 30px 28px; overflow: hidden; }
 .flight__right { float: right; margin: 0 -1px 0 0; }
+@media only screen and (max-width: 768px) { .flight__right { margin: 0; width: 100%; } }
 .flight__right .btn { width: 100%; font-family: "Montserrat", sans-serif; font-weight: 700; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscal; display: block; }
-.flight__right .check-prices { padding: 20px 27px 20px; color: #333; }
+.flight__right .check-prices { padding: 20px 27px; color: #333; }
+@media only screen and (max-width: 768px) { .flight__right .check-prices { padding: 10px 27px; text-align: center; } }
 .flight__row { margin-top: 28px; }
 .flight__row:first-child { margin-top: 0; }
+@media only screen and (max-width: 480px) { .flight__row { margin-top: 15px; } }
 .flight__field { padding-left: 38px; font-size: 0; color: #666; }
+@media only screen and (max-width: 480px) { .flight__field { padding-left: 25px; } }
 .flight__col { width: 33.3%; font-size: 15px; vertical-align: top; display: inline-block; }
 .flight__col:first-child { width: 46.3%; }
 .flight__col:nth-child(2) { width: 39%; }
 .flight__col:nth-child(3) { width: 14%; }
+@media only screen and (max-width: 480px) { .flight__col { margin-top: 5px; width: 100%; }
+  .flight__col:first-child, .flight__col:nth-child(2), .flight__col:nth-child(3) { width: 100%; }
+  .flight__col:first-child { margin-top: 0; } }
 .flight__bold { font-family: "Lato", sans-serif; font-weight: 700; }
 .flight .info { margin-bottom: 8px; padding: 0; font-family: "Lato", sans-serif; font-weight: 700; }
 .flight .info .icon { font-size: 18px; }
 .flight .info__row { padding-left: 38px; }
+@media only screen and (max-width: 480px) { .flight .info__row { padding-left: 25px; } }
 
 .armor { margin: 25px 0; line-height: 1.3; }
 .armor.is-mod .armor__row + .armor__row { margin-top: 20px; }
@@ -762,8 +775,9 @@ a { color: inherit; text-decoration: none; }
 .reply__btn:active { background: #bfbfbf; }
 @media only screen and (min-width: 1024px) { .reply__btn:hover { background: #bfbfbf; } }
 
-.rounds { margin: 58px 0 0; *zoom: 1; }
-.rounds:after { content: " "; display: table; clear: both; }
+.rounds { margin: 58px 0 0; }
+.rounds__row { *zoom: 1; }
+.rounds__row:after { content: " "; display: table; clear: both; }
 .rounds__col { float: left; margin-left: 3.4%; width: 31%; }
 .rounds__col:first-child { margin-left: 0; }
 
@@ -1313,8 +1327,10 @@ body.is-home .menu-open__btn:active:before, body.is-home .menu-open__btn:active:
 .center.is-order { padding: 40px 15px 100px; }
 
 .sidebar { float: left; width: 31.7%; }
+@media only screen and (max-width: 1024px) { .sidebar { margin-bottom: 30px; width: 100%; } }
 
 .layout { float: right; width: 65.8%; box-sizing: border-box; }
+@media only screen and (max-width: 1024px) { .layout { width: 100%; } }
 .layout .title-h2 { margin: 20px 0; }
 .layout .title-h2:first-child { margin-top: 0; }
 

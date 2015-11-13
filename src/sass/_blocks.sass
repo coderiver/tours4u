@@ -24,12 +24,17 @@
 .sidebar
 	float: left
 	width: 31.7%
+	+r(1024)
+		margin-bottom: 30px
+		width: 100%
 
 // layout
 .layout
 	float: right
 	width: 65.8%
 	+box
+	+r(1024)
+		width: 100%
 	.title-h2
 		margin: 20px 0
 		&:first-child
