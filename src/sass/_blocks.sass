@@ -124,6 +124,11 @@ article
 	text-transform: uppercase
 	+m400
 	+clr
+	+r(768)
+		margin: 20px 0
+		line-height: 1.1
+	+r(480)
+		font-size: 22px
 	&.is-mod
 		margin: 28px 0 10px
 	.rating
@@ -147,6 +152,9 @@ article
 	font-size: 24px
 	+r(1024)
 		margin: 30px 0 20px
+	+r(768)
+		font-size: 20px
+		line-height: 1.2
 	+r(560)
 		margin: 20px 0 15px
 .title-h4
@@ -243,6 +251,9 @@ h5
 			border: 1px solid $red
 			border-bottom: none
 			+box
+		.tab__list
+			+r(767)
+				margin-top: -39px
 	&__list
 		margin-top: -42px
 		font-size: 0
@@ -437,6 +448,8 @@ h5
 		text-overflow: ellipsis
 		border-bottom: 1px solid #a1a1a1
 		display: inline-block
+		+r(980)
+			height: 20px
 
 // input textarea
 .input,
@@ -451,6 +464,9 @@ h5
 		color: $red
 		+l300
 		font-size: 25px
+		+r(980)
+			top: 6px
+			left: 6px
 	input,
 	textarea
 		padding: 0 15px
@@ -508,6 +524,8 @@ h5
 		padding-top: 17px
 		height: 160px
 		resize: none
+		+r(768)
+			padding-top: 10px
 	
 // checkbox
 .checkbox
@@ -1018,6 +1036,8 @@ h5
 	+rm(1024)
 		&:hover
 			border-color: $red
+	+r(768)
+		font-size: 14px
 
 // more
 .more
@@ -1475,7 +1495,10 @@ h5
 		+box
 		border: 1px solid $c_pag
 		display: block
-
+		+r(768)
+			height: 39px
+			width: 39px
+			line-height: 37px
 
 // title-border
 .title-border

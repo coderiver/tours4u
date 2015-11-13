@@ -53,6 +53,8 @@ body
 	+l300
 	font-size: 14px
 	line-height: 20px
+	+r(768)
+		font-size: 13px
 	&.is-hidden
 		overflow: hidden
 	&.is-registration
@@ -371,11 +373,21 @@ a
 		+l700
 	&__right
 		float: right
+		+r(768)
+			margin-bottom: 20px
+			width: 100%
+			text-align: center
 	.view
 		margin-top: 10px
 		display: block
 		&:first-child
 			margin-top: 0
+		+r(768)
+			margin: 0 0 0 20px
+			vertical-align: top
+			display: inline-block
+			&:first-child
+				margin-left: 0
 	p
 		margin-top: 22px
 		&:first-child
@@ -447,11 +459,17 @@ a
 			margin-left: 0
 		&:nth-child(+n+3)
 			margin-top: 24px
+		+r(480)
+			margin-left: 0
+			width: 100%
 
 // facility
 .facility
 	margin: 24px 0
 	font-size: 14px
+	& + .facility
+		+r(480)
+			margin-top: 20px
 	&__img
 		margin-bottom: 16px
 		display: block
@@ -519,8 +537,13 @@ a
 			margin-top: 5px
 			color: $red
 			font-size: 22px
+			+r(480)
+				float: none
 		.tot
 			float: right
+			+r(480)
+				margin-top: 15px
+				float: none
 	&__title
 		margin-bottom: 11px
 		font-size: 14px
@@ -727,6 +750,8 @@ a
 	width: 48.4%
 	vertical-align: top
 	display: inline-block
+	+r(1200)
+		margin-left: 1.5%
 	&__in
 		margin-top: 15px
 		font-size: 0
@@ -796,11 +821,16 @@ a
 	.gall
 		float: left
 		margin-right: 30px
+		+r(768)
+			max-width: 100%
 	.info
 		float: right
 		padding: 0
 		color: $c_text
 		width: calc(100% - 400px)
+		+r(768)
+			margin-top: 25px
+			width: 100%
 	.title-h2
 		&:first-child
 			margin-top: 0
@@ -836,9 +866,15 @@ a
 	overflow: hidden
 	&__top
 		height: 234px
-	&__pag
+		+r(768)
+			height: auto
+			img
+				width: 100%
+	.gall__pag
 		margin: 10px -5px 0
 		height: 54px
+		+r(768)
+			display: none
 		img
 			margin: 0 5px
 			cursor: pointer
@@ -879,6 +915,8 @@ a
 // article
 .article
 	padding-top: 49px
+	+r(480)
+		padding-top: 30px
 	&__in
 		+clr
 	&__wrap
@@ -891,8 +929,17 @@ a
 		color: $c_foot
 		letter-spacing: 0.46px
 		+box
+		+r(480)
+			float: none
+			margin-top: 15px
+			padding: 0
+			width: 100%
+			&:first-child
+				margin-top: 0
 	img
 		float: right
+		+r(1200)
+			display: none
 	p
 		& + p,
 		& + h5
@@ -910,12 +957,18 @@ a
 	border-bottom: 1px solid $gray
 	color: $c_foot
 	+clr
+	+r(1200)
+		margin-top: 20px
 	&__col
 		float: left
 		padding: 22px 30px 15px
 		width: 18%
+		+box
 		&.is-name
 			+l700
+		+r(1200)
+			padding-left: 0
+			width: 50%
 	&__row
 		margin-top: 15px
 		&:first-child
@@ -927,6 +980,8 @@ a
 		position: absolute
 		right: 0
 		bottom: 0
+		+r(1200)
+			display: none
 
 // resorts
 .resorts
@@ -942,13 +997,20 @@ a
 			bottom: 0
 			width: 1px
 			background: $gray
+			+r(768)
+				display: none
 		.resort
 			position: static
 			float: left
 			width: 50%
 			border-left: 1px solid transparent
+			+r(768)
+				position: relative
+				width: 100%
 		.resort__hidden
 			width: 50%
+			+r(768)
+				width: 100%
 
 // resort
 .resort
@@ -972,6 +1034,8 @@ a
 		background-position: 50% 50%
 		background-repeat: no-repeat
 		background-size: cover
+		+r(480)
+			padding-bottom: 65%
 	&__inf
 		position: absolute
 		top: 20px
@@ -990,6 +1054,9 @@ a
 		color: $c_foot
 		letter-spacing: .5px
 		+box
+		+r(768)
+			padding: 28px
+			min-height: auto
 	&__hidden
 		position: absolute
 		top: 0
@@ -1048,6 +1115,9 @@ a
 		margin-bottom: 15px
 		font-size: 18px
 		+m700
+		+r(768)
+			margin-bottom: 10px
+			font-size: 12px
 	&__bot
 		margin-top: 33px
 		+clr
@@ -1061,6 +1131,8 @@ a
 	p
 		margin-top: 15px
 		color: $c_foot
+		+r(768)
+			margin-top: 10px
 	.author
 		margin-bottom: 18px
 	.title-h3
@@ -1155,6 +1227,8 @@ a
 		box-shadow: 0 0 18px rgba(0, 0, 0, 0.19)
 		.title-h6
 			margin-bottom: 3px
+		+r(480)
+			display: none
 	&__row
 		+clr
 	&__col
@@ -1233,6 +1307,9 @@ a
 		.profile__in
 			position: relative
 			padding-right: 93px
+			+r(768)
+				padding-right: 0
+				padding-bottom: 20px
 	& + .profile
 		margin-top: 30px
 	& + .title-h6
@@ -1247,22 +1324,45 @@ a
 	&__in
 		padding: 30px 18px
 		+clr
-	&__row
+		+r(768)
+			overflow: auto
+			.inform
+				min-width: 620px
+	.profile__row
 		margin-top: 20px
 		+clr
 		&:first-child
 			margin-top: 0
+		+r(768)
+			margin-top: 10px
+			&:first-child
+				margin-top: 0
+		.input,
+		.select
+			+r(980)
+				margin-top: 0
+			+r(768)
+				margin-top: 10px
 	&__checkbox
 		margin-top: 20px
+		padding-left: 180px
 		+clr
 		&:first-child
 			margin-top: 0
-		padding-left: 180px
+		+r(768)
+			padding-left: 0
 	&__label
 		float: left
 		width: 180px
 		min-height: 60px
 		line-height: 60px
+		+r(980)
+			line-height: 42px
+			min-height: 42px
+		+r(768)
+			min-height: auto
+			width: 100%
+			line-height: 1.4
 		label,
 		span
 			display: inline-block
@@ -1276,6 +1376,8 @@ a
 		float: left
 		width: calc(100% - 180px)
 		+clr
+		+r(768)
+			width: 100%
 	&__info
 		margin-top: 8px
 		&:first-child
@@ -1293,11 +1395,17 @@ a
 		margin-top: 40px
 	&__wrap
 		padding: 30px 69px 38px 49px
+		+r(768)
+			padding: 20px
 	&__wrapper
 		padding: 30px 69px 30px 99px
+		+r(768)
+			padding: 20px
 	&__field
 		position: relative
 		padding: 20px 20px 20px 49px
+		+r(768)
+			padding: 20px 
 	&__wrap,
 	&__wrapper,
 	&__field
@@ -1307,15 +1415,22 @@ a
 			border-top: 1px solid $bord_profile
 	&__block
 		padding-left: 50px
+		+r(768)
+			padding-left: 0
 	&__title
 		margin-bottom: 16px
 		+l700
 		font-size: 15px
 		text-transform: uppercase
+		+r(768)
+			margin-bottom: 5px
+			text-align: center
 	&__title,
 	&__point
 		position: relative
 		padding-left: 50px
+		+r(768)
+			padding-left: 0
 		.fa,
 		.icon
 			position: absolute
@@ -1324,13 +1439,8 @@ a
 			transform: translate(0,-50%)
 			font-size: 27px
 			color: $yellow
-	&__numb
-		margin-right: 8px
-		max-width: 88px
-	&__date
-		max-width: 108px
-	&__code
-		max-width: 68px
+			+r(768)
+				display: none
 	&__numb,
 	&__date,
 	&__code
@@ -1343,6 +1453,23 @@ a
 		.select
 			min-width: 0
 			width: 100%
+	&__numb
+		margin-right: 8px
+		max-width: 88px
+		+r(980)
+			max-width: calc(50% - 15px)
+	&__date
+		max-width: 108px
+		+r(980)
+			max-width: calc(50% - 15px)
+	&__code
+		max-width: 68px
+		+r(900)
+			width: calc(100% - 180px)
+			max-width: 100%
+		+r(768)
+			margin: 0
+			width: 100%
 	&__slash
 		min-height: 60px
 		color: #a5a5a5
@@ -1351,11 +1478,19 @@ a
 		+l300
 		vertical-align: top
 		display: inline-block
+		+r(980)
+			line-height: 42px
+			min-height: 42px
+		+r(768)
+			margin-top: 10px
 	&__text
 		min-height: 60px
 		line-height: 60px
 		vertical-align: top
 		display: inline-block
+		+r(980)
+			line-height: 42px
+			min-height: 42px
 		label,
 		span
 			display: inline-block
@@ -1365,13 +1500,38 @@ a
 			font-size: 15px
 			color: $yellow
 			+l700
-	&__float
+	.profile__float
 		float: right
 		margin-left: 5px
+		+r(900)
+			float: none
+			margin: 20px 0 0 -180px
+			width: calc(100% + 180px)
+			.input
+				margin-top: 0
+			.profile__text
+				width: 167px
+		+r(768)
+			margin: 0
+			width: 100%
+			.profile__text
+				width: 100%
+	&__filter
+		.sort-by
+			+r(480)
+				margin: 10px 0 0
+				width: 100%
+				&:first-child
+					margin-top: 0
 	&__view
 		position: absolute
 		top: 30px
 		right: -1px
+		+r(768)
+			position: relative
+			top: 0
+			right: 0
+			margin: 10px 0 0
 	.inform
 		margin-top: 0
 	.inform__col
@@ -1392,16 +1552,37 @@ a
 		& + .input,
 		& + .select
 			margin-top: 20px
+		+r(1200)
+			max-width: 100%
+		+r(980)
+			margin-top: 15px
+		+r(768)
+			margin-top: 10px
 	.select__text
 		height: 60px
+		+r(980)
+			height: auto
 // prof-in
 .prof-in
+	+clr
 	.btn
 		margin-top: 8px
 		text-align: left
 		display: block
 		&:first-child
 			margin-top: 0
+		+r(1200)
+			float: left
+			margin: 0 0 0 4%
+			width: 48%
+			text-align: center
+			&:first-child
+				margin-left: 0
+		+r(480)
+			margin: 10px 0 0 
+			width: 100%
+			&:first-child
+				margin-top: 0
 
 // addition
 .addition
@@ -1536,6 +1717,7 @@ a
 .armor
 	margin: 25px 0
 	line-height: 1.3
+	overflow-x: auto
 	&.is-mod
 		.armor__row
 			& + .armor__row
@@ -1594,6 +1776,8 @@ a
 		overflow: hidden
 		min-height: 30px
 		line-height: 30px
+	&__wrapper
+		min-width: 750px
 	&__l
 		line-height: 1.3
 		vertical-align: middle
@@ -1645,6 +1829,11 @@ a
 		margin-left: 4%
 		&:first-child
 			margin-left: 0
+		+r(768)
+			margin: 10px 0 0 0 
+			width: 100%
+			&:first-child
+				margin-top: 0
 
 // book
 .book
@@ -1678,6 +1867,11 @@ a
 		margin-left: 4%
 		&:first-child
 			margin-left: 0
+		+r(768)
+			margin: 10px 0 0 0
+			width: 100%
+			&:first-child
+				margin-top: 0
 	&__inf
 		margin-top: 15px
 		padding-left: 20px
@@ -1700,10 +1894,16 @@ a
 	background: $yellow
 	+box
 	+clr
+	+r(768)
+		padding: 12px 20px
 	&.is-nonmarg
 		margin-bottom: 0
+	+r(768)
+		margin: 10px 0
 	&__left
 		float: left
+		+r(768)
+			width: 100%
 		.price
 			font-size: 22px
 			vertical-align: top
@@ -1728,6 +1928,9 @@ a
 		min-width: 258px
 		transition: opacity .2s
 		+box
+		+r(768)
+			margin-top: 10px
+			width: 100%
 		&:active
 			opacity: .8
 			&:before
@@ -1957,6 +2160,8 @@ a
 		border-top: 1px solid #fff
 		.price
 			font-size: 30px
+		+r(768)
+			padding: 15px 20px
 	&__tot
 		float: left
 		margin-top: 10px
@@ -1968,11 +2173,19 @@ a
 // guarant
 .guarant
 	+clr
+	+r(768)
+		text-align: center
 	&__left
 		float: left
 		width: 262px
+		+r(768)
+			float: none
+			width: 100%
 	&__right
 		overflow: hidden
+		+r(768)
+			margin-top: 5px
+			overflow: initial
 	&__item
 		margin-left: 25px
 		height: 40px
@@ -2028,6 +2241,11 @@ a
 		float: left
 		margin-left: 4%
 		width: 48%
+		+r(768)
+			margin: 20px 0 0 0
+			width: 100%
+			&:first-child
+				margin-top: 0
 		&:first-child
 			margin-left: 0
 		.inform__name
@@ -2038,6 +2256,8 @@ a
 			&:first-child
 				margin-top: -7px
 	&__img
+		+r(768)
+			margin-right: 10px
 		a
 			display: block
 		img
@@ -2046,6 +2266,8 @@ a
 	&__in
 		padding: 0 20px
 		+clr
+		+r(768)
+			padding: 0
 		& + .inform__in
 			margin-top: 20px
 			padding-top: 20px
@@ -2064,6 +2286,8 @@ a
 	&__name
 		float: left
 		width: 23%
+		+r(768)
+			width: 27%
 		img
 			margin: 5px 0
 			display: block
@@ -2076,6 +2300,8 @@ a
 	&__field
 		margin-top: 28px
 		text-align: right
+		+r(768)
+			text-align: center
 	&__left
 		overflow: hidden
 	&__right
@@ -2141,16 +2367,31 @@ a
 		text-transform: uppercase
 		vertical-align: middle
 		display: inline-block
+		+r(768)
+			font-size: 14px
+		+r(480)
+			font-size: 10px
 	&__name
 		margin-bottom: 28px
 		vertical-align: top
 		display: inline-block
+		+r(768)
+			margin-bottom: 15px
+		+r(480)
+			width: 70%
 		img
 			display: block
+			+r(480)
+				width: 100%
 	&__title
 		margin-bottom: 22px
 		font-size: 35px
 		+l700
+		+r(768)
+			margin-bottom: 10px
+			font-size: 25px
+		+r(480)
+			font-size: 16px
 	&__text
 		margin: 0 auto
 		max-width: 470px
@@ -2164,12 +2405,20 @@ a
 	+clr
 	&__left
 		float: left
+		+r(480)
+			float: none
 	&__right
 		float: right
+		+r(480)
+			margin-top: 10px
+			float: none
 	&__item
 		margin-left: 35px
 		vertical-align: top
 		display: inline-block
+		+r(480)
+			margin: 10px 0 0 
+			display: block
 		&:first-child
 			margin-left: 0
 		.icon,
@@ -2207,6 +2456,8 @@ a
 		display: block
 	ul
 		margin: 22px 0 22px 45px
+		+r(480)
+			margin-left: 25px
 		li
 			list-style-type: disc
 
@@ -2252,16 +2503,24 @@ a
 		margin-left: 3.4%
 		&:first-child
 			margin-left: 0
+		+r(768)
+			margin: 20px 0 0 0
+			width: 100%
 	.input,
 	.textarea
 		position: relative
 		display: block
+	.btn
+		+r(480)
+			width: 100%
 
 // comment
 .comm
 	font-size: 15px
 	+l700
 	color: $c_foot
+	+r(768)
+		font-size: 13px
 	.comm
 		margin: 30px 0 30px 60px
 	// &__in
@@ -2273,6 +2532,8 @@ a
 		+l400
 	&__text
 		margin: 25px 0 20px
+		+r(768)
+			margin: 10px 0
 		p
 			margin-top: 20px
 			&:first-child
@@ -2280,6 +2541,10 @@ a
 	.author
 		float: left
 		margin: 0
+	.author__img 
+		+r(768)
+			width: 42px
+			height: 42px
 	.author__name
 		margin-top: 10px
 		display: inline-block
@@ -2310,6 +2575,11 @@ a
 		width: 31%
 		&:first-child
 			margin-left: 0
+		+r(620)
+			width: 100%
+		& + .rounds__col
+			+r(620)
+				margin: 20px 0 0 0
 
 // suite
 .suite
@@ -2344,13 +2614,20 @@ a
 
 // contact
 .contact
-	margin: 20px 0
 	&__form
 		.btn
 			margin-left: 16px
 			min-width: 170px
 			&:first-child
 				margin-left: 0
+			+r(480)
+				margin: 20px 0 0 0
+				width: 100%
+				&:first-child
+					margin-top: 0
+	&__bot
+		+r(768)
+			text-align: center
 	&__bot,
 	.input,
 	.textarea
@@ -2374,6 +2651,7 @@ a
 		padding-right: 20px
 		text-transform: uppercase
 	img
+		width: 100%
 		display: block
 
 .office-info

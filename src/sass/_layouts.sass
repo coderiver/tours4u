@@ -10,10 +10,16 @@
 			padding: 0
 	&_blog
 		padding: 50px 0 125px
+		+r(768)
+			padding: 20px 0 50px
 		.l-left
 			padding-top: 0
 	&_blog-view
 		padding: 50px 0 84px
+		+r(768)
+			padding: 10px 0 54px
+			.l-left
+				padding-top: 0
 	&_profile
 		padding: 35px 0 60px
 		.title-h2
@@ -22,14 +28,21 @@
 		padding: 50px 0 80px
 		.l-left
 			padding: 0
+		+r(1024)
+			padding: 35px 0 50px
 	&__in
 		+clr
 	&-col1
 		float: left
 		width: 65.813%
+		+r(1200)
+			width: 100%
 	&-col2
 		float: right
 		width: 31.625%
+		+r(1200)
+			margin-top: 30px
+			width: 100%
 		.shadow,
 		.widget,
 		.call,
@@ -39,6 +52,10 @@
 			margin-top: 30px
 			&:first-child
 				margin-top: 0
+			+r(768)
+				margin-top: 20px
+				&:first-child
+					margin-top: 0
 		.check-prices
 			& + .shadow
 				margin-top: 0
@@ -50,8 +67,12 @@
 		float: left
 		padding-top: 28px
 		width: 74.4%
+		+r(1024)
+			width: 100%
 	&-right
 		float: right
 		width: 23%
 		.list-border
 			margin-bottom: 40px
+		+r(1024)
+			display: none

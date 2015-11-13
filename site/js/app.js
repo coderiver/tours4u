@@ -201,7 +201,27 @@ $(document).ready(function() {
 		dots 			: false,
 		arrows 			: false,
 		centerMode 		: true,
-		focusOnSelect 	: true
+		focusOnSelect 	: true,
+		responsive 		: [
+			{
+				breakpoint	: 1200,
+				settings 	: {
+					slidesToShow: 6
+				}
+			},
+			{
+				breakpoint 	: 768,
+				settings	: {
+				  slidesToShow: 5
+				}
+			},
+			{
+				breakpoint 	: 480,
+				settings 	: {
+					slidesToShow: 3
+				}
+			}
+		]
 	});
 	$('.js-gall').each(function() {
 		var this_ = $(this),
@@ -250,6 +270,8 @@ $(document).ready(function() {
 				center 				: myLatlng,
 				mapTypeControl 		: false,
 				streetViewControl 	: true,
+    			scrollwheel			: false,
+				draggable			: false,
 				streetViewControlOptions: {
 					position: google.maps.ControlPosition.LEFT_CENTER
 				},
@@ -295,6 +317,8 @@ $(document).ready(function() {
 				mapTypeControl 		: false,
 				streetViewControl 	: false,
 				styles 				: castum,
+    			scrollwheel			: false,
+				draggable			: false,
 				zoomControl 		: true,
 				zoomControlOptions 	: {
 					style: google.maps.ZoomControlStyle.LARGE,
