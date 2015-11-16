@@ -304,10 +304,18 @@ a
 			margin: 0
 			width: 100%
 			display: table
+			+r(768)
+				display: block
 		.nav__item
 			display: table-cell
 			width: 14.28%
 			max-width: 14.28%
+			+r(768)
+				width: 100%
+				max-width: 100%
+				border-bottom: 1px solid $l_gray
+				border-left: none
+				display: block
 			a
 				padding-left: 20px
 				padding-right: 20px
@@ -322,6 +330,14 @@ a
 		background: #fff
 		vertical-align: top
 		display: inline-block
+		+r(1024)
+			font-size: 12px
+		+r(768)
+			width: 100%
+			max-width: 100%
+			border-bottom: 1px solid $l_gray
+			border-left: none
+			display: block
 		&:first-child
 			border-left: none
 		&.is-gray
@@ -336,16 +352,22 @@ a
 		margin-bottom: 1px
 		height: 33px
 		color: $c_nav-ico
+		+r(768)
+			display: none
 		.fa,
 		.icon
 			font-size: 31px
 			transition: color .2s
+			+r(1024)
+				font-size: 26px
 	a
 		padding: 22px 38px
 		text-align: center
 		transform: translate3(0,0,0)
 		transition: color .2s
 		display: block
+		+r(1024)
+			padding: 12px 19px
 		&:active
 			color: $red
 			.nav__ico
@@ -377,6 +399,8 @@ a
 			margin-bottom: 20px
 			width: 100%
 			text-align: center
+		+r(480)
+			font-size: 0
 	.view
 		margin-top: 10px
 		display: block
@@ -386,6 +410,13 @@ a
 			margin: 0 0 0 20px
 			vertical-align: top
 			display: inline-block
+			&:first-child
+				margin-left: 0
+		+r(480)
+			margin-left: 4%
+			width: 48%
+			font-size: 14px
+			+box
 			&:first-child
 				margin-left: 0
 	p
@@ -402,6 +433,9 @@ a
 		z-index: 2
 		font-size: 15px
 		background: #fff
+		+r(768)
+			height: 30px
+			width: 30px
 		&:active
 			&:before
 				color: $red
@@ -489,18 +523,29 @@ a
 	font-size: 14px
 	background: $yellow
 	+clr
+	+r(480)
+		text-align: center
 	&__left
 		float: left
 		margin-top: -5px
+		+r(480)
+			margin-bottom: 10px
+			width: 100%
 	&__price
 		font-size: 30px
 		+m700
 	&__right
 		float: right
+		+r(480)
+			width: 100%
 	sup
 		margin-top: -2px
 		font-size: 18px
 		vertical-align: top
+	.btn
+		+r(480)
+			width: 100%
+			display: block
 
 // info
 .info
@@ -652,6 +697,35 @@ a
 			+rm(1024)
 				&:hover
 					border-color: $purple
+	&__in
+		+clr
+		+r(1200)
+			.hot
+				float: left
+				&:first-child,
+				& + .hot
+					margin: 0 0 0 4%
+					float: left
+					width: 48%
+				&:nth-child(odd)
+					margin-left: 0
+				&:nth-child(n+3)
+					margin-top: 20px
+			.hot-tours__all
+				width: 100%
+		+r(768)
+			.hot
+				float: none
+				margin-left: 0
+				width: 100%
+				&:first-child,
+				& + .hot,
+				&:nth-child(odd),
+				&:nth-child(n+3)
+					margin: 20px 0 0
+					width: 100%
+				&:first-child
+					margin-top: 0
 	.title-h2
 		margin: 28px 0
 		&:first-child
@@ -692,14 +766,30 @@ a
 	font-size: 16px
 	&__in
 		@extend %in
+	+r(1024)
+		font-size: 0
 
 // adults children
 .adults,
 .children,
 .duration
+	margin-left: 2.5%
 	width: 14.4%
 	vertical-align: top
 	display: inline-block
+	&:first-child
+		margin-left: 0
+	+r(1200)
+		margin-left: 1.5%
+	+r(1024)
+		width: 32.3%
+		font-size: 16px
+		text-align: center
+	+r(768)
+		margin: 20px 0 0
+		width: 100%
+		&:first-child
+			margin-top: 0
 	&__quantity
 		margin-left: 15px
 		+l700
@@ -713,12 +803,11 @@ a
 	&__group
 		margin-top: 20px
 		font-size: 0
+		+r(768)
+			margin-top: 10px
 
-.children
-	margin-left: 2.5%
-
+// duration
 .duration 
-	margin-left: 2.5%
 	&__quantity
 		width: 42px
 	&__inf
@@ -752,9 +841,14 @@ a
 	display: inline-block
 	+r(1200)
 		margin-left: 1.5%
+	+r(1024)
+		margin-left: 0
+		width: 100%
 	&__in
 		margin-top: 15px
 		font-size: 0
+
+// tally
 .tally
 	position: relative
 	padding: 2px
@@ -834,6 +928,8 @@ a
 	.title-h2
 		&:first-child
 			margin-top: 0
+	.town
+		margin-bottom: 5px
 
 // tot
 .tot
@@ -864,8 +960,12 @@ a
 .gall
 	max-width: 370px
 	overflow: hidden
+	+r(768)
+		width: 100%
 	&__top
 		height: 234px
+		.slick-slide
+			width: 100%
 		+r(768)
 			height: auto
 			img
@@ -1722,8 +1822,13 @@ a
 		.armor__row
 			& + .armor__row
 				margin-top: 20px
+				+r(768)
+					margin-top: 10px
 		.armor__about
 			max-width: 378px
+			+r(480)
+				width: 100%
+				max-width: 100%
 	&__top
 		padding: 0 20px
 		background: $light_yellow
@@ -1751,17 +1856,28 @@ a
 		+l700
 	&__in
 		+clr
+		+r(480)
+			display: flex
+			flex-flow: row wrap
+			text-align: center
 	&__about
 		overflow: hidden
 		max-width: 340px
+		+r(480)
+			width: 100%
+			max-width: 100%
 	&__but
 		float: right
-		margin: 4px 0
+		margin: 4px 0 4px 10px
 		text-align: center
 		.armor__price
 			margin-top: 12px
 			font-size: 14px
 			+m700
+		+r(480)
+			margin: 10px 0 0 
+			width: 100%
+			order: 2
 	&__ico
 		float: left
 		margin-left: 8px
@@ -1770,6 +1886,8 @@ a
 		font-size: 27px
 		line-height: 1
 		color: $yellow
+		+r(480)
+			display: none
 		&.is-nonpad
 			padding-top: 1px
 	&__wrap
@@ -1816,6 +1934,8 @@ a
 		color: $c_text
 	.line
 		margin: 30px 0 15px
+		+r(768)
+			display: none
 	.title-small
 		margin-bottom: 16px
 
@@ -1931,6 +2051,8 @@ a
 		+r(768)
 			margin-top: 10px
 			width: 100%
+		+r(480)
+			min-width: 100%
 		&:active
 			opacity: .8
 			&:before

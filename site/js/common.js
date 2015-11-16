@@ -188,7 +188,17 @@ $(document).ready(function() {
 			slidesToScroll	: 1,
 			arrows			: false,
 			fade 			: true,
-			asNavFor 		: pag
+			asNavFor 		: pag,
+			responsive 		: [
+				{
+					breakpoint 	: 768,
+					settings	: {
+						dots 			: false,
+						asNavFor 		: null,
+						adaptiveHeight	: true
+					}
+				}
+			]
 		});
 		pag.slick({
 			slidesToShow	: 4,
