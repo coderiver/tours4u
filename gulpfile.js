@@ -21,17 +21,20 @@ var src = {
     sass    : 'src/sass/',
     js      : 'src/js',
     img     : 'src/img',
+    imgEm   : 'src/email/img',
     svg     : 'src/img/svg',
     helpers : 'src/helpers'
 };
 
 //** dest paths **
 var dest = {
-    root : 'site',
-    html : 'site',
-    css  : 'site/css',
-    js   : 'site/js',
-    img  : 'site/img'
+    root    : 'site',
+    html    : 'site',
+    css     : 'site/css',
+    js      : 'site/js',
+    img     : 'site/img',
+    imgEm   : 'src/email/img',
+    email   : 'src/email'
 };
 
 
@@ -91,6 +94,14 @@ gulp.task('js', function () {
         .pipe(reload({stream: true}));
 });
 
+// js includes
+gulp.task('email', function () {
+    gulp.src('src/email/*.html')
+        .pipe(rigger())
+        .pipe(gulp.dest('site/email/'))
+        .pipe(reload({stream: true}));
+});
+
 gulp.task('copy', function() {
    gulp.src('src/img/*.*')
    .pipe(gulp.dest('site/img/'));
@@ -98,6 +109,8 @@ gulp.task('copy', function() {
    .pipe(gulp.dest('site/css/fonts/'));
    gulp.src('src/video/*.*')
    .pipe(gulp.dest('site/video/'));
+   gulp.src('src/email/img/*.*')
+   .pipe(gulp.dest('site/email/img/'));
 });
 
 gulp.task('delete', function (cb) {
@@ -192,9 +205,12 @@ gulp.task('watch', function() {
     gulp.watch(src.sass + '/**/*', ['sass']);
     gulp.watch('src/js/*', ['js']);
     gulp.watch('src/img/*', ['copy']);
+    gulp.watch('src/email/img/*', ['copy']);
     gulp.watch('src/img/svg/*', ['font']);
     gulp.watch(['src/*.html', 'src/partials/*.html'], ['html']);
     gulp.watch(src.img + '/icons/*.png', ['sprite']);
+    gulp.watch('src/email/*', ['email']);
+
 });
 
 
