@@ -387,7 +387,7 @@ a { color: inherit; text-decoration: none; }
 .resort__inf span { padding: 10px 20px; background: #58357b; background: rgba(88, 53, 123, 0.9); display: block; }
 .resort__text { padding: 28px 55px 28px 60px; min-height: 200px; color: #888; letter-spacing: 0.5px; box-sizing: border-box; }
 @media only screen and (max-width: 768px) { .resort__text { padding: 28px; min-height: auto; } }
-.resort__hidden { position: absolute; top: 0; height: 100%; width: 100%; bottom: 0; border: 7px solid #ffdb00; opacity: 0; visibility: hidden; z-index: -1; transition: opacity 0.2s, visibility 0.2s; box-shadow: 0 0 18px rgba(0, 0, 0, 0.29); box-sizing: border-box; }
+.resort__hidden { position: absolute; top: 0; height: 100%; width: 100%; bottom: 0; border: 7px solid #ffdb00; opacity: 0; visibility: hidden; z-index: -1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); transition: opacity 0.2s, visibility 0.2s; box-shadow: 0 0 18px rgba(0, 0, 0, 0.29); box-sizing: border-box; }
 .resort__in { position: absolute; top: 50%; left: 50%; -webkit-transform: translate3(0, 0, 0); -ms-transform: translate3(0, 0, 0); transform: translate3(0, 0, 0); -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 .resort__btn { margin-left: 10px; width: 60px; height: 60px; line-height: 60px; text-align: center; color: #fff; font-size: 0; transition: background 0.2s; background: rgba(88, 53, 123, 0.9); display: inline-block; }
 .resort__btn:first-child { margin-left: 0; }
