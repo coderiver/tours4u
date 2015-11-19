@@ -1885,7 +1885,7 @@ h5 { font-size: 15px; font-family: "Lato", sans-serif; font-weight: 700; }
 
 .total-price { font-size: 15px; font-family: "Montserrat", sans-serif; font-weight: 700; background: #f2f2f2; vertical-align: top; display: inline-block; *zoom: 1; }
 .total-price:after { content: " "; display: table; clear: both; }
-.total-price__text { padding: 0 18px; line-height: 45px; min-height: 45px; overflow: hidden; }
+.total-price__text { float: left; padding: 0 18px; line-height: 45px; min-height: 45px; }
 .total-price__text span { margin-top: -2px; line-height: 1.4; vertical-align: middle; display: inline-block; }
 .total-price .btn { float: right; font-size: 18px; }
 
