@@ -311,8 +311,8 @@ a { color: inherit; text-decoration: none; }
 .tour .title-h2:first-child { margin-top: 0; }
 .tour .town { margin-bottom: 5px; }
 
-.tot { font-size: 0; font-family: "Montserrat", sans-serif; font-weight: 700; text-transform: uppercase; box-shadow: 0 0 18px rgba(0, 0, 0, 0.19); vertical-align: top; display: inline-block; }
-.tot__item { padding: 5px 8px; font-size: 14px; color: #666; vertical-align: top; display: inline-block; }
+.tot { font-size: 0; font-family: "Montserrat", sans-serif; font-weight: 700; text-transform: uppercase; box-shadow: 0 0 18px rgba(0, 0, 0, 0.19); -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: top; display: inline-block; }
+.tot__item { padding: 5px 8px; font-size: 14px; color: #666; cursor: pointer; vertical-align: top; display: inline-block; }
 .tot__item.is-active { color: #fff; background: #58357b; box-shadow: 0 0 18px rgba(0, 0, 0, 0.19); }
 
 .town { margin-bottom: 16px; color: #9e9e9e; font-family: "Lato", sans-serif; font-weight: 400; }

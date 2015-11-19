@@ -716,4 +716,12 @@ $(document).ready(function() {
 		});
 	} accord();
 
+	// tot
+	$('.js-tot-item').on('click', function() {
+		var this_ = $(this),
+			item = this_.parents('.js-tot').find('.js-tot-item');
+		item.removeClass('is-active');
+		this_.addClass('is-active');
+	});
+
 });
