@@ -138,7 +138,8 @@ $(document).ready(function() {
 	$(".js-datepicker").datepicker({
     	showOn 			: "both",
     	buttonImage 	: "img/calendar.png",
-    	buttonImageOnly : true
+		minDate: 'today',
+    	dayNamesMin: ['F', 'T', 'W', 'T', 'F', 'S', 'S']
     });
 
 	$('.js-close').on('click', function(){

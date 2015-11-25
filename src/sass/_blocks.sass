@@ -479,8 +479,11 @@ h5
 		+l300
 		font-size: 16px
 		border: 3px solid $l_gray
+		transition: border-color .2s
 		+box
 		display: block
+		&:focus
+			border-color: $yellow
 		&.is-error,
 		&.error
 			& + .text-error

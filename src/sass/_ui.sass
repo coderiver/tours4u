@@ -1,12 +1,25 @@
 // ui-datepicker
 .ui-datepicker
-	width: 13.4em
+	margin-top: 5px
+	padding: 4px 8px
+	width: 285px
+	+l300
+	border-radius: 0
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.16)
+	+box
+	background: #fff
 	.ui-datepicker-next,
 	.ui-datepicker-prev
+		top: 7px
 		cursor: pointer
+		user-select: none
+		border: 1px solid transparent
 		&:active
 			span
 				color: #000
+		&.ui-state-hover
+			background: transparent
+			border-color: transparent
 		+rm(1024)
 			&:hover
 				span
@@ -17,7 +30,7 @@
 			text-rendering: auto
 			-webkit-font-smoothing: antialiased
 			background: none
-			color: #fff
+			color: $c_form
 			font-size: 0 !important
 			text-indent: 0
 			&:before
@@ -25,9 +38,60 @@
 				top: 50%
 				left: 50%
 				transform: translate(-50%,-50%)
+				transition: color .2s
 				font-size: 16px
-				content: "\f104"
+				content: "\f053"
 	.ui-datepicker-next
+		&.ui-state-hover
+			right: 2px
 		span
 			&:before
-				content: "\f105"
+				content: "\f054"
+	.ui-datepicker-prev
+		&.ui-state-hover
+			left: 2px
+	.ui-widget-header
+		padding: 8px 0
+		color: $c_form
+		+l700
+		border: none
+		background: transparent,
+		.ui-state-disabled
+			background: transparent
+	.ui-datepicker-calendar
+		th
+			background: $yellow
+			border-left: 1px solid #fff
+		td
+			padding: 0
+			border-left: 1px solid #fff
+			border-bottom: 1px solid #fff
+			+box
+			&.ui-state-disabled
+				a,
+				span
+					color: rgba($c_menu, .5)
+			&.ui-datepicker-today
+				a
+					background: $yellow
+			a
+				&:hover
+					background: $yellow
+			a,
+			span
+				height: 37px
+				width: 37px
+				line-height: 32px
+				text-align: center
+				color: $c_menu
+				transition: background .2s
+				background: transparent
+				+box
+				border: none
+				display: block
+	.ui-state-disabled
+		opacity: 1
+		background: $l_gray
+		a,
+		span
+			color: rgba($c_menu, .5)
