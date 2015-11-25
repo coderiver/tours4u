@@ -7,6 +7,11 @@
 	z-index: 10
 	+r(1200)
 		height: 70px
+	&.is-login
+		.menu
+			width: calc(100% - 525px)
+			+r(1200)
+				width: 100%
 	&:before
 		position: absolute
 		content: ''
@@ -383,9 +388,34 @@
 .user
 	position: relative
 	vertical-align: top
+	font-size: 16px
 	transition: visibility .2s, opacity .2s
 	display: inline-block
 	&__btn
 		vertical-align: top
 		background: none
 		display: inline-block
+	&__name,
+	&__img
+		margin-top: -2px
+		vertical-align: top
+		display: inline-block
+	&__name
+		color: $c_menu
+		max-width: 136px
+		line-height: 26px
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+		+r(600)
+			width: 90px
+		+r(400)
+			width: 24px
+	&__img
+		margin-left: 2px
+		height: 26px
+		width: 26px
+		border-radius: 50%
+		overflow: hidden
+		img
+			display: block

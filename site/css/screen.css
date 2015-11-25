@@ -1331,6 +1331,8 @@ body.is-home .menu-open__btn:active:before, body.is-home .menu-open__btn:active:
 
 .header { position: relative; height: 90px; font-family: "Lato", sans-serif; font-weight: 300; color: #333; z-index: 10; }
 @media only screen and (max-width: 1200px) { .header { height: 70px; } }
+.header.is-login .menu { width: calc(100% - 525px); }
+@media only screen and (max-width: 1200px) { .header.is-login .menu { width: 100%; } }
 .header:before { position: absolute; content: ""; top: 0; left: 0; width: 100%; height: 90px; background: transparent; z-index: -1; transition: background 0.2s; }
 @media only screen and (max-width: 1200px) { .header:before { height: 70px; } }
 @media only screen and (max-width: 768px) { .header:before { height: 0; } }
@@ -1424,8 +1426,14 @@ body.is-home .menu-open__btn:active:before, body.is-home .menu-open__btn:active:
 .search { position: relative; vertical-align: top; transition: visibility 0.2s, opacity 0.2s; display: inline-block; }
 .search__btn { font-size: 24px; line-height: 1; color: #adadad; vertical-align: top; background: none; display: inline-block; }
 
-.user { position: relative; vertical-align: top; transition: visibility 0.2s, opacity 0.2s; display: inline-block; }
+.user { position: relative; vertical-align: top; font-size: 16px; transition: visibility 0.2s, opacity 0.2s; display: inline-block; }
 .user__btn { vertical-align: top; background: none; display: inline-block; }
+.user__name, .user__img { margin-top: -2px; vertical-align: top; display: inline-block; }
+.user__name { color: #333; max-width: 136px; line-height: 26px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media only screen and (max-width: 600px) { .user__name { width: 90px; } }
+@media only screen and (max-width: 400px) { .user__name { width: 24px; } }
+.user__img { margin-left: 2px; height: 26px; width: 26px; border-radius: 50%; overflow: hidden; }
+.user__img img { display: block; }
 
 .footer { margin-top: -423px; letter-spacing: 0.4px; color: #888; background: url(../img/bg-foot.png) repeat 0 0; }
 @media only screen and (max-width: 768px) { .footer { text-align: center; } }
@@ -1585,14 +1593,14 @@ h5 { font-size: 15px; font-family: "Lato", sans-serif; font-weight: 700; }
 @media only screen and (max-width: 980px) { .tab__cont { padding: 20px 10px; } }
 @media only screen and (max-width: 480px) { .tab__cont { padding: 10px; border-bottom: 1px solid #ededed; } }
 .tab__text { font-size: 14px; }
-.tab .select, .tab .input, .tab .btn { margin-left: 1.7%; }
-.tab .select:first-child, .tab .input:first-child, .tab .btn:first-child { margin-left: 0; }
-@media only screen and (max-width: 900px) { .tab .select, .tab .input, .tab .btn { margin-left: 1.2%; } }
-@media only screen and (max-width: 768px) { .tab .select, .tab .input, .tab .btn { margin: 10px 0 0; width: 100%; }
-  .tab .select:first-child, .tab .input:first-child, .tab .btn:first-child { margin-top: 0; } }
-.tab .select, .tab .input { width: 18%; }
-@media only screen and (max-width: 1199px) { .tab .select, .tab .input { width: 17%; min-width: 120px; } }
-@media only screen and (max-width: 768px) { .tab .select, .tab .input { width: 100%; } }
+.tab .select, .tab .input, .tab .btn, .tab .combo-select { margin-left: 1.7%; }
+.tab .select:first-child, .tab .input:first-child, .tab .btn:first-child, .tab .combo-select:first-child { margin-left: 0; }
+@media only screen and (max-width: 900px) { .tab .select, .tab .input, .tab .btn, .tab .combo-select { margin-left: 1.2%; } }
+@media only screen and (max-width: 768px) { .tab .select, .tab .input, .tab .btn, .tab .combo-select { margin: 10px 0 0; width: 100%; }
+  .tab .select:first-child, .tab .input:first-child, .tab .btn:first-child, .tab .combo-select:first-child { margin-top: 0; } }
+.tab .select, .tab .input, .tab .combo-select { width: 18%; }
+@media only screen and (max-width: 1199px) { .tab .select, .tab .input, .tab .combo-select { width: 17%; min-width: 120px; } }
+@media only screen and (max-width: 768px) { .tab .select, .tab .input, .tab .combo-select { width: 100%; } }
 .tab .input input { padding-left: 44px; }
 @media only screen and (max-width: 980px) { .tab .input input { padding-left: 40px; } }
 @media only screen and (max-width: 900px) { .tab .input input { padding-left: 35px; } }
@@ -1940,6 +1948,23 @@ h5 { font-size: 15px; font-family: "Lato", sans-serif; font-weight: 700; }
 .ui-datepicker .ui-datepicker-calendar td a, .ui-datepicker .ui-datepicker-calendar td span { height: 37px; width: 37px; line-height: 32px; text-align: center; color: #333; transition: background 0.2s; background: transparent; box-sizing: border-box; border: none; display: block; }
 .ui-datepicker .ui-state-disabled { opacity: 1; background: #f2f2f2; }
 .ui-datepicker .ui-state-disabled a, .ui-datepicker .ui-state-disabled span { color: rgba(51, 51, 51, 0.5); }
+
+.combo-select { position: relative; min-width: 220px; color: #666; font-family: "Lato", sans-serif; font-weight: 300; font-size: 16px; text-align: left; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; cursor: pointer; vertical-align: top; transition: border-color 0.2s; border: 3px solid #f2f2f2; display: inline-block; }
+.combo-select.combo-focus, .combo-select.combo-open { border-color: #ffdb00; box-shadow: 0 0 5px rgba(0, 0, 0, 0.16); }
+.combo-select .combo-arrow { font-size: 16px; color: #666; }
+.combo-select .combo-arrow:before { top: 50%; left: 50%; width: auto; height: auto; margin-top: 4px; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); content: ""; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; border: none; }
+.combo-select .combo-input { padding: 17px 35px 17px 15px; font-size: 16px; color: #666; line-height: 1.3; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; font-family: "Lato", sans-serif; font-weight: 300; box-sizing: border-box; display: block; }
+.combo-select .combo-input::-webkit-input-placeholder { color: #666; }
+.combo-select .combo-input::-moz-placeholder { color: #666; }
+.combo-select .combo-input:-ms-input-placeholder { color: #666; }
+.combo-select .combo-input::placeholder { color: #666; }
+@media only screen and (max-width: 980px) { .combo-select .combo-input { padding: 12px 10px; } }
+@media only screen and (max-width: 900px) { .combo-select .combo-input { padding: 8px 10px; } }
+.combo-select .combo-dropdown { padding: 0 0 0 3px; left: -3px; right: -3px; margin: 3px 0 0; max-height: 262px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.16); border: none; }
+.combo-select .option-item { padding: 2px 2px 2px 35px; height: 25px; box-sizing: border-box; transition: color 0.2s, background 0.2s; border: none; }
+.combo-select .option-item:first-child { display: none !important; }
+.combo-select .option-item:hover, .combo-select .option-item.option-selected, .combo-select .option-item.option-hover { color: #333; background: #ffdb00; }
+.combo-select .option-group { padding: 8px 15px; font-family: "Lato", sans-serif; font-weight: 700; border: none; background: none; }
 
 .slick-slider { position: relative; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 

@@ -681,4 +681,9 @@ $(document).ready(function() {
 		this_.addClass('is-active');
 	});
 
+	// $('.js-multiple').multipleSelect({
+	// 	single: true
+	// }); 
+	$('.js-multiple').comboSelect();
+
 });
